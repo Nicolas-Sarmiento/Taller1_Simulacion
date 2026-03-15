@@ -67,7 +67,7 @@ namespace Taller1_Simulacion
             // 3. Tendencia ( grafico linea) 
             // 4. Correlación un cálculo ( label ) 
             // 5. Kolmogorov-Smirnov ( label )
-
+            //&:h
 
         }
 
