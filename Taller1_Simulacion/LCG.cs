@@ -9,6 +9,8 @@ namespace Taller1_Simulacion
     internal class LCG : IRandomGenerator
     {
         private long x, seed, multiplier, additive, mod;
+        private long lastXn = 0;
+        public long LastXn { get { return lastXn; } }
 
         public LCG(int seed, int multiplier, int additive, int mod)
         {
@@ -20,11 +22,13 @@ namespace Taller1_Simulacion
             this.additive = additive;
             this.mod = mod;
             x = seed;
+            lastXn = x;
         }
 
         public double Next()
         {
             x = ((multiplier * x) + additive) % mod;
+            lastXn = x;
             return (double) x / ( mod - 1.0 );
         }
 
