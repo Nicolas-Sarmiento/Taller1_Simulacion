@@ -176,7 +176,7 @@ namespace Taller1_Simulacion
             try
             {
                 // Obtener parámetros del usuario si están disponibles
-                if (!string.IsNullOrEmpty(textBox1.Text) && !string.IsNullOrEmpty(textBox2.Text) && 
+                if (!string.IsNullOrEmpty(textBox1.Text) && !string.IsNullOrEmpty(textBox2.Text) &&
                     !string.IsNullOrEmpty(textBox3.Text))
                 {
                     paramA = long.Parse(textBox1.Text);
