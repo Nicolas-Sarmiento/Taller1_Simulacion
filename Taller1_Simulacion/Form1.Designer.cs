@@ -28,22 +28,31 @@ namespace Taller1_Simulacion
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title6 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title7 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title8 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.TextAnnotation textAnnotation3 = new System.Windows.Forms.DataVisualization.Charting.TextAnnotation();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title9 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.TextAnnotation textAnnotation4 = new System.Windows.Forms.DataVisualization.Charting.TextAnnotation();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title10 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.btnRun = new System.Windows.Forms.Button();
             this.txtParamA = new System.Windows.Forms.TextBox();
             this.txtParamC = new System.Windows.Forms.TextBox();
@@ -54,7 +63,7 @@ namespace Taller1_Simulacion
             this.lblSeed = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tbRandom = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblRandomInfo = new System.Windows.Forms.Label();
             this.tbIteration20 = new System.Windows.Forms.TabControl();
             this.tbRand20 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -66,12 +75,31 @@ namespace Taller1_Simulacion
             this.tbFrecuencia = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.lblFreqInfo = new System.Windows.Forms.Label();
+            this.lblLCGfreq = new System.Windows.Forms.Label();
+            this.lblXORfreq = new System.Windows.Forms.Label();
+            this.lblLCGfreqTest20 = new System.Windows.Forms.Label();
+            this.lblXORfreqTest20 = new System.Windows.Forms.Label();
             this.tbDistri = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.chRanges20 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.lblRangesInfo = new System.Windows.Forms.Label();
             this.tbTend = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.chXORTrendTest20 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.lblTrendInfo20 = new System.Windows.Forms.Label();
+            this.chLCGTrendTest20 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabPage11 = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.label2 = new System.Windows.Forms.Label();
             this.tbKolmo = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblKSInfo = new System.Windows.Forms.Label();
+            this.lblLCGKS20 = new System.Windows.Forms.Label();
+            this.lblXORKS20 = new System.Windows.Forms.Label();
+            this.lblLCGKSTest20 = new System.Windows.Forms.Label();
+            this.lblXORKSTest20 = new System.Windows.Forms.Label();
             this.lblTest = new System.Windows.Forms.Label();
-            this.gridXOR20 = new System.Windows.Forms.DataGridView();
+            this.gridXor20 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -82,26 +110,17 @@ namespace Taller1_Simulacion
             this.tbRand1000 = new System.Windows.Forms.TabPage();
             this.tbRand20000 = new System.Windows.Forms.TabPage();
             this.tbMontecarlo = new System.Windows.Forms.TabPage();
-            this.lblLCGfreq = new System.Windows.Forms.Label();
-            this.lblXORfreq = new System.Windows.Forms.Label();
-            this.lblLCGfreTest = new System.Windows.Forms.Label();
-            this.lblXORfreqTest = new System.Windows.Forms.Label();
-            this.chRanges20 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblRangesInfo = new System.Windows.Forms.Label();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblKSInfo = new System.Windows.Forms.Label();
-            this.lblLCGKS20 = new System.Windows.Forms.Label();
-            this.lblXORKS20 = new System.Windows.Forms.Label();
-            this.lblLCGKSTest20 = new System.Windows.Forms.Label();
-            this.lblXORKSTest20 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblTrendInfo20 = new System.Windows.Forms.Label();
-            this.chLCGTrendTest20 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.chXORTrendTest20 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.chLCGCorr20 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.lblXorInfo = new System.Windows.Forms.Label();
+            this.txtShiftA = new System.Windows.Forms.TextBox();
+            this.txtShiftB = new System.Windows.Forms.TextBox();
+            this.txtShiftC = new System.Windows.Forms.TextBox();
+            this.txtXorSeed = new System.Windows.Forms.TextBox();
+            this.lblSeedxor = new System.Windows.Forms.Label();
+            this.lblShiftA = new System.Windows.Forms.Label();
+            this.lblShiftB = new System.Windows.Forms.Label();
+            this.lblShiftC = new System.Windows.Forms.Label();
+            this.chXorCorrelation20 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chLCGCorrelation20 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabControl1.SuspendLayout();
             this.tbRandom.SuspendLayout();
             this.tbIteration20.SuspendLayout();
@@ -112,18 +131,19 @@ namespace Taller1_Simulacion
             this.tbFrecuencia.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tbDistri.SuspendLayout();
-            this.tbTend.SuspendLayout();
-            this.tabPage11.SuspendLayout();
-            this.tbKolmo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridXOR20)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chRanges20)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
-            this.tableLayoutPanel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chRanges20)).BeginInit();
+            this.tbTend.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chLCGTrendTest20)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chXORTrendTest20)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chLCGTrendTest20)).BeginInit();
+            this.tabPage11.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chLCGCorr20)).BeginInit();
+            this.tbKolmo.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridXor20)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chXorCorrelation20)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chLCGCorrelation20)).BeginInit();
             this.SuspendLayout();
             // 
             // btnRun
@@ -138,29 +158,32 @@ namespace Taller1_Simulacion
             // 
             // txtParamA
             // 
-            this.txtParamA.Location = new System.Drawing.Point(40, 37);
+            this.txtParamA.Location = new System.Drawing.Point(296, 6);
             this.txtParamA.Name = "txtParamA";
             this.txtParamA.Size = new System.Drawing.Size(100, 20);
             this.txtParamA.TabIndex = 1;
+            this.txtParamA.Text = "4141";
             // 
             // txtParamC
             // 
-            this.txtParamC.Location = new System.Drawing.Point(195, 40);
+            this.txtParamC.Location = new System.Drawing.Point(296, 32);
             this.txtParamC.Name = "txtParamC";
             this.txtParamC.Size = new System.Drawing.Size(100, 20);
             this.txtParamC.TabIndex = 2;
+            this.txtParamC.Text = "777";
             // 
             // txtSeed
             // 
-            this.txtSeed.Location = new System.Drawing.Point(380, 40);
+            this.txtSeed.Location = new System.Drawing.Point(296, 58);
             this.txtSeed.Name = "txtSeed";
             this.txtSeed.Size = new System.Drawing.Size(100, 20);
             this.txtSeed.TabIndex = 3;
+            this.txtSeed.Text = "1818";
             // 
             // lblParamA
             // 
             this.lblParamA.AutoSize = true;
-            this.lblParamA.Location = new System.Drawing.Point(21, 40);
+            this.lblParamA.Location = new System.Drawing.Point(277, 9);
             this.lblParamA.Name = "lblParamA";
             this.lblParamA.Size = new System.Drawing.Size(13, 13);
             this.lblParamA.TabIndex = 4;
@@ -169,7 +192,7 @@ namespace Taller1_Simulacion
             // lblParamC
             // 
             this.lblParamC.AutoSize = true;
-            this.lblParamC.Location = new System.Drawing.Point(176, 43);
+            this.lblParamC.Location = new System.Drawing.Point(277, 35);
             this.lblParamC.Name = "lblParamC";
             this.lblParamC.Size = new System.Drawing.Size(13, 13);
             this.lblParamC.TabIndex = 5;
@@ -178,7 +201,7 @@ namespace Taller1_Simulacion
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(176, 9);
+            this.label3.Location = new System.Drawing.Point(73, 43);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(131, 13);
             this.label3.TabIndex = 6;
@@ -187,7 +210,7 @@ namespace Taller1_Simulacion
             // lblSeed
             // 
             this.lblSeed.AutoSize = true;
-            this.lblSeed.Location = new System.Drawing.Point(336, 43);
+            this.lblSeed.Location = new System.Drawing.Point(252, 63);
             this.lblSeed.Name = "lblSeed";
             this.lblSeed.Size = new System.Drawing.Size(38, 13);
             this.lblSeed.TabIndex = 7;
@@ -200,32 +223,32 @@ namespace Taller1_Simulacion
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tbRandom);
             this.tabControl1.Controls.Add(this.tbMontecarlo);
-            this.tabControl1.Location = new System.Drawing.Point(12, 79);
+            this.tabControl1.Location = new System.Drawing.Point(12, 99);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1296, 648);
+            this.tabControl1.Size = new System.Drawing.Size(1280, 710);
             this.tabControl1.TabIndex = 8;
             // 
             // tbRandom
             // 
-            this.tbRandom.Controls.Add(this.label1);
+            this.tbRandom.Controls.Add(this.lblRandomInfo);
             this.tbRandom.Controls.Add(this.tbIteration20);
             this.tbRandom.Location = new System.Drawing.Point(4, 22);
             this.tbRandom.Name = "tbRandom";
             this.tbRandom.Padding = new System.Windows.Forms.Padding(3);
-            this.tbRandom.Size = new System.Drawing.Size(1288, 622);
+            this.tbRandom.Size = new System.Drawing.Size(1272, 684);
             this.tbRandom.TabIndex = 0;
             this.tbRandom.Text = "números pseudoaleatorios";
             this.tbRandom.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // lblRandomInfo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(543, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "label1";
+            this.lblRandomInfo.AutoSize = true;
+            this.lblRandomInfo.Location = new System.Drawing.Point(513, 9);
+            this.lblRandomInfo.Name = "lblRandomInfo";
+            this.lblRandomInfo.Size = new System.Drawing.Size(271, 13);
+            this.lblRandomInfo.TabIndex = 1;
+            this.lblRandomInfo.Text = "Iteraciones de generación de números pseudoaleatorios";
             // 
             // tbIteration20
             // 
@@ -240,7 +263,7 @@ namespace Taller1_Simulacion
             this.tbIteration20.Location = new System.Drawing.Point(8, 25);
             this.tbIteration20.Name = "tbIteration20";
             this.tbIteration20.SelectedIndex = 0;
-            this.tbIteration20.Size = new System.Drawing.Size(1276, 591);
+            this.tbIteration20.Size = new System.Drawing.Size(1260, 653);
             this.tbIteration20.TabIndex = 0;
             // 
             // tbRand20
@@ -249,7 +272,7 @@ namespace Taller1_Simulacion
             this.tbRand20.Location = new System.Drawing.Point(4, 22);
             this.tbRand20.Name = "tbRand20";
             this.tbRand20.Padding = new System.Windows.Forms.Padding(3);
-            this.tbRand20.Size = new System.Drawing.Size(1268, 565);
+            this.tbRand20.Size = new System.Drawing.Size(1252, 627);
             this.tbRand20.TabIndex = 0;
             this.tbRand20.Text = "20";
             this.tbRand20.UseVisualStyleBackColor = true;
@@ -263,7 +286,7 @@ namespace Taller1_Simulacion
             this.tableLayoutPanel1.Controls.Add(this.gridMod20, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.tbCorrel, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.lblTest, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.gridXOR20, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.gridXor20, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.lbllgc20, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblxor20, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -272,7 +295,7 @@ namespace Taller1_Simulacion
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1262, 559);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1246, 621);
             this.tableLayoutPanel1.TabIndex = 7;
             // 
             // gridMod20
@@ -290,7 +313,7 @@ namespace Taller1_Simulacion
             this.gridMod20.Name = "gridMod20";
             this.gridMod20.ReadOnly = true;
             this.gridMod20.RowHeadersVisible = false;
-            this.gridMod20.Size = new System.Drawing.Size(309, 533);
+            this.gridMod20.Size = new System.Drawing.Size(305, 595);
             this.gridMod20.TabIndex = 0;
             // 
             // iteracion
@@ -310,6 +333,9 @@ namespace Taller1_Simulacion
             // un
             // 
             this.un.DataPropertyName = "Un";
+            dataGridViewCellStyle4.Format = "G8";
+            dataGridViewCellStyle4.NullValue = null;
+            this.un.DefaultCellStyle = dataGridViewCellStyle4;
             this.un.HeaderText = "Un";
             this.un.Name = "un";
             this.un.ReadOnly = true;
@@ -325,10 +351,10 @@ namespace Taller1_Simulacion
             this.tbCorrel.Controls.Add(this.tbTend);
             this.tbCorrel.Controls.Add(this.tabPage11);
             this.tbCorrel.Controls.Add(this.tbKolmo);
-            this.tbCorrel.Location = new System.Drawing.Point(633, 23);
+            this.tbCorrel.Location = new System.Drawing.Point(625, 23);
             this.tbCorrel.Name = "tbCorrel";
             this.tbCorrel.SelectedIndex = 0;
-            this.tbCorrel.Size = new System.Drawing.Size(626, 533);
+            this.tbCorrel.Size = new System.Drawing.Size(618, 595);
             this.tbCorrel.TabIndex = 2;
             // 
             // tbFrecuencia
@@ -337,7 +363,7 @@ namespace Taller1_Simulacion
             this.tbFrecuencia.Location = new System.Drawing.Point(4, 22);
             this.tbFrecuencia.Name = "tbFrecuencia";
             this.tbFrecuencia.Padding = new System.Windows.Forms.Padding(3);
-            this.tbFrecuencia.Size = new System.Drawing.Size(604, 414);
+            this.tbFrecuencia.Size = new System.Drawing.Size(610, 569);
             this.tbFrecuencia.TabIndex = 0;
             this.tbFrecuencia.Text = "Frecuencia";
             this.tbFrecuencia.UseVisualStyleBackColor = true;
@@ -350,8 +376,8 @@ namespace Taller1_Simulacion
             this.tableLayoutPanel2.Controls.Add(this.lblFreqInfo, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.lblLCGfreq, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.lblXORfreq, 0, 2);
-            this.tableLayoutPanel2.Controls.Add(this.lblLCGfreTest, 1, 1);
-            this.tableLayoutPanel2.Controls.Add(this.lblXORfreqTest, 1, 2);
+            this.tableLayoutPanel2.Controls.Add(this.lblLCGfreqTest20, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.lblXORfreqTest20, 1, 2);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -359,7 +385,7 @@ namespace Taller1_Simulacion
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(598, 408);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(604, 563);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // lblFreqInfo
@@ -369,176 +395,12 @@ namespace Taller1_Simulacion
             this.lblFreqInfo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblFreqInfo.Location = new System.Drawing.Point(3, 0);
             this.lblFreqInfo.Name = "lblFreqInfo";
-            this.lblFreqInfo.Size = new System.Drawing.Size(592, 50);
+            this.lblFreqInfo.Size = new System.Drawing.Size(598, 50);
             this.lblFreqInfo.TabIndex = 0;
             this.lblFreqInfo.Text = "En esta prueba se verifica la existencia de números pseudoaleatorios repetidos. S" +
     "i no se encuentra ninguno, significa que el generador tiene un periodo completo." +
     "\r\n\r\n";
             this.lblFreqInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // tbDistri
-            // 
-            this.tbDistri.Controls.Add(this.tableLayoutPanel3);
-            this.tbDistri.Location = new System.Drawing.Point(4, 22);
-            this.tbDistri.Name = "tbDistri";
-            this.tbDistri.Padding = new System.Windows.Forms.Padding(3);
-            this.tbDistri.Size = new System.Drawing.Size(604, 414);
-            this.tbDistri.TabIndex = 1;
-            this.tbDistri.Text = "Distribución";
-            this.tbDistri.UseVisualStyleBackColor = true;
-            // 
-            // tbTend
-            // 
-            this.tbTend.Controls.Add(this.tableLayoutPanel5);
-            this.tbTend.Location = new System.Drawing.Point(4, 22);
-            this.tbTend.Name = "tbTend";
-            this.tbTend.Padding = new System.Windows.Forms.Padding(3);
-            this.tbTend.Size = new System.Drawing.Size(618, 507);
-            this.tbTend.TabIndex = 2;
-            this.tbTend.Text = "Tendencia";
-            this.tbTend.UseVisualStyleBackColor = true;
-            // 
-            // tabPage11
-            // 
-            this.tabPage11.Controls.Add(this.tableLayoutPanel6);
-            this.tabPage11.Location = new System.Drawing.Point(4, 22);
-            this.tabPage11.Name = "tabPage11";
-            this.tabPage11.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage11.Size = new System.Drawing.Size(618, 507);
-            this.tabPage11.TabIndex = 3;
-            this.tabPage11.Text = "Correlación";
-            this.tabPage11.UseVisualStyleBackColor = true;
-            // 
-            // tbKolmo
-            // 
-            this.tbKolmo.Controls.Add(this.tableLayoutPanel4);
-            this.tbKolmo.Location = new System.Drawing.Point(4, 22);
-            this.tbKolmo.Name = "tbKolmo";
-            this.tbKolmo.Padding = new System.Windows.Forms.Padding(3);
-            this.tbKolmo.Size = new System.Drawing.Size(618, 507);
-            this.tbKolmo.TabIndex = 4;
-            this.tbKolmo.Text = "Kolmogorov-Smirnov";
-            this.tbKolmo.UseVisualStyleBackColor = true;
-            // 
-            // lblTest
-            // 
-            this.lblTest.AutoSize = true;
-            this.lblTest.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTest.Location = new System.Drawing.Point(633, 0);
-            this.lblTest.Name = "lblTest";
-            this.lblTest.Size = new System.Drawing.Size(626, 20);
-            this.lblTest.TabIndex = 6;
-            this.lblTest.Text = "Pruebas de Aletoreidad";
-            this.lblTest.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // gridXOR20
-            // 
-            this.gridXOR20.AllowUserToAddRows = false;
-            this.gridXOR20.AllowUserToDeleteRows = false;
-            this.gridXOR20.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.gridXOR20.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridXOR20.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3});
-            this.gridXOR20.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridXOR20.Location = new System.Drawing.Point(318, 23);
-            this.gridXOR20.Name = "gridXOR20";
-            this.gridXOR20.ReadOnly = true;
-            this.gridXOR20.RowHeadersVisible = false;
-            this.gridXOR20.Size = new System.Drawing.Size(309, 533);
-            this.gridXOR20.TabIndex = 5;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "iteración";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Xn";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Un";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.ToolTipText = "Número entre [0,1]";
-            // 
-            // lbllgc20
-            // 
-            this.lbllgc20.AllowDrop = true;
-            this.lbllgc20.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbllgc20.Location = new System.Drawing.Point(3, 0);
-            this.lbllgc20.Name = "lbllgc20";
-            this.lbllgc20.Size = new System.Drawing.Size(309, 20);
-            this.lbllgc20.TabIndex = 3;
-            this.lbllgc20.Text = "generador Congruencial";
-            this.lbllgc20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblxor20
-            // 
-            this.lblxor20.AutoSize = true;
-            this.lblxor20.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblxor20.Location = new System.Drawing.Point(318, 0);
-            this.lblxor20.Name = "lblxor20";
-            this.lblxor20.Size = new System.Drawing.Size(309, 20);
-            this.lblxor20.TabIndex = 4;
-            this.lblxor20.Text = "generador XOR shift";
-            this.lblxor20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tbRand200
-            // 
-            this.tbRand200.Location = new System.Drawing.Point(4, 22);
-            this.tbRand200.Name = "tbRand200";
-            this.tbRand200.Padding = new System.Windows.Forms.Padding(3);
-            this.tbRand200.Size = new System.Drawing.Size(1187, 472);
-            this.tbRand200.TabIndex = 1;
-            this.tbRand200.Text = "200";
-            this.tbRand200.UseVisualStyleBackColor = true;
-            // 
-            // tbRand2000
-            // 
-            this.tbRand2000.Location = new System.Drawing.Point(4, 22);
-            this.tbRand2000.Name = "tbRand2000";
-            this.tbRand2000.Padding = new System.Windows.Forms.Padding(3);
-            this.tbRand2000.Size = new System.Drawing.Size(1187, 472);
-            this.tbRand2000.TabIndex = 2;
-            this.tbRand2000.Text = "2000";
-            this.tbRand2000.UseVisualStyleBackColor = true;
-            // 
-            // tbRand1000
-            // 
-            this.tbRand1000.Location = new System.Drawing.Point(4, 22);
-            this.tbRand1000.Name = "tbRand1000";
-            this.tbRand1000.Padding = new System.Windows.Forms.Padding(3);
-            this.tbRand1000.Size = new System.Drawing.Size(1187, 472);
-            this.tbRand1000.TabIndex = 3;
-            this.tbRand1000.Text = "10000";
-            this.tbRand1000.UseVisualStyleBackColor = true;
-            // 
-            // tbRand20000
-            // 
-            this.tbRand20000.Location = new System.Drawing.Point(4, 22);
-            this.tbRand20000.Name = "tbRand20000";
-            this.tbRand20000.Padding = new System.Windows.Forms.Padding(3);
-            this.tbRand20000.Size = new System.Drawing.Size(1187, 472);
-            this.tbRand20000.TabIndex = 4;
-            this.tbRand20000.Text = "20000";
-            this.tbRand20000.UseVisualStyleBackColor = true;
-            // 
-            // tbMontecarlo
-            // 
-            this.tbMontecarlo.Location = new System.Drawing.Point(4, 22);
-            this.tbMontecarlo.Name = "tbMontecarlo";
-            this.tbMontecarlo.Padding = new System.Windows.Forms.Padding(3);
-            this.tbMontecarlo.Size = new System.Drawing.Size(1207, 529);
-            this.tbMontecarlo.TabIndex = 1;
-            this.tbMontecarlo.Text = "método montecarlo";
-            this.tbMontecarlo.UseVisualStyleBackColor = true;
             // 
             // lblLCGfreq
             // 
@@ -546,7 +408,7 @@ namespace Taller1_Simulacion
             this.lblLCGfreq.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblLCGfreq.Location = new System.Drawing.Point(3, 50);
             this.lblLCGfreq.Name = "lblLCGfreq";
-            this.lblLCGfreq.Size = new System.Drawing.Size(194, 179);
+            this.lblLCGfreq.Size = new System.Drawing.Size(194, 256);
             this.lblLCGfreq.TabIndex = 1;
             this.lblLCGfreq.Text = "Generador Congruencial";
             this.lblLCGfreq.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -555,61 +417,45 @@ namespace Taller1_Simulacion
             // 
             this.lblXORfreq.AutoSize = true;
             this.lblXORfreq.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblXORfreq.Location = new System.Drawing.Point(3, 229);
+            this.lblXORfreq.Location = new System.Drawing.Point(3, 306);
             this.lblXORfreq.Name = "lblXORfreq";
-            this.lblXORfreq.Size = new System.Drawing.Size(194, 179);
+            this.lblXORfreq.Size = new System.Drawing.Size(194, 257);
             this.lblXORfreq.TabIndex = 2;
             this.lblXORfreq.Text = "generador XOR shift";
             this.lblXORfreq.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblLCGfreTest
+            // lblLCGfreqTest20
             // 
-            this.lblLCGfreTest.AutoSize = true;
-            this.lblLCGfreTest.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblLCGfreTest.Location = new System.Drawing.Point(203, 50);
-            this.lblLCGfreTest.Name = "lblLCGfreTest";
-            this.lblLCGfreTest.Size = new System.Drawing.Size(392, 179);
-            this.lblLCGfreTest.TabIndex = 3;
-            this.lblLCGfreTest.Text = "label5";
-            this.lblLCGfreTest.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblLCGfreqTest20.AutoSize = true;
+            this.lblLCGfreqTest20.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblLCGfreqTest20.Location = new System.Drawing.Point(203, 50);
+            this.lblLCGfreqTest20.Name = "lblLCGfreqTest20";
+            this.lblLCGfreqTest20.Size = new System.Drawing.Size(398, 256);
+            this.lblLCGfreqTest20.TabIndex = 3;
+            this.lblLCGfreqTest20.Text = "label5";
+            this.lblLCGfreqTest20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblXORfreqTest
+            // lblXORfreqTest20
             // 
-            this.lblXORfreqTest.AutoSize = true;
-            this.lblXORfreqTest.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblXORfreqTest.Location = new System.Drawing.Point(203, 229);
-            this.lblXORfreqTest.Name = "lblXORfreqTest";
-            this.lblXORfreqTest.Size = new System.Drawing.Size(392, 179);
-            this.lblXORfreqTest.TabIndex = 4;
-            this.lblXORfreqTest.Text = "label6";
-            this.lblXORfreqTest.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblXORfreqTest20.AutoSize = true;
+            this.lblXORfreqTest20.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblXORfreqTest20.Location = new System.Drawing.Point(203, 306);
+            this.lblXORfreqTest20.Name = "lblXORfreqTest20";
+            this.lblXORfreqTest20.Size = new System.Drawing.Size(398, 257);
+            this.lblXORfreqTest20.TabIndex = 4;
+            this.lblXORfreqTest20.Text = "label6";
+            this.lblXORfreqTest20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // chRanges20
+            // tbDistri
             // 
-            chartArea1.AxisX.Title = "Intervalos";
-            chartArea1.AxisY.Title = "Frecuencia";
-            chartArea1.Name = "ChartArea1";
-            this.chRanges20.ChartAreas.Add(chartArea1);
-            this.chRanges20.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend1.Name = "Legend1";
-            legend1.Title = "Generador";
-            this.chRanges20.Legends.Add(legend1);
-            this.chRanges20.Location = new System.Drawing.Point(3, 43);
-            this.chRanges20.Name = "chRanges20";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Congruencial";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "XOR shift";
-            this.chRanges20.Series.Add(series1);
-            this.chRanges20.Series.Add(series2);
-            this.chRanges20.Size = new System.Drawing.Size(592, 362);
-            this.chRanges20.TabIndex = 0;
-            this.chRanges20.Text = "chart1";
-            title1.Name = "Title1";
-            title1.Text = "Distribución de los números pseudoaleatorios generados por rangos";
-            this.chRanges20.Titles.Add(title1);
+            this.tbDistri.Controls.Add(this.tableLayoutPanel3);
+            this.tbDistri.Location = new System.Drawing.Point(4, 22);
+            this.tbDistri.Name = "tbDistri";
+            this.tbDistri.Padding = new System.Windows.Forms.Padding(3);
+            this.tbDistri.Size = new System.Drawing.Size(610, 569);
+            this.tbDistri.TabIndex = 1;
+            this.tbDistri.Text = "Distribución";
+            this.tbDistri.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel3
             // 
@@ -623,8 +469,37 @@ namespace Taller1_Simulacion
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(598, 408);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(604, 563);
             this.tableLayoutPanel3.TabIndex = 0;
+            // 
+            // chRanges20
+            // 
+            chartArea6.AxisX.Interval = 1D;
+            chartArea6.AxisX.Title = "Intervalos";
+            chartArea6.AxisY.Title = "Frecuencia";
+            chartArea6.Name = "ChartArea1";
+            this.chRanges20.ChartAreas.Add(chartArea6);
+            this.chRanges20.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend4.Name = "Legend1";
+            legend4.Title = "Generador";
+            this.chRanges20.Legends.Add(legend4);
+            this.chRanges20.Location = new System.Drawing.Point(3, 43);
+            this.chRanges20.Name = "chRanges20";
+            series7.ChartArea = "ChartArea1";
+            series7.Color = System.Drawing.Color.Red;
+            series7.Legend = "Legend1";
+            series7.Name = "Congruencial";
+            series8.ChartArea = "ChartArea1";
+            series8.Legend = "Legend1";
+            series8.Name = "XOR shift";
+            this.chRanges20.Series.Add(series7);
+            this.chRanges20.Series.Add(series8);
+            this.chRanges20.Size = new System.Drawing.Size(598, 517);
+            this.chRanges20.TabIndex = 0;
+            this.chRanges20.Text = "chart1";
+            title6.Name = "Title1";
+            title6.Text = "Distribución de los números pseudoaleatorios generados por rangos";
+            this.chRanges20.Titles.Add(title6);
             // 
             // lblRangesInfo
             // 
@@ -632,12 +507,149 @@ namespace Taller1_Simulacion
             this.lblRangesInfo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblRangesInfo.Location = new System.Drawing.Point(3, 0);
             this.lblRangesInfo.Name = "lblRangesInfo";
-            this.lblRangesInfo.Size = new System.Drawing.Size(592, 40);
+            this.lblRangesInfo.Size = new System.Drawing.Size(598, 40);
             this.lblRangesInfo.TabIndex = 1;
             this.lblRangesInfo.Text = "En esta prueba se verifica la distribución de los valores pseudoaleatorios genera" +
     "dos en rangos. Si los rangos son equitativos, entonces, se confirma que el gener" +
     "ador es pseudoaleatorio.\r\n";
             this.lblRangesInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // tbTend
+            // 
+            this.tbTend.Controls.Add(this.tableLayoutPanel5);
+            this.tbTend.Location = new System.Drawing.Point(4, 22);
+            this.tbTend.Name = "tbTend";
+            this.tbTend.Padding = new System.Windows.Forms.Padding(3);
+            this.tbTend.Size = new System.Drawing.Size(610, 569);
+            this.tbTend.TabIndex = 2;
+            this.tbTend.Text = "Tendencia";
+            this.tbTend.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 1;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.Controls.Add(this.chXORTrendTest20, 0, 2);
+            this.tableLayoutPanel5.Controls.Add(this.lblTrendInfo20, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.chLCGTrendTest20, 0, 1);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 3;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(604, 563);
+            this.tableLayoutPanel5.TabIndex = 0;
+            // 
+            // chXORTrendTest20
+            // 
+            chartArea7.AxisX.Title = "Iteración";
+            chartArea7.AxisY.Title = "Valor generado (Un)";
+            chartArea7.Name = "ChartArea1";
+            this.chXORTrendTest20.ChartAreas.Add(chartArea7);
+            this.chXORTrendTest20.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend5.Name = "Legend1";
+            legend5.Title = "Generador";
+            this.chXORTrendTest20.Legends.Add(legend5);
+            this.chXORTrendTest20.Location = new System.Drawing.Point(3, 304);
+            this.chXORTrendTest20.Name = "chXORTrendTest20";
+            series9.ChartArea = "ChartArea1";
+            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series9.Color = System.Drawing.Color.Red;
+            series9.Legend = "Legend1";
+            series9.Name = "XOR shift";
+            this.chXORTrendTest20.Series.Add(series9);
+            this.chXORTrendTest20.Size = new System.Drawing.Size(598, 256);
+            this.chXORTrendTest20.TabIndex = 2;
+            this.chXORTrendTest20.Text = "chart1";
+            title7.Name = "Title1";
+            title7.Text = "Prueba de Tendencia";
+            this.chXORTrendTest20.Titles.Add(title7);
+            // 
+            // lblTrendInfo20
+            // 
+            this.lblTrendInfo20.AutoSize = true;
+            this.lblTrendInfo20.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTrendInfo20.Location = new System.Drawing.Point(3, 0);
+            this.lblTrendInfo20.Name = "lblTrendInfo20";
+            this.lblTrendInfo20.Size = new System.Drawing.Size(598, 40);
+            this.lblTrendInfo20.TabIndex = 0;
+            this.lblTrendInfo20.Text = resources.GetString("lblTrendInfo20.Text");
+            // 
+            // chLCGTrendTest20
+            // 
+            chartArea8.AxisX.Title = "Iteración";
+            chartArea8.AxisY.Title = "Valor generado (Un)";
+            chartArea8.Name = "ChartArea1";
+            this.chLCGTrendTest20.ChartAreas.Add(chartArea8);
+            this.chLCGTrendTest20.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend6.Name = "Legend1";
+            legend6.Title = "Generador";
+            this.chLCGTrendTest20.Legends.Add(legend6);
+            this.chLCGTrendTest20.Location = new System.Drawing.Point(3, 43);
+            this.chLCGTrendTest20.Name = "chLCGTrendTest20";
+            series10.ChartArea = "ChartArea1";
+            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series10.Legend = "Legend1";
+            series10.Name = "Congruencial";
+            this.chLCGTrendTest20.Series.Add(series10);
+            this.chLCGTrendTest20.Size = new System.Drawing.Size(598, 255);
+            this.chLCGTrendTest20.TabIndex = 1;
+            this.chLCGTrendTest20.Text = "chart1";
+            title8.Name = "Title1";
+            title8.Text = "Prueba de Tendencia";
+            this.chLCGTrendTest20.Titles.Add(title8);
+            // 
+            // tabPage11
+            // 
+            this.tabPage11.Controls.Add(this.tableLayoutPanel6);
+            this.tabPage11.Location = new System.Drawing.Point(4, 22);
+            this.tabPage11.Name = "tabPage11";
+            this.tabPage11.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage11.Size = new System.Drawing.Size(610, 569);
+            this.tabPage11.TabIndex = 3;
+            this.tabPage11.Text = "Correlación";
+            this.tabPage11.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.AllowDrop = true;
+            this.tableLayoutPanel6.ColumnCount = 1;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel6.Controls.Add(this.chLCGCorrelation20, 0, 1);
+            this.tableLayoutPanel6.Controls.Add(this.label2, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.chXorCorrelation20, 0, 2);
+            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 3;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(604, 563);
+            this.tableLayoutPanel6.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(598, 60);
+            this.label2.TabIndex = 0;
+            this.label2.Text = resources.GetString("label2.Text");
+            // 
+            // tbKolmo
+            // 
+            this.tbKolmo.Controls.Add(this.tableLayoutPanel4);
+            this.tbKolmo.Location = new System.Drawing.Point(4, 22);
+            this.tbKolmo.Name = "tbKolmo";
+            this.tbKolmo.Padding = new System.Windows.Forms.Padding(3);
+            this.tbKolmo.Size = new System.Drawing.Size(610, 569);
+            this.tbKolmo.TabIndex = 4;
+            this.tbKolmo.Text = "Kolmogorov-Smirnov";
+            this.tbKolmo.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel4
             // 
@@ -656,7 +668,7 @@ namespace Taller1_Simulacion
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(612, 501);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(604, 563);
             this.tableLayoutPanel4.TabIndex = 1;
             // 
             // lblKSInfo
@@ -666,7 +678,7 @@ namespace Taller1_Simulacion
             this.lblKSInfo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblKSInfo.Location = new System.Drawing.Point(3, 0);
             this.lblKSInfo.Name = "lblKSInfo";
-            this.lblKSInfo.Size = new System.Drawing.Size(606, 50);
+            this.lblKSInfo.Size = new System.Drawing.Size(598, 50);
             this.lblKSInfo.TabIndex = 0;
             this.lblKSInfo.Text = "En esta prueba se verifica indica qué tan uniforme están los valores generados.\r\n" +
     "\r\n";
@@ -678,7 +690,7 @@ namespace Taller1_Simulacion
             this.lblLCGKS20.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblLCGKS20.Location = new System.Drawing.Point(3, 50);
             this.lblLCGKS20.Name = "lblLCGKS20";
-            this.lblLCGKS20.Size = new System.Drawing.Size(194, 225);
+            this.lblLCGKS20.Size = new System.Drawing.Size(194, 256);
             this.lblLCGKS20.TabIndex = 1;
             this.lblLCGKS20.Text = "Generador Congruencial";
             this.lblLCGKS20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -687,9 +699,9 @@ namespace Taller1_Simulacion
             // 
             this.lblXORKS20.AutoSize = true;
             this.lblXORKS20.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblXORKS20.Location = new System.Drawing.Point(3, 275);
+            this.lblXORKS20.Location = new System.Drawing.Point(3, 306);
             this.lblXORKS20.Name = "lblXORKS20";
-            this.lblXORKS20.Size = new System.Drawing.Size(194, 226);
+            this.lblXORKS20.Size = new System.Drawing.Size(194, 257);
             this.lblXORKS20.TabIndex = 2;
             this.lblXORKS20.Text = "generador XOR Shift";
             this.lblXORKS20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -700,147 +712,295 @@ namespace Taller1_Simulacion
             this.lblLCGKSTest20.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblLCGKSTest20.Location = new System.Drawing.Point(203, 50);
             this.lblLCGKSTest20.Name = "lblLCGKSTest20";
-            this.lblLCGKSTest20.Size = new System.Drawing.Size(406, 225);
+            this.lblLCGKSTest20.Size = new System.Drawing.Size(398, 256);
             this.lblLCGKSTest20.TabIndex = 3;
-            this.lblLCGKSTest20.Text = "label5";
             this.lblLCGKSTest20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblXORKSTest20
             // 
             this.lblXORKSTest20.AutoSize = true;
             this.lblXORKSTest20.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblXORKSTest20.Location = new System.Drawing.Point(203, 275);
+            this.lblXORKSTest20.Location = new System.Drawing.Point(203, 306);
             this.lblXORKSTest20.Name = "lblXORKSTest20";
-            this.lblXORKSTest20.Size = new System.Drawing.Size(406, 226);
+            this.lblXORKSTest20.Size = new System.Drawing.Size(398, 257);
             this.lblXORKSTest20.TabIndex = 4;
-            this.lblXORKSTest20.Text = "label6";
             this.lblXORKSTest20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // tableLayoutPanel5
+            // lblTest
             // 
-            this.tableLayoutPanel5.ColumnCount = 1;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Controls.Add(this.chXORTrendTest20, 0, 2);
-            this.tableLayoutPanel5.Controls.Add(this.lblTrendInfo20, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.chLCGTrendTest20, 0, 1);
-            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 3;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(612, 501);
-            this.tableLayoutPanel5.TabIndex = 0;
+            this.lblTest.AutoSize = true;
+            this.lblTest.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTest.Location = new System.Drawing.Point(625, 0);
+            this.lblTest.Name = "lblTest";
+            this.lblTest.Size = new System.Drawing.Size(618, 20);
+            this.lblTest.TabIndex = 6;
+            this.lblTest.Text = "Pruebas de Aletoreidad";
+            this.lblTest.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblTrendInfo20
+            // gridXor20
             // 
-            this.lblTrendInfo20.AutoSize = true;
-            this.lblTrendInfo20.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTrendInfo20.Location = new System.Drawing.Point(3, 0);
-            this.lblTrendInfo20.Name = "lblTrendInfo20";
-            this.lblTrendInfo20.Size = new System.Drawing.Size(606, 40);
-            this.lblTrendInfo20.TabIndex = 0;
-            this.lblTrendInfo20.Text = resources.GetString("lblTrendInfo20.Text");
+            this.gridXor20.AllowUserToAddRows = false;
+            this.gridXor20.AllowUserToDeleteRows = false;
+            this.gridXor20.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gridXor20.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridXor20.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3});
+            this.gridXor20.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridXor20.Location = new System.Drawing.Point(314, 23);
+            this.gridXor20.Name = "gridXor20";
+            this.gridXor20.ReadOnly = true;
+            this.gridXor20.RowHeadersVisible = false;
+            this.gridXor20.Size = new System.Drawing.Size(305, 595);
+            this.gridXor20.TabIndex = 5;
             // 
-            // chLCGTrendTest20
+            // dataGridViewTextBoxColumn1
             // 
-            chartArea3.AxisX.Title = "Iteración";
-            chartArea3.AxisY.Title = "Valor generado (Un)";
-            chartArea3.Name = "ChartArea1";
-            this.chLCGTrendTest20.ChartAreas.Add(chartArea3);
-            this.chLCGTrendTest20.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend3.Name = "Legend1";
-            legend3.Title = "Generador";
-            this.chLCGTrendTest20.Legends.Add(legend3);
-            this.chLCGTrendTest20.Location = new System.Drawing.Point(3, 43);
-            this.chLCGTrendTest20.Name = "chLCGTrendTest20";
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Congruencial";
-            this.chLCGTrendTest20.Series.Add(series4);
-            this.chLCGTrendTest20.Size = new System.Drawing.Size(606, 224);
-            this.chLCGTrendTest20.TabIndex = 1;
-            this.chLCGTrendTest20.Text = "chart1";
-            title3.Name = "Title1";
-            title3.Text = "Prueba de Tendencia";
-            this.chLCGTrendTest20.Titles.Add(title3);
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "I";
+            dataGridViewCellStyle5.NullValue = null;
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridViewTextBoxColumn1.HeaderText = "iteración";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
-            // chXORTrendTest20
+            // dataGridViewTextBoxColumn2
             // 
-            chartArea2.AxisX.Title = "Iteración";
-            chartArea2.AxisY.Title = "Valor generado (Un)";
-            chartArea2.Name = "ChartArea1";
-            this.chXORTrendTest20.ChartAreas.Add(chartArea2);
-            this.chXORTrendTest20.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend2.Name = "Legend1";
-            legend2.Title = "Generador";
-            this.chXORTrendTest20.Legends.Add(legend2);
-            this.chXORTrendTest20.Location = new System.Drawing.Point(3, 273);
-            this.chXORTrendTest20.Name = "chXORTrendTest20";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "XOR shift";
-            this.chXORTrendTest20.Series.Add(series3);
-            this.chXORTrendTest20.Size = new System.Drawing.Size(606, 225);
-            this.chXORTrendTest20.TabIndex = 2;
-            this.chXORTrendTest20.Text = "chart1";
-            title2.Name = "Title1";
-            title2.Text = "Prueba de Tendencia";
-            this.chXORTrendTest20.Titles.Add(title2);
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Xn";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Xn";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
-            // tableLayoutPanel6
+            // dataGridViewTextBoxColumn3
             // 
-            this.tableLayoutPanel6.AllowDrop = true;
-            this.tableLayoutPanel6.ColumnCount = 1;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Controls.Add(this.label2, 0, 0);
-            this.tableLayoutPanel6.Controls.Add(this.chLCGCorr20, 0, 1);
-            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
-            this.tableLayoutPanel6.RowCount = 3;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(612, 501);
-            this.tableLayoutPanel6.TabIndex = 0;
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Un";
+            dataGridViewCellStyle6.Format = "G8";
+            dataGridViewCellStyle6.NullValue = null;
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridViewTextBoxColumn3.HeaderText = "Un";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.ToolTipText = "Número entre [0,1]";
             // 
-            // label2
+            // lbllgc20
             // 
-            this.label2.AutoSize = true;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Location = new System.Drawing.Point(3, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(606, 60);
-            this.label2.TabIndex = 0;
-            this.label2.Text = resources.GetString("label2.Text");
+            this.lbllgc20.AllowDrop = true;
+            this.lbllgc20.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbllgc20.Location = new System.Drawing.Point(3, 0);
+            this.lbllgc20.Name = "lbllgc20";
+            this.lbllgc20.Size = new System.Drawing.Size(305, 20);
+            this.lbllgc20.TabIndex = 3;
+            this.lbllgc20.Text = "generador Congruencial";
+            this.lbllgc20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // chLCGCorr20
+            // lblxor20
             // 
-            chartArea4.Name = "ChartArea1";
-            this.chLCGCorr20.ChartAreas.Add(chartArea4);
-            this.chLCGCorr20.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chLCGCorr20.Location = new System.Drawing.Point(3, 63);
-            this.chLCGCorr20.Name = "chLCGCorr20";
-            series5.ChartArea = "ChartArea1";
-            series5.Name = "Series1";
-            this.chLCGCorr20.Series.Add(series5);
-            this.chLCGCorr20.Size = new System.Drawing.Size(606, 214);
-            this.chLCGCorr20.TabIndex = 1;
-            this.chLCGCorr20.Text = "chart1";
+            this.lblxor20.AutoSize = true;
+            this.lblxor20.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblxor20.Location = new System.Drawing.Point(314, 0);
+            this.lblxor20.Name = "lblxor20";
+            this.lblxor20.Size = new System.Drawing.Size(305, 20);
+            this.lblxor20.TabIndex = 4;
+            this.lblxor20.Text = "generador XOR shift";
+            this.lblxor20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tbRand200
+            // 
+            this.tbRand200.Location = new System.Drawing.Point(4, 22);
+            this.tbRand200.Name = "tbRand200";
+            this.tbRand200.Padding = new System.Windows.Forms.Padding(3);
+            this.tbRand200.Size = new System.Drawing.Size(1252, 627);
+            this.tbRand200.TabIndex = 1;
+            this.tbRand200.Text = "200";
+            this.tbRand200.UseVisualStyleBackColor = true;
+            // 
+            // tbRand2000
+            // 
+            this.tbRand2000.Location = new System.Drawing.Point(4, 22);
+            this.tbRand2000.Name = "tbRand2000";
+            this.tbRand2000.Padding = new System.Windows.Forms.Padding(3);
+            this.tbRand2000.Size = new System.Drawing.Size(1252, 627);
+            this.tbRand2000.TabIndex = 2;
+            this.tbRand2000.Text = "2000";
+            this.tbRand2000.UseVisualStyleBackColor = true;
+            // 
+            // tbRand1000
+            // 
+            this.tbRand1000.Location = new System.Drawing.Point(4, 22);
+            this.tbRand1000.Name = "tbRand1000";
+            this.tbRand1000.Padding = new System.Windows.Forms.Padding(3);
+            this.tbRand1000.Size = new System.Drawing.Size(1252, 627);
+            this.tbRand1000.TabIndex = 3;
+            this.tbRand1000.Text = "10000";
+            this.tbRand1000.UseVisualStyleBackColor = true;
+            // 
+            // tbRand20000
+            // 
+            this.tbRand20000.Location = new System.Drawing.Point(4, 22);
+            this.tbRand20000.Name = "tbRand20000";
+            this.tbRand20000.Padding = new System.Windows.Forms.Padding(3);
+            this.tbRand20000.Size = new System.Drawing.Size(1252, 627);
+            this.tbRand20000.TabIndex = 4;
+            this.tbRand20000.Text = "20000";
+            this.tbRand20000.UseVisualStyleBackColor = true;
+            // 
+            // tbMontecarlo
+            // 
+            this.tbMontecarlo.Location = new System.Drawing.Point(4, 22);
+            this.tbMontecarlo.Name = "tbMontecarlo";
+            this.tbMontecarlo.Padding = new System.Windows.Forms.Padding(3);
+            this.tbMontecarlo.Size = new System.Drawing.Size(1272, 684);
+            this.tbMontecarlo.TabIndex = 1;
+            this.tbMontecarlo.Text = "método montecarlo";
+            this.tbMontecarlo.UseVisualStyleBackColor = true;
+            // 
+            // lblXorInfo
+            // 
+            this.lblXorInfo.AutoSize = true;
+            this.lblXorInfo.Location = new System.Drawing.Point(789, 17);
+            this.lblXorInfo.Name = "lblXorInfo";
+            this.lblXorInfo.Size = new System.Drawing.Size(79, 39);
+            this.lblXorInfo.TabIndex = 9;
+            this.lblXorInfo.Text = "x ^= x << shiftA\r\nx ^= x >> shiftB\r\nx ^= x << shiftC\r\n";
+            // 
+            // txtShiftA
+            // 
+            this.txtShiftA.Location = new System.Drawing.Point(959, 12);
+            this.txtShiftA.Name = "txtShiftA";
+            this.txtShiftA.Size = new System.Drawing.Size(100, 20);
+            this.txtShiftA.TabIndex = 10;
+            this.txtShiftA.Text = "13";
+            // 
+            // txtShiftB
+            // 
+            this.txtShiftB.Location = new System.Drawing.Point(959, 40);
+            this.txtShiftB.Name = "txtShiftB";
+            this.txtShiftB.Size = new System.Drawing.Size(100, 20);
+            this.txtShiftB.TabIndex = 11;
+            this.txtShiftB.Text = "7";
+            // 
+            // txtShiftC
+            // 
+            this.txtShiftC.Location = new System.Drawing.Point(959, 73);
+            this.txtShiftC.Name = "txtShiftC";
+            this.txtShiftC.Size = new System.Drawing.Size(100, 20);
+            this.txtShiftC.TabIndex = 12;
+            this.txtShiftC.Text = "17";
+            // 
+            // txtXorSeed
+            // 
+            this.txtXorSeed.Location = new System.Drawing.Point(782, 73);
+            this.txtXorSeed.Name = "txtXorSeed";
+            this.txtXorSeed.Size = new System.Drawing.Size(100, 20);
+            this.txtXorSeed.TabIndex = 13;
+            this.txtXorSeed.Text = "1818";
+            // 
+            // lblSeedxor
+            // 
+            this.lblSeedxor.AutoSize = true;
+            this.lblSeedxor.Location = new System.Drawing.Point(738, 80);
+            this.lblSeedxor.Name = "lblSeedxor";
+            this.lblSeedxor.Size = new System.Drawing.Size(38, 13);
+            this.lblSeedxor.TabIndex = 14;
+            this.lblSeedxor.Text = "semilla";
+            // 
+            // lblShiftA
+            // 
+            this.lblShiftA.AutoSize = true;
+            this.lblShiftA.Location = new System.Drawing.Point(920, 12);
+            this.lblShiftA.Name = "lblShiftA";
+            this.lblShiftA.Size = new System.Drawing.Size(33, 13);
+            this.lblShiftA.TabIndex = 15;
+            this.lblShiftA.Text = "shiftA";
+            // 
+            // lblShiftB
+            // 
+            this.lblShiftB.AutoSize = true;
+            this.lblShiftB.Location = new System.Drawing.Point(920, 43);
+            this.lblShiftB.Name = "lblShiftB";
+            this.lblShiftB.Size = new System.Drawing.Size(33, 13);
+            this.lblShiftB.TabIndex = 16;
+            this.lblShiftB.Text = "shiftB";
+            // 
+            // lblShiftC
+            // 
+            this.lblShiftC.AutoSize = true;
+            this.lblShiftC.Location = new System.Drawing.Point(920, 80);
+            this.lblShiftC.Name = "lblShiftC";
+            this.lblShiftC.Size = new System.Drawing.Size(33, 13);
+            this.lblShiftC.TabIndex = 17;
+            this.lblShiftC.Text = "shiftC";
+            // 
+            // chXorCorrelation20
+            // 
+            textAnnotation3.Name = "txtAnnXorCorrelation";
+            textAnnotation3.Text = "Correlación XOR shift: 0.0001";
+            textAnnotation3.X = 0D;
+            textAnnotation3.Y = 93D;
+            this.chXorCorrelation20.Annotations.Add(textAnnotation3);
+            chartArea9.AxisX.Title = "Valor Actual (Un)";
+            chartArea9.AxisY.Title = "Valor Siguiente (Un+1)";
+            chartArea9.Name = "ChartArea1";
+            this.chXorCorrelation20.ChartAreas.Add(chartArea9);
+            this.chXorCorrelation20.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chXorCorrelation20.Location = new System.Drawing.Point(3, 314);
+            this.chXorCorrelation20.Name = "chXorCorrelation20";
+            series11.ChartArea = "ChartArea1";
+            series11.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
+            series11.Name = "Series1";
+            this.chXorCorrelation20.Series.Add(series11);
+            this.chXorCorrelation20.Size = new System.Drawing.Size(598, 246);
+            this.chXorCorrelation20.TabIndex = 2;
+            this.chXorCorrelation20.Text = "chart1";
+            title9.Name = "Title1";
+            title9.Text = "Prueba Correlación Generador Xor shift ";
+            this.chXorCorrelation20.Titles.Add(title9);
+            // 
+            // chLCGCorrelation20
+            // 
+            textAnnotation4.Name = "txtAnnLCGCorrelation";
+            textAnnotation4.Text = "Correlación Congruencial: 0.0001";
+            textAnnotation4.X = 0D;
+            textAnnotation4.Y = 93D;
+            this.chLCGCorrelation20.Annotations.Add(textAnnotation4);
+            chartArea10.AxisX.Title = "Valor Actual (Un)";
+            chartArea10.AxisY.Title = "Valor Siguiente (Un+1)";
+            chartArea10.Name = "ChartArea1";
+            this.chLCGCorrelation20.ChartAreas.Add(chartArea10);
+            this.chLCGCorrelation20.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chLCGCorrelation20.Location = new System.Drawing.Point(3, 63);
+            this.chLCGCorrelation20.Name = "chLCGCorrelation20";
+            series12.ChartArea = "ChartArea1";
+            series12.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
+            series12.Name = "Series1";
+            this.chLCGCorrelation20.Series.Add(series12);
+            this.chLCGCorrelation20.Size = new System.Drawing.Size(598, 245);
+            this.chLCGCorrelation20.TabIndex = 3;
+            this.chLCGCorrelation20.Text = "chart1";
+            title10.Name = "Title1";
+            title10.Text = "Prueba Correlación Generador Congruencial ";
+            this.chLCGCorrelation20.Titles.Add(title10);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1320, 739);
+            this.ClientSize = new System.Drawing.Size(1304, 821);
+            this.Controls.Add(this.lblShiftC);
+            this.Controls.Add(this.lblShiftB);
+            this.Controls.Add(this.lblShiftA);
+            this.Controls.Add(this.lblSeedxor);
+            this.Controls.Add(this.txtXorSeed);
+            this.Controls.Add(this.txtShiftC);
+            this.Controls.Add(this.txtShiftB);
+            this.Controls.Add(this.txtShiftA);
+            this.Controls.Add(this.lblXorInfo);
+            this.Controls.Add(this.txtSeed);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.lblSeed);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblParamC);
             this.Controls.Add(this.lblParamA);
-            this.Controls.Add(this.txtSeed);
             this.Controls.Add(this.txtParamC);
             this.Controls.Add(this.txtParamA);
             this.Controls.Add(this.btnRun);
@@ -859,22 +1019,23 @@ namespace Taller1_Simulacion
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.tbDistri.ResumeLayout(false);
-            this.tbTend.ResumeLayout(false);
-            this.tabPage11.ResumeLayout(false);
-            this.tbKolmo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridXOR20)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chRanges20)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
-            this.tableLayoutPanel4.ResumeLayout(false);
-            this.tableLayoutPanel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chRanges20)).EndInit();
+            this.tbTend.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chLCGTrendTest20)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chXORTrendTest20)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chLCGTrendTest20)).EndInit();
+            this.tabPage11.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chLCGCorr20)).EndInit();
+            this.tbKolmo.ResumeLayout(false);
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridXor20)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chXorCorrelation20)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chLCGCorrelation20)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -905,25 +1066,19 @@ namespace Taller1_Simulacion
         private System.Windows.Forms.TabPage tbDistri;
         private System.Windows.Forms.DataGridView gridMod20;
         private System.Windows.Forms.Label lblxor20;
-        private System.Windows.Forms.DataGridView gridXOR20;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridView gridXor20;
         private System.Windows.Forms.Label lblTest;
         private System.Windows.Forms.TabPage tbTend;
         private System.Windows.Forms.TabPage tabPage11;
         private System.Windows.Forms.TabPage tbKolmo;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iteracion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn xn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn un;
+        private System.Windows.Forms.Label lblRandomInfo;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label lblFreqInfo;
         private System.Windows.Forms.Label lblLCGfreq;
         private System.Windows.Forms.Label lblXORfreq;
-        private System.Windows.Forms.Label lblLCGfreTest;
-        private System.Windows.Forms.Label lblXORfreqTest;
+        private System.Windows.Forms.Label lblLCGfreqTest20;
+        private System.Windows.Forms.Label lblXORfreqTest20;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.DataVisualization.Charting.Chart chRanges20;
         private System.Windows.Forms.Label lblRangesInfo;
@@ -939,6 +1094,22 @@ namespace Taller1_Simulacion
         private System.Windows.Forms.DataVisualization.Charting.Chart chXORTrendTest20;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chLCGCorr20;
+        private System.Windows.Forms.Label lblXorInfo;
+        private System.Windows.Forms.TextBox txtShiftA;
+        private System.Windows.Forms.TextBox txtShiftB;
+        private System.Windows.Forms.TextBox txtShiftC;
+        private System.Windows.Forms.TextBox txtXorSeed;
+        private System.Windows.Forms.Label lblSeedxor;
+        private System.Windows.Forms.Label lblShiftA;
+        private System.Windows.Forms.Label lblShiftB;
+        private System.Windows.Forms.Label lblShiftC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iteracion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn xn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn un;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chXorCorrelation20;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chLCGCorrelation20;
     }
 }

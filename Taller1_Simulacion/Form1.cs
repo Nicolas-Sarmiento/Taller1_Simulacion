@@ -1,43 +1,94 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace Taller1_Simulacion
 {
     public partial class Form1 : Form
     {
         long paramA, paramC, paramSeed;
+        ulong xorseed;
+        int shiftA, shiftB, shiftC;
         LCG lcg20, lcg200, lcg2000, lcg10000, lcg20000;
         // xor ones
+        List<Double> xorvalues20, xorvalues200, xorvalues2000, xorvalues10000, xorvalues20000;
         List<Double> values20, values200, values2000, values10000, values20000;
+
         DataTable tbLcG20, tbLcG200, tbLcG2000, tbLcG10000, tbLcG20000;
+        DataTable tbxor20, tbxor200, tbxor2000, tbxor10000, tbxor20000;
+
 
         List<LCG> lgcs;
 
+        xorShift xorGenerator;
         List<long> modulos = new List<long> { 20, 200, 2000, 10000, 20000 };
+        List<int> randomQuantity = new List<int> { 20, 200, 2000, 10000, 20000 };
 
 
-        List<DataTable> tables;
-        List<List<double>> valuesLists;
-        List<DataGridView> dataGrids;
+        List<DataTable> tablesLCG;
+        List<DataTable> tablesXOR;
+        List<List<double>> valuesLCGLists;
+        List<List<double>> valuesXORLists;
+
+        List<List<double>> valuesLCGListsMontecarlo;
+        List<List<double>> valuesXORListsMontecarlo;
+
+        List<DataGridView> dataGridsLCG;
+        List<DataGridView> dataGridsXOR;
+
+        List<Label> labelsRepeatedLCG;
+        List<Label> labelsRepeatedXOR;
+
+        List<Chart> rangedCharts;
+        List<Chart> trendLCGCharts;
+        List<Chart> trendXORCharts;
+
+        List<Chart> correlationLCGCharts;
+        List<Chart> correlationXORCharts;
+
+        List<Label> KSLCGlabels;
+        List<Label> KSXORlabels;
 
         public Form1()
         {
             InitializeComponent();
             InitializeObjects();
-            
+
         }
 
-        private void InitializeObjects () {
-            
-            lgcs= new List<LCG> { lcg20, lcg200, lcg2000, lcg10000, lcg20000 };
-            tables = new List<DataTable> { tbLcG20, tbLcG200, tbLcG2000, tbLcG10000, tbLcG20000 };
-            valuesLists = new List<List<double>> { values20, values200, values2000, values10000, values20000 };
-            dataGrids = new List<DataGridView> { gridMod20 };
+        private void InitializeObjects() {
 
-            for (int i = 0; i < valuesLists.Count; i++) valuesLists[i] = new List<Double>();
+            lgcs = new List<LCG> { lcg20, lcg200, lcg2000, lcg10000, lcg20000 };
+
+            tablesLCG = new List<DataTable> { tbLcG20, tbLcG200, tbLcG2000, tbLcG10000, tbLcG20000 };
+            tablesXOR = new List<DataTable> { tbxor20, tbxor200, tbxor2000, tbxor10000, tbxor20000 };
+
+            valuesXORLists = new List<List<double>> { xorvalues20, xorvalues200, xorvalues2000, xorvalues10000, xorvalues20000 };
+            valuesLCGLists = new List<List<double>> { values20, values200, values2000, values10000, values20000 };
+
+            dataGridsLCG = new List<DataGridView> { gridMod20 };
+            dataGridsXOR = new List<DataGridView> { gridXor20 };
+
+            labelsRepeatedLCG = new List<Label> { lblLCGfreqTest20 };
+            labelsRepeatedXOR = new List<Label> { lblXORfreqTest20 };
+
+            rangedCharts = new List<Chart> { chRanges20 };
+
+            trendLCGCharts = new List<Chart> { chLCGTrendTest20 };
+            trendXORCharts = new List<Chart> { chXORTrendTest20 };
+
+            correlationLCGCharts = new List<Chart> { chLCGCorrelation20 };
+            correlationXORCharts = new List<Chart> { chXorCorrelation20 };
+
+            KSLCGlabels = new List<Label> { lblLCGKSTest20 };
+            KSXORlabels = new List<Label> { lblXORKSTest20 };
+
+            for (int i = 0; i < valuesLCGLists.Count; i++) valuesLCGLists[i] = new List<Double>();
+            for (int i = 0; i < valuesXORLists.Count; i++) valuesXORLists[i] = new List<Double>();
 
             loadRandomVisualizationObjects();
             loadMontecarloVisualizationObjects();
@@ -53,24 +104,34 @@ namespace Taller1_Simulacion
         }
         private void loadRandomVisualizationObjects() {
 
-           
 
-            for (int i = 0; i < tables.Count; i++) { 
-                tables[i] = new DataTable();
-                tables[i].Columns.Add("I", typeof(int));
-                tables[i].Columns.Add("Xn", typeof(long));
-                tables[i].Columns.Add("Un", typeof(double));
+
+            for (int i = 0; i < tablesLCG.Count; i++) {
+                tablesLCG[i] = new DataTable();
+                tablesLCG[i].Columns.Add("I", typeof(int));
+                tablesLCG[i].Columns.Add("Xn", typeof(long));
+                tablesLCG[i].Columns.Add("Un", typeof(double));
             }
 
-            for (int i = 0; i < dataGrids.Count; i++)
+            for (int i = 0; i < dataGridsLCG.Count; i++)
             {
-                dataGrids[i].AutoGenerateColumns = false;
-                dataGrids[i].DataSource = tables[i];
+                dataGridsLCG[i].AutoGenerateColumns = false;
+                dataGridsLCG[i].DataSource = tablesLCG[i];
             }
 
+            for (int i = 0; i < tablesXOR.Count; i++)
+            {
+                tablesXOR[i] = new DataTable();
+                tablesXOR[i].Columns.Add("I", typeof(int));
+                tablesXOR[i].Columns.Add("Xn", typeof(ulong));
+                tablesXOR[i].Columns.Add("Un", typeof(double));
+            }
 
-
-
+            for (int i = 0; i < dataGridsXOR.Count; i++)
+            {
+                dataGridsXOR[i].AutoGenerateColumns = false;
+                dataGridsXOR[i].DataSource = tablesXOR[i];
+            }
         }
 
 
@@ -95,37 +156,68 @@ namespace Taller1_Simulacion
         }
 
         private void randomSimulation() {
-            buildLCGs();
+            buildGenerators();
             clearObjects();
             getRandomValues();
 
+            copyValues();
+
+            runFrequencyTests();
+            runDistributionTests();
+            runTrendTests();
+            runCorrelationTests();
+            runKSTests();
         }
 
+        private void copyValues()
+        {
+            valuesLCGListsMontecarlo = new List<List<double>>(valuesLCGLists);
+            valuesXORListsMontecarlo = new List<List<double>>(valuesXORLists);
+        }
 
         private void getRandomValues()
         {
-            for ( int i = 0; i < 1; i++)
+            getRandomLCGValues();
+            getRandomXorValues();
+        }
+
+        private void getRandomLCGValues()
+        {
+            for (int i = 0; i < valuesLCGLists.Count; i++)
             {
                 LCG lcg = lgcs[i];
-                List<double> valuesList = valuesLists[i];
-                DataTable table = tables[i];
+                List<double> valuesList = valuesLCGLists[i];
+                DataTable table = tablesLCG[i];
                 for (int j = 0; j < modulos[i]; j++)
                 {
                     double un = lcg.Next();
-                    long xn = lcg.LastXn;   
+                    long xn = lcg.LastXn;
                     table.Rows.Add(j + 1, xn, un);
-                    Console.WriteLine($"LCG {modulos[i]} - Iteración {j + 1}: Xn={xn}, Un={un}");
+                    // Console.WriteLine($"LCG {modulos[i]} - Iteración {j + 1}: Xn={xn}, Un={un}");
                     valuesList.Add(un);
                 }
-                
             }
-
-
-
         }
-        private void clearObjects () {
-           foreach ( DataTable tb in tables) tb.Rows.Clear();
-           foreach (List<double> lst in valuesLists) lst.Clear();
+
+        private void getRandomXorValues() {
+            for (int i = 0; i < valuesXORLists.Count; i++)
+            {
+                for (int j = 0; j < randomQuantity[i]; j++)
+                {
+                    double un = xorGenerator.Next();
+                    //Console.WriteLine($"XOR Shift - Iteración {j + 1}: Un={un}");
+                    valuesXORLists[i].Add(un);
+                    tablesXOR[i].Rows.Add(j + 1, xorGenerator.x, un);
+                }
+            }
+        }
+
+        private void clearObjects() {
+            foreach (DataTable tb in tablesLCG) tb.Rows.Clear();
+            foreach (List<double> lst in valuesLCGLists) lst.Clear();
+
+            foreach (DataTable tb in tablesXOR) tb.Rows.Clear();
+            foreach (List<double> lst in valuesXORLists) lst.Clear();
         }
 
         private void buildLCGs() {
@@ -135,13 +227,26 @@ namespace Taller1_Simulacion
             }
         }
 
+        private void buildGenerators()
+        {
+            buildLCGs();
+            xorGenerator = new xorShift(xorseed, shiftA, shiftB, shiftC);
+
+        }
+
 
         private bool validateParams() {
             string strParamAInput = txtParamA.Text;
             string strParamCInput = txtParamC.Text;
             string strSeed = txtSeed.Text;
 
-            if ((!long.TryParse(strParamAInput, out paramA) || paramA <= 0)){
+            string strShiftA = txtShiftA.Text;
+            string strShiftB = txtShiftB.Text;
+            string strShiftC = txtShiftC.Text;
+            string strxorseed = txtXorSeed.Text;
+
+
+            if ((!long.TryParse(strParamAInput, out paramA) || paramA <= 0)) {
                 MessageBox.Show("El parámetro a debe ser un número entero positivo.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtParamA.SelectAll();
                 txtParamA.Focus();
@@ -164,18 +269,106 @@ namespace Taller1_Simulacion
                 return false;
             }
 
+            if (!ulong.TryParse(strxorseed, out xorseed)) {
+                MessageBox.Show("El parámetro semilla de xor shift debe ser un número entero positivo.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtXorSeed.SelectAll();
+                txtXorSeed.Focus();
+                return false;
+            }
+
+            if (!int.TryParse(strShiftA, out shiftA) || shiftA <= 0)
+            {
+                MessageBox.Show("El parámetro semilla de shift A debe ser un número entero positivo.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtShiftA.SelectAll();
+                txtShiftA.Focus();
+                return false;
+            }
+
+            if (!int.TryParse(strShiftB, out shiftB) || shiftB <= 0)
+            {
+                MessageBox.Show("El parámetro semilla de shift B debe ser un número entero positivo.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtShiftB.SelectAll();
+                txtShiftB.Focus();
+                return false;
+            }
+
+            if (!int.TryParse(strShiftC, out shiftC) || shiftC <= 0)
+            {
+                MessageBox.Show("El parámetro semilla de shift C debe ser un número entero positivo.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtShiftC.SelectAll();
+                txtShiftC.Focus();
+                return false;
+            }
 
             return true;
         }
 
-        private void FrequencyTest(List<long> values, Label label )
+        private void runFrequencyTests() {
+            for (int i = 0; i < 1; i++)
+            {
+                FrequencyTest(valuesLCGLists[i], labelsRepeatedLCG[i]);
+            }
+            for (int i = 0; i < 1; i++)
+            {
+                FrequencyTest(valuesXORLists[i], labelsRepeatedXOR[i]);
+            }
+        }
+
+        private void runDistributionTests() {
+
+            for (int i = 0; i < 1; i++)
+            {
+                graphDistributedRanges(rangedCharts[i], valuesLCGLists[i], 0);
+                graphDistributedRanges(rangedCharts[i], valuesXORLists[i], 1);
+            }
+
+        }
+
+        private void runTrendTests() {
+            for (int i = 0; i < 1; i++)
+            {
+                graphTrendChart(trendLCGCharts[i], valuesLCGLists[i]);
+                graphTrendChart(trendXORCharts[i], valuesXORLists[i]);
+            }
+        }
+
+        private void runCorrelationTests()
         {
-            
-            HashSet<long> uniqueNumbers = new HashSet<long>(values);
+            for ( int i = 0; i < 1; i++)
+            {
+                graphCorrelation(correlationLCGCharts[i], valuesLCGLists[i]);
+                double corrLCG = calcCorrelation(valuesLCGLists[i]);
+                TextAnnotation noteLCG = (TextAnnotation)correlationLCGCharts[i].Annotations["txtAnnLCGCorrelation"];
+                noteLCG.Text = $"Correlación (r): {corrLCG:F4}";
+
+                graphCorrelation(correlationXORCharts[i], valuesXORLists[i]);
+                double corrXOR = calcCorrelation(valuesXORLists[i]);
+                TextAnnotation noteXOR = (TextAnnotation)correlationXORCharts[i].Annotations["txtAnnXorCorrelation"];
+                noteXOR.Text = $"Correlación (r): {corrXOR:F4}";
+
+            }
+        }
+
+        private void runKSTests() {
+            for (int i = 0; i < 1; i++)
+            {
+                KSTest(valuesLCGLists[i], KSLCGlabels[i]);
+            }
+            for (int i = 0; i < 1; i++)
+            {
+                KSTest(valuesXORLists[i], KSXORlabels[i]);
+            }
+        }
+
+
+        private void FrequencyTest(List<double> values, Label label)
+        {
+
+            HashSet<double> uniqueNumbers = new HashSet<double>(values);
             int repeatedCount = values.Count - uniqueNumbers.Count;
 
-            Dictionary<long, int> frequencyMap = new Dictionary<long, int>();
-            List<long> repeatedNumbers = new List<long>();
+            Dictionary<double, int> frequencyMap = new Dictionary<double, int>();
+            List<double> repeatedNumbers = new List<double>();
 
             foreach (var num in values)
             {
@@ -191,14 +384,14 @@ namespace Taller1_Simulacion
 
             if (repeatedCount == 0)
             {
-                label.BackColor = System.Drawing.Color.LightGreen;
-                label.ForeColor = System.Drawing.Color.DarkGreen;
+                label.BackColor = Color.LightGreen;
+                label.ForeColor = Color.DarkGreen;
                 label.Text = $"✅ SIN REPETICIONES: {uniqueNumbers.Count}/{values.Count} números únicos. Periodo completo garantizado.";
             }
             else
             {
-                label.BackColor = System.Drawing.Color.LightCoral;
-                label.ForeColor = System.Drawing.Color.DarkRed;
+                label.BackColor = Color.LightCoral;
+                label.ForeColor = Color.DarkRed;
                 string repeatedList = string.Join(", ", repeatedNumbers.Take(10));
                 if (repeatedNumbers.Count > 10)
                     repeatedList += $", ... (+{repeatedNumbers.Count - 10} más)";
@@ -206,391 +399,134 @@ namespace Taller1_Simulacion
             }
         }
 
+        private void graphDistributedRanges(Chart ch, List<double> lst, int serie)
+        {
+            int ranges = 10;
+            double rangeSize = 1.0 / ranges;
 
-        //private void InitializeMonteCarloTab()
-        //{
-        //    // Crear DataGridView para resultados MonteCarlo
-        //    dgvMonteCarlo = new DataGridView
-        //    {
-        //        AllowUserToAddRows = false,
-        //        AllowUserToDeleteRows = false,
-        //        ReadOnly = true,
-        //        Size = new System.Drawing.Size(1170, 150),
-        //        Location = new System.Drawing.Point(10, 10),
-        //        ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize,
-        //        Name = "dgvMonteCarlo"
-        //    };
+            int[] frequencies = new int[ranges];
 
-        //    dgvMonteCarlo.Columns.Add("Puntos", "Cantidad de Puntos");
-        //    dgvMonteCarlo.Columns.Add("AreaReal", "Área Conocida");
-        //    dgvMonteCarlo.Columns.Add("AreaEstimada", "Área Estimada");
-        //    dgvMonteCarlo.Columns.Add("ErrorReal", "Error Real");
-        //    dgvMonteCarlo.Columns.Add("ErrorPorcentaje", "Error %");
-        //    dgvMonteCarlo.Columns.Add("PuntosAdentro", "Puntos Dentro");
-        //    dgvMonteCarlo.Columns.Add("PuntosTotales", "Puntos Totales");
+            foreach (double Un in lst)
+            {
+                int rangeIndex = (int)Math.Floor(Un / rangeSize);
+                if (rangeIndex >= ranges) rangeIndex = ranges - 1;
+                frequencies[rangeIndex]++;
+            }
+            ch.Series[serie].Points.Clear();
+            for (int i = 0; i < ranges; i++)
+            {
+                string tag = $"{(i * rangeSize):F2} - {((i + 1) * rangeSize):F2}";
+                ch.Series[serie].Points.AddXY(tag, frequencies[i]);
+            }
+        }
 
-        //    tabPage2.Controls.Add(dgvMonteCarlo);
+        private void graphTrendChart(Chart ch, List<double> lst)
+        {
+            ch.Series[0].Points.Clear();
+            for (int i = 0; i < lst.Count; i++)
+            {
+                ch.Series[0].Points.AddXY(i + 1, lst[i]);
+            }
+        }
 
-        //    // Crear gráficos scatter para MonteCarlo
-        //    chartsScatter = new System.Windows.Forms.DataVisualization.Charting.Chart[5];
-        //    int[] xPositions = { 10, 340, 670, 1000, 300 };
-        //    int[] yPositions = { 170, 170, 170, 170, 350 };
+        private void graphCorrelation(Chart ch, List<double> lst)
+        {
+            ch.Series[0].Points.Clear();
+            for (int i = 0; i < lst.Count - 1; i++)
+            {
+                ch.Series[0].Points.AddXY(lst[i], lst[i + 1]);
+            }
+        }
 
-        //    for (int i = 0; i < 5; i++)
-        //    {
-        //        chartsScatter[i] = new System.Windows.Forms.DataVisualization.Charting.Chart
-        //        {
-        //            Size = new System.Drawing.Size(320, 150),
-        //            Location = new System.Drawing.Point(xPositions[i], yPositions[i]),
-        //            Name = $"scatterChart{i}"
-        //        };
+        private double calcCorrelation(List<double> lst) {
+            int n = lst.Count - 1;
+            if (n <= 0) return 0.0;
+            double sumX = 0, sumY = 0, sumXY = 0, sumX2 = 0, sumY2 = 0;
+            for ( int i = 0; i < n; i++)
+            {
+                double x = lst[i];
+                double y = lst[i + 1];
+                sumX += x;
+                sumY += y;
+                sumXY += x * y;
+                sumX2 += x * x;
+                sumY2 += y * y;
+            }
+            double num = (n * sumXY) - (sumX * sumY);   
+            double den = Math.Sqrt(((n * sumX2) - (sumX * sumX)) * ((n * sumY2) - (sumY * sumY)));
 
-        //        chartsScatter[i].ChartAreas.Add(new System.Windows.Forms.DataVisualization.Charting.ChartArea("ChartArea"));
-        //        chartsScatter[i].Legends.Add(new System.Windows.Forms.DataVisualization.Charting.Legend("Legend"));
-        //        tabPage2.Controls.Add(chartsScatter[i]);
-        //    }
-        //}
+            if (den == 0) return 0.0;
+            return num / den;
+        }
 
-        //private void InitializeCharts()
-        //{
-        //    dataGrids = new DataGridView[5];
-        //    chartsFreq = new System.Windows.Forms.DataVisualization.Charting.Chart[5];
-        //    chartsTend = new System.Windows.Forms.DataVisualization.Charting.Chart[5];
-        //    labelsCorr = new System.Windows.Forms.Label[5];
-        //    labelsKS = new System.Windows.Forms.Label[5];
-        //    labelsRepeated = new System.Windows.Forms.Label[5];
+        private void KSTest(List<double> lst, Label kslabel)
+        {
+            int n = lst.Count;
+            if (n == 0) return;
 
-        //    TabPage[] tabs = { tabPage3, tabPage4, tabPage5, tabPage6, tabPage7 };
+            List<double> lstsorted = new List<double>(lst);
+            lstsorted.Sort();
 
-        //    for (int i = 0; i < 5; i++)
-        //    {
-        //        // DataGridView
-        //        dataGrids[i] = new DataGridView
-        //        {
-        //            AllowUserToAddRows = false,
-        //            AllowUserToDeleteRows = false,
-        //            ReadOnly = true,
-        //            Size = new System.Drawing.Size(280, 200),
-        //            Location = new System.Drawing.Point(10, 10),
-        //            ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize,
-        //            Name = $"dataGrid{i}"
-        //        };
+            double dPlusMax = 0;
+            double dMinusMax = 0;
 
-        //        // Chart Frecuencia
-        //        chartsFreq[i] = new System.Windows.Forms.DataVisualization.Charting.Chart
-        //        {
-        //            Size = new System.Drawing.Size(350, 200),
-        //            Location = new System.Drawing.Point(300, 10),
-        //            Name = $"chartFreq{i}"
-        //        };
-        //        chartsFreq[i].ChartAreas.Add(new System.Windows.Forms.DataVisualization.Charting.ChartArea("ChartArea"));
-        //        chartsFreq[i].Legends.Add(new System.Windows.Forms.DataVisualization.Charting.Legend("Legend"));
+            for (int i = 0; i < n; i++)
+            {
+                double i_math = i + 1;
+                double Ui = lstsorted[i];
 
-        //        // Chart Tendencia
-        //        chartsTend[i] = new System.Windows.Forms.DataVisualization.Charting.Chart
-        //        {
-        //            Size = new System.Drawing.Size(350, 200),
-        //            Location = new System.Drawing.Point(660, 10),
-        //            Name = $"chartTend{i}"
-        //        };
-        //        chartsTend[i].ChartAreas.Add(new System.Windows.Forms.DataVisualization.Charting.ChartArea("ChartArea"));
-        //        chartsTend[i].Legends.Add(new System.Windows.Forms.DataVisualization.Charting.Legend("Legend"));
+                double dPlus = (i_math / n) - Ui;
+                double dMinus = Ui - ((i_math - 1) / n);
 
-        //        // Label Correlación
-        //        labelsCorr[i] = new System.Windows.Forms.Label
-        //        {
-        //            Size = new System.Drawing.Size(350, 30),
-        //            Location = new System.Drawing.Point(300, 220),
-        //            Name = $"labelCorr{i}",
-        //            Font = new System.Drawing.Font("Arial", 10, System.Drawing.FontStyle.Bold),
-        //            BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        //        };
+                dPlusMax = Math.Max(dPlusMax, dPlus);
+                dMinusMax = Math.Max(dMinusMax, dMinus);
 
-        //        // Label K-S
-        //        labelsKS[i] = new System.Windows.Forms.Label
-        //        {
-        //            Size = new System.Drawing.Size(350, 30),
-        //            Location = new System.Drawing.Point(660, 220),
-        //            Name = $"labelKS{i}",
-        //            Font = new System.Drawing.Font("Arial", 10, System.Drawing.FontStyle.Bold),
-        //            BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        //        };
+            }
 
-        //        // Label Números Repetidos
-        //        labelsRepeated[i] = new System.Windows.Forms.Label
-        //        {
-        //            Size = new System.Drawing.Size(990, 25),
-        //            Location = new System.Drawing.Point(10, 265),
-        //            Name = $"labelRepeated{i}",
-        //            Font = new System.Drawing.Font("Arial", 9, System.Drawing.FontStyle.Bold),
-        //            BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle,
-        //            BackColor = System.Drawing.Color.LightGreen,
-        //            ForeColor = System.Drawing.Color.DarkGreen
-        //        };
+            double dCalculated = Math.Max(dPlusMax, dMinusMax);
+            double dCritical = 1.36 / Math.Sqrt(n);
 
-        //        // Agregar controles a la pestaña
-        //        tabs[i].Controls.Add(dataGrids[i]);
-        //        tabs[i].Controls.Add(chartsFreq[i]);
-        //        tabs[i].Controls.Add(chartsTend[i]);
-        //        tabs[i].Controls.Add(labelsCorr[i]);
-        //        tabs[i].Controls.Add(labelsKS[i]);
-        //        tabs[i].Controls.Add(labelsRepeated[i]);
-        //    }
-        //}
-        //private void GenerateRandomNumbers()
-        //{
-        //    for (int idx = 0; idx < modulos.Length; idx++)
-        //    {
-        //        int modulo = modulos[idx];
-        //        var grid = dataGrids[idx];
-        //        var chartFreq = chartsFreq[idx];
-        //        var chartTend = chartsTend[idx];
-        //        var labelCorr = labelsCorr[idx];
-        //        var labelKS = labelsKS[idx];
-        //        var labelRep = labelsRepeated[idx];
+            double percent = calcRandomnessPercent(dCalculated, n);
 
-        //        // Limpiar
-        //        grid.Rows.Clear();
-        //        grid.Columns.Clear();
-        //        chartFreq.Series.Clear();
-        //        chartFreq.Titles.Clear();
-        //        chartTend.Series.Clear();
-        //        chartTend.Titles.Clear();
+            kslabel.Text = $"D calculado = {dCalculated:F4}\nD crítico = {dCritical:F4}\nPorcentaje de aleatoreidad de los números generados = {percent:F2}%";
+            if (dCalculated <= dCritical)
+            {
+                if (percent >= 90)
+                {
+                    kslabel.ForeColor = Color.DarkGreen;
+                    kslabel.BackColor = Color.LightGreen;
+                }
+                else
+                {
+                    kslabel.ForeColor = Color.Orange;
+                    kslabel.BackColor = Color.LightYellow;
+                }
+            }
+            else { 
+                kslabel.ForeColor = Color.DarkRed; 
+                kslabel.BackColor = Color.LightCoral;
+            }
+            
+        }
+        private double calcRandomnessPercent ( double dCalculated , int n)
+        {
+            double x = dCalculated * Math.Sqrt(n);
+            if (x == 0) return 100.0;
 
-        //        // Configurar columnas DataGridView
-        //        grid.Columns.Add("Iteracion", "Iteración");
-        //        grid.Columns.Add("Xn", "Xn");
-        //        grid.Columns.Add("Un", "Un");
+            double sum = 0;
+            for ( int j = 1; j <= 10; j++)
+            {
+                double sign = Math.Pow(-1, j - 1);
+                double exp = Math.Exp(-2 * j * j * x * x);
+                sum += sign * exp;
+            }
 
-        //        // Generar números aleatorios
-        //        LCG lcg = new LCG(paramSeed, paramA, paramC, modulo);
-        //        List<double> valoresUn = new List<double>();
-        //        List<long> valoresXn = new List<long>();
+            double p = 2 * sum;
+            if (p > 1.0) p = 1.0;
+            if (p < 0.0) p = 0.0;
 
-        //        for (int i = 0; i < modulo; i++)
-        //        {
-        //            double un = lcg.Next();
-        //            long xn = lcg.LastXn;
-        //            grid.Rows.Add(i + 1, xn, un.ToString("F6"));
-        //            valoresUn.Add(un);
-        //            valoresXn.Add(xn);
-        //        }
-
-        //        // 1. Gráfico Frecuencia (Distribución por rangos)
-        //        CreateFrequencyChart(chartFreq, valoresUn, modulo);
-
-        //        // 2. Gráfico Tendencia
-        //        CreateTrendChart(chartTend, valoresUn, modulo);
-
-        //        // 3. Correlación
-        //        double correlacion = CalculateCorrelation(valoresUn);
-        //        labelCorr.Text = $"Correlación (Un, Un+1): {correlacion:F6}";
-
-        //        // 4. Kolmogorov-Smirnov
-        //        double dMax = CalculateKolmogorovSmirnov(valoresUn);
-        //        labelKS.Text = $"K-S Dmax: {dMax:F6}";
-
-        //        // 5. Detectar números repetidos
-        //        DetectRepeatedNumbers(valoresXn, labelRep, modulo);
-        //    }
-        //}
-
-        //private void ExecuteMonteCarlo()
-        //{
-        //    LCG lcgBig = new LCG(paramSeed, paramA, paramC, paramM);
-
-        //    dgvMonteCarlo.Rows.Clear();
-
-        //    for (int idx = 0; idx < modulos.Length; idx++)
-        //    {
-        //        int numPoints = modulos[idx];
-
-        //        // Definir condiciones del área (funciones del problema)
-        //        var conditions = new List<Func<Point, bool>>
-        //        {
-        //            (p) => p.Y <= Math.Pow(p.X, 2),  // f(x) = x^2
-        //            (p) => p.Y <= Math.Cos(p.X),     // h(x) = cos(x)
-        //            (p) => p.Y >= Math.Pow(p.X, 3)   // g(x) = x^3
-        //        };
-
-        //        // Límites del rectángulo de búsqueda
-        //        Point lower = new Point(0, 0);
-        //        Point upper = new Point(0.865474033101613, 0.679194068181104);
-
-        //        // Ejecutar MonteCarlo
-        //        var mc = new Montecarlo(lcgBig, conditions, lower, upper);
-        //        List<Point> pointsInside = new List<Point>();
-        //        List<Point> pointsOutside = new List<Point>();
-
-        //        int insideCount = 0;
-        //        for (int i = 0; i < numPoints; i++)
-        //        {
-        //            var p = new Point(
-        //                lower.X + lcgBig.Next() * (upper.X - lower.X),
-        //                lower.Y + lcgBig.Next() * (upper.Y - lower.Y)
-        //            );
-
-        //            bool inside = true;
-        //            foreach (var condition in conditions)
-        //            {
-        //                if (!condition(p)) { inside = false; break; }
-        //            }
-
-        //            if (inside)
-        //            {
-        //                insideCount++;
-        //                pointsInside.Add(p);
-        //            }
-        //            else
-        //            {
-        //                pointsOutside.Add(p);
-        //            }
-        //        }
-
-        //        // Calcular área estimada
-        //        double rectangleArea = (upper.X - lower.X) * (upper.Y - lower.Y);
-        //        double estimatedArea = ((double)insideCount / numPoints) * rectangleArea;
-
-        //        // Calcular errores
-        //        double realError = Math.Abs(AREA_REAL - estimatedArea);
-        //        double errorPercentage = (realError / AREA_REAL) * 100;
-
-        //        // Agregar fila a tabla
-        //        dgvMonteCarlo.Rows.Add(
-        //            numPoints,
-        //            AREA_REAL.ToString("F10"),
-        //            estimatedArea.ToString("F10"),
-        //            realError.ToString("F10"),
-        //            errorPercentage.ToString("F4"),
-        //            insideCount,
-        //            numPoints
-        //        );
-
-        //        // Crear gráfico scatter
-        //        CreateScatterChart(chartsScatter[idx], pointsInside, pointsOutside, numPoints);
-        //    }
-        //}
-
-        //private void CreateScatterChart(System.Windows.Forms.DataVisualization.Charting.Chart chart, 
-        //    List<Point> inside, List<Point> outside, int numPoints)
-        //{
-        //    chart.Series.Clear();
-        //    chart.Titles.Clear();
-
-        //    // Series para puntos dentro
-        //    var seriesInside = new System.Windows.Forms.DataVisualization.Charting.Series("Dentro")
-        //    {
-        //        ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point
-        //    };
-        //    seriesInside.Color = Color.Red;
-
-        //    foreach (var p in inside)
-        //    {
-        //        seriesInside.Points.AddXY(p.X, p.Y);
-        //    }
-
-        //    // Series para puntos fuera
-        //    var seriesOutside = new System.Windows.Forms.DataVisualization.Charting.Series("Fuera")
-        //    {
-        //        ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point
-        //    };
-        //    seriesOutside.Color = Color.Blue;
-
-        //    foreach (var p in outside)
-        //    {
-        //        seriesOutside.Points.AddXY(p.X, p.Y);
-        //    }
-
-        //    chart.Series.Add(seriesInside);
-        //    chart.Series.Add(seriesOutside);
-        //    chart.ChartAreas[0].AxisX.Title = "X";
-        //    chart.ChartAreas[0].AxisY.Title = "Y";
-        //    chart.Titles.Add($"MonteCarlo ({numPoints} puntos)");
-        //}
-
-        //private void CreateFrequencyChart(System.Windows.Forms.DataVisualization.Charting.Chart chart, List<double> values, int modulo)
-        //{
-        //    var serie = new System.Windows.Forms.DataVisualization.Charting.Series("Frecuencia")
-        //    {
-        //        ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column
-        //    };
-
-        //    int bins = 10;
-        //    int[] frecuencias = new int[bins];
-        //    foreach (var val in values)
-        //    {
-        //        int bin = (int)(val * bins);
-        //        if (bin == bins) bin = bins - 1;
-        //        if (bin >= 0) frecuencias[bin]++;
-        //    }
-
-        //    for (int j = 0; j < bins; j++)
-        //    {
-        //        serie.Points.AddXY($"R{j + 1}", frecuencias[j]);
-        //    }
-
-        //    chart.Series.Add(serie);
-        //    chart.ChartAreas[0].AxisX.Title = "Rangos";
-        //    chart.ChartAreas[0].AxisY.Title = "Frecuencia";
-        //    chart.Titles.Add($"Frecuencia (módulo {modulo})");
-        //}
-
-        //private void CreateTrendChart(System.Windows.Forms.DataVisualization.Charting.Chart chart, List<double> values, int modulo)
-        //{
-        //    var serie = new System.Windows.Forms.DataVisualization.Charting.Series("Tendencia")
-        //    {
-        //        ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
-        //    };
-
-        //    for (int i = 0; i < values.Count; i++)
-        //    {
-        //        serie.Points.AddXY(i + 1, values[i]);
-        //    }
-
-        //    chart.Series.Add(serie);
-        //    chart.ChartAreas[0].AxisX.Title = "Iteración";
-        //    chart.ChartAreas[0].AxisY.Title = "Un";
-        //    chart.Titles.Add($"Tendencia (módulo {modulo})");
-        //}
-
-        //private double CalculateCorrelation(List<double> values)
-        //{
-        //    if (values.Count < 2) return 0;
-
-        //    double mean = values.Average();
-        //    double sumProduct = 0, sumSq1 = 0, sumSq2 = 0;
-
-        //    for (int i = 0; i < values.Count - 1; i++)
-        //    {
-        //        double diff1 = values[i] - mean;
-        //        double diff2 = values[i + 1] - mean;
-        //        sumProduct += diff1 * diff2;
-        //        sumSq1 += diff1 * diff1;
-        //        sumSq2 += diff2 * diff2;
-        //    }
-
-        //    if (sumSq1 == 0 || sumSq2 == 0) return 0;
-        //    return sumProduct / Math.Sqrt(sumSq1 * sumSq2);
-        //}
-
-        //private double CalculateKolmogorovSmirnov(List<double> values)
-        //{
-        //    if (values.Count == 0) return 0;
-
-        //    var sorted = values.OrderBy(x => x).ToList();
-        //    double dMax = 0;
-
-        //    for (int i = 0; i < sorted.Count; i++)
-        //    {
-        //        double empiricalCdf = (i + 1) / (double)sorted.Count;
-        //        double diff = Math.Abs(sorted[i] - empiricalCdf);
-        //        if (diff > dMax) dMax = diff;
-        //    }
-
-        //    return dMax;
-        //}
-
-
+            return p * 100.0;
+        }
 
 
     }
