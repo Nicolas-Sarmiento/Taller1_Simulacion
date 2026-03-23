@@ -3,78 +3,94 @@ using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 
 namespace Taller1_Simulacion
 {
+    /// <summary>
+    /// Formulario principal de la aplicación.
+    /// Actúa como el controlador principal ("God Object") que maneja la UI, 
+    /// genera los números pseudoaleatorios y ejecuta las pruebas estadísticas.
+    /// </summary>
     public partial class Form1 : Form
     {
+        // Parámetros LCG
         long paramA, paramC, paramSeed;
+        // Parámetros XorShift
         ulong xorseed;
         int shiftA, shiftB, shiftC;
-        LCG lcg20, lcg200, lcg2000, lcg10000, lcg20000;
-        
-        List<Double> xorvalues20, xorvalues200, xorvalues2000, xorvalues10000, xorvalues20000;
-        List<Double> values20, values200, values2000, values10000, values20000;
 
+        // Generadores e instancias
+        LCG lcg20, lcg200, lcg2000, lcg10000, lcg20000;
+        xorShift xorGenerator;
+        List<LCG> lgcs;
+
+        // Estructuras de datos para almacenar resultados de los generadores
+        List<double> xorvalues20, xorvalues200, xorvalues2000, xorvalues10000, xorvalues20000;
+        List<double> values20, values200, values2000, values10000, values20000;
         DataTable tbLcG20, tbLcG200, tbLcG2000, tbLcG10000, tbLcG20000;
         DataTable tbxor20, tbxor200, tbxor2000, tbxor10000, tbxor20000;
 
-
-        List<LCG> lgcs;
-
-        xorShift xorGenerator;
+        // Configuración de las iteraciones y módulos para las pruebas
         List<long> modulos = new List<long> { 20, 200, 2000, 10000, 20000 };
         List<int> randomQuantity = new List<int> { 20, 200, 2000, 10000, 20000 };
+        List<int> pointsIterations = new List<int> { 10, 100, 1000, 5000, 10000 };
 
+        // Variables de almacenamiento temporal para resultados de pruebas estadísticas
+        List<double> lcgRepeated = new List<double>();
+        List<double> xorRepeated = new List<double>();
+        List<double> lcgCorrelations = new List<double>();
+        List<double> xorCorrelations = new List<double>();
+        List<double> lcgKSD = new List<double>();
+        List<double> xorKSD = new List<double>();
+        List<double> lcgKSPercents = new List<double>();
+        List<double> xorKSPercents = new List<double>();
 
+        // Listas agrupadotas para facilitar la iteración de la UI
         List<DataTable> tablesLCG;
         List<DataTable> tablesXOR;
         List<List<double>> valuesLCGLists;
         List<List<double>> valuesXORLists;
-
         List<DataGridView> dataGridsLCG;
         List<DataGridView> dataGridsXOR;
+        List<Label> labelsRepeatedLCG, labelsRepeatedXOR;
+        List<Chart> rangedCharts, trendLCGCharts, trendXORCharts;
+        List<Chart> correlationLCGCharts, correlationXORCharts;
+        List<Label> KSLCGlabels, KSXORlabels;
+        List<Chart> montecarloLCGCharts, montecarloXORCharts;
+        List<Label> montecarloLCGResultsLabels, montecarloXORResultsLabels;
 
-        List<Label> labelsRepeatedLCG;
-        List<Label> labelsRepeatedXOR;
-
-        List<Chart> rangedCharts;
-        List<Chart> trendLCGCharts;
-        List<Chart> trendXORCharts;
-
-        List<Chart> correlationLCGCharts;
-        List<Chart> correlationXORCharts;
-
-        List<Label> KSLCGlabels;
-        List<Label> KSXORlabels;
-
-        List<Chart> montecarloLCGCharts;
-        List<Chart> montecarloXORCharts;
-
-        List<Label> montecarloLCGResultsLabels;
-        List<Label> montecarloXORResultsLabels;
-
+        // Datos para las gráficas de Montecarlo
         List<double> xValues, fun1, fun2, fun3, squareX, squareY;
+        
+        // Clases de utilidad
         Montecarlo montecarloSim;
+        ShuffleFisherYates shuffler;
+        IRandomGenerator rgnShuffler;
 
+        // Puntos delimitadores para el rectángulo de Montecarlo
         Point maxPoint = new Point { X = 0.865474033101613, Y = 0.679194068181104 };
         Point minPoint = new Point { X = 0.0, Y = 0.0 };
 
-        const double realArea = 0.0737586345871;
+        // Constante del área real calculada analíticamente para comparar errores
+        const double REALAREA = 0.0737586345871;
+
+        double absError, relError, theoricalError;
+        double estimatedArea;
 
         public Form1()
         {
             InitializeComponent();
             InitializeObjects();
-
         }
 
-        
-
+        /// <summary>
+        /// Agrupa e inicializa todos los controles visuales (Grids, Gráficas, Labels) 
+        /// en listas para poder iterarlos fácilmente mediante bucles 'for'.
+        /// </summary>
         private void InitializeObjects() {
-
             lgcs = new List<LCG> { lcg20, lcg200, lcg2000, lcg10000, lcg20000 };
 
             tablesLCG = new List<DataTable> { tbLcG20, tbLcG200, tbLcG2000, tbLcG10000, tbLcG20000 };
@@ -100,26 +116,23 @@ namespace Taller1_Simulacion
             KSLCGlabels = new List<Label> { lblLCGKSTest20, lblLCGKSTest200, lblLCGKSTest2000, lblLCGKSTest10000, lblLCGKSTest20000 };
             KSXORlabels = new List<Label> { lblXORKSTest20, lblXORKSTest200, lblXORKSTest2000, lblXORKSTest10000, lblXORKSTest20000 };
 
-            montecarloLCGCharts = new List<Chart> { chMontecarloLGCI10 };
-            montecarloXORCharts = new List<Chart> { chMontecarloXORI10 };
+            montecarloLCGCharts = new List<Chart> { chMontecarloLGCI10, chMontecarloLGCI100, chMontecarloLGCI1000, chMontecarloLGCI5000, chMontecarloLGCI10000 };
+            montecarloXORCharts = new List<Chart> { chMontecarloXORI10, chMontecarloXORI100, chMontecarloXORI1000, chMontecarloXORI5000, chMontecarloXORI10000 };
 
-            montecarloLCGResultsLabels = new List<Label> { lblLCGResultI10 };
-            montecarloXORResultsLabels = new List<Label> { lblXORResultI10 };
-
-
-
+            montecarloLCGResultsLabels = new List<Label> { lblLCGResultI10, lblLCGResultI100, lblLCGResultI1000, lblLCGResultI5000, lblLCGResultI10000 };
+            montecarloXORResultsLabels = new List<Label> { lblXORResultI10, lblXORResultI100, lblXORResultI1000, lblXORResultI5000, lblXORResultI10000 };
 
             for (int i = 0; i < valuesLCGLists.Count; i++) valuesLCGLists[i] = new List<Double>();
             for (int i = 0; i < valuesXORLists.Count; i++) valuesXORLists[i] = new List<Double>();
 
             loadRandomVisualizationObjects();
             loadMontecarloVisualizationObjects();
-
         }
 
-
-
-
+        /// <summary>
+        /// Inicializa el motor de Montecarlo con las tres funciones matemáticas 
+        /// que delimitan el área de intersección y prepara las series de los gráficos.
+        /// </summary>
         private void loadMontecarloVisualizationObjects()
         {
             montecarloSim = new Montecarlo(
@@ -131,6 +144,9 @@ namespace Taller1_Simulacion
                 minPoint,
                 maxPoint
             );
+
+            rgnShuffler = new xorShiftPlus( 23, 17, 26 );
+            shuffler = new ShuffleFisherYates(rgnShuffler);
 
             loadFunctions();
             for (int i = 0; i < montecarloLCGCharts.Count; i++) {
@@ -148,43 +164,38 @@ namespace Taller1_Simulacion
             }
         }
 
+        /// <summary>
+        /// Precalcula los puntos X e Y de las funciones matemáticas (Cos(x), x^2, x^3) 
+        /// para dibujar el contorno del área en las gráficas de Montecarlo.
+        /// </summary>
         private void loadFunctions()
         {
-                xValues = new List<double>();
-                fun1 = new List<double>();
-                fun2 = new List<double>();
-                fun3 = new List<double>();
-                squareX = new List<double> { 0, 0.865474033101613, 0.865474033101613, 0, 0 };
-                squareY = new List<double> { 0, 0, 0.679194068181104, 0.679194068181104, 0 };
+            xValues = new List<double>();
+            fun1 = new List<double>();
+            fun2 = new List<double>();
+            fun3 = new List<double>();
+            squareX = new List<double> { 0, 0.865474033101613, 0.865474033101613, 0, 0 };
+            squareY = new List<double> { 0, 0, 0.679194068181104, 0.679194068181104, 0 };
     
-                for (double x = 0; x <= 1; x += 0.01)
-                {
-                    xValues.Add(x);
-                    fun1.Add(Math.Pow(x, 2));
-                    fun2.Add(Math.Pow(x, 3));
-                    fun3.Add(Math.Cos(x));
-                    
-                }
-
-
+            for (double x = 0; x <= 1; x += 0.01)
+            {
+                xValues.Add(x);
+                fun1.Add(Math.Pow(x, 2));
+                fun2.Add(Math.Pow(x, 3));
+                fun3.Add(Math.Cos(x));
+            }
         }
 
-
+        /// <summary>
+        /// Configura las columnas de los DataTables en memoria para recibir los datos de 
+        /// los generadores aleatorios (Iteración, ValorCrudo, ValorUniforme).
+        /// </summary>
         private void loadRandomVisualizationObjects() {
-
-
-
             for (int i = 0; i < tablesLCG.Count; i++) {
                 tablesLCG[i] = new DataTable();
                 tablesLCG[i].Columns.Add("I", typeof(int));
                 tablesLCG[i].Columns.Add("Xn", typeof(long));
                 tablesLCG[i].Columns.Add("Un", typeof(double));
-            }
-
-            for (int i = 0; i < dataGridsLCG.Count; i++)
-            {
-                dataGridsLCG[i].AutoGenerateColumns = false;
-                dataGridsLCG[i].DataSource = tablesLCG[i];
             }
 
             for (int i = 0; i < tablesXOR.Count; i++)
@@ -194,37 +205,55 @@ namespace Taller1_Simulacion
                 tablesXOR[i].Columns.Add("Xn", typeof(ulong));
                 tablesXOR[i].Columns.Add("Un", typeof(double));
             }
-
-            for (int i = 0; i < dataGridsXOR.Count; i++)
-            {
-                dataGridsXOR[i].AutoGenerateColumns = false;
-                dataGridsXOR[i].DataSource = tablesXOR[i];
-            }
         }
 
-
-        private void btnRun_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Evento disparado al solicitar la generación de números aleatorios.
+        /// Ejecuta los cálculos asíncronos y pinta las pruebas estadísticas.
+        /// </summary>
+        private async void btnRun_Click(object sender, EventArgs e)
         {
             btnRun.Enabled = false;
             btnRunMontecarlo.Enabled = false;
+            loadingIcon.Visible = true;
             tbcMontecarloIterations.Visible = false;
+            
             if (!validateParams())
             {
                 btnRun.Enabled = true;
                 return;
             }
 
-            randomSimulation();
+            unBindDataGrids(); // Desconecta la UI para mayor rendimiento
+            
+            // Ejecuta el peso matemático en un hilo secundario
+            await Task.Run(() => { randomSimulation(); });
+            
+            loadRandomDataGrids(); // Reconecta la UI
+            runRandomTests();
+            setSimulationResults();
 
             btnRun.Enabled = true;
             btnRunMontecarlo.Enabled = true;
+            loadingIcon.Visible = false;
+        }
+
+        private void setSimulationResults(){
+            gridRandomResults.Rows.Clear();
+            for (int i = 0; i < randomQuantity.Count; i++)
+            {
+                gridRandomResults.Rows.Add(randomQuantity[i], lcgRepeated[i], xorRepeated[i], lcgCorrelations[i], xorCorrelations[i], lcgKSD[i], xorKSD[i], lcgKSPercents[i], xorKSPercents[i]);
+            }
         }
 
         private void randomSimulation() {
             buildGenerators();
             clearObjects();
             getRandomValues();
-
+        }
+            
+        private void runRandomTests()
+        {
             runFrequencyTests();
             runDistributionTests();
             runTrendTests();
@@ -238,6 +267,9 @@ namespace Taller1_Simulacion
             getRandomXorValues();
         }
 
+        /// <summary>
+        /// Genera y almacena los números usando el Congruencial Lineal (LCG).
+        /// </summary>
         private void getRandomLCGValues()
         {
             for (int i = 0; i < valuesLCGLists.Count; i++)
@@ -255,6 +287,9 @@ namespace Taller1_Simulacion
             }
         }
 
+        /// <summary>
+        /// Genera y almacena los números usando XorShift.
+        /// </summary>
         private void getRandomXorValues() {
             for (int i = 0; i < valuesXORLists.Count; i++)
             {
@@ -273,6 +308,11 @@ namespace Taller1_Simulacion
 
             foreach (DataTable tb in tablesXOR) tb.Rows.Clear();
             foreach (List<double> lst in valuesXORLists) lst.Clear();
+
+            lcgRepeated.Clear(); xorRepeated.Clear();
+            lcgCorrelations.Clear(); xorCorrelations.Clear();
+            lcgKSD.Clear(); xorKSD.Clear();
+            lcgKSPercents.Clear(); xorKSPercents.Clear(); 
         }
 
         private void buildLCGs() {
@@ -286,10 +326,12 @@ namespace Taller1_Simulacion
         {
             buildLCGs();
             xorGenerator = new xorShift(xorseed, shiftA, shiftB, shiftC);
-
         }
 
-
+        /// <summary>
+        /// Valida que las entradas del usuario en los TextBoxes sean números válidos
+        /// y correspondan a los rangos permitidos para los generadores.
+        /// </summary>
         private bool validateParams() {
             string strParamAInput = txtParamA.Text;
             string strParamCInput = txtParamC.Text;
@@ -303,80 +345,73 @@ namespace Taller1_Simulacion
 
             if ((!long.TryParse(strParamAInput, out paramA) || paramA <= 0)) {
                 MessageBox.Show("El parámetro a debe ser un número entero positivo.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtParamA.SelectAll();
-                txtParamA.Focus();
                 return false;
             }
 
-            if ((!long.TryParse(strParamCInput, out paramC) || paramC <= 0))
-            {
+            if ((!long.TryParse(strParamCInput, out paramC) || paramC <= 0)) {
                 MessageBox.Show("El parámetro c debe ser un número entero positivo.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtParamC.SelectAll();
-                txtParamC.Focus();
                 return false;
             }
 
-            if ((!long.TryParse(strSeed, out paramSeed) || paramSeed <= 0))
-            {
+            if ((!long.TryParse(strSeed, out paramSeed) || paramSeed <= 0)) {
                 MessageBox.Show("El parámetro semilla debe ser un número entero positivo.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtSeed.SelectAll();
-                txtSeed.Focus();
                 return false;
             }
 
             if (!ulong.TryParse(strxorseed, out xorseed)) {
                 MessageBox.Show("El parámetro semilla de xor shift debe ser un número entero positivo.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtXorSeed.SelectAll();
-                txtXorSeed.Focus();
                 return false;
             }
 
-            if (!int.TryParse(strShiftA, out shiftA) || shiftA <= 0)
-            {
-                MessageBox.Show("El parámetro semilla de shift A debe ser un número entero positivo.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtShiftA.SelectAll();
-                txtShiftA.Focus();
+            if (!int.TryParse(strShiftA, out shiftA) || shiftA <= 0 || shiftA >= 64) {
+                MessageBox.Show("El parámetro semilla de shift A debe ser un número entero positivo [1, 64).", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
-            if (!int.TryParse(strShiftB, out shiftB) || shiftB <= 0)
-            {
-                MessageBox.Show("El parámetro semilla de shift B debe ser un número entero positivo.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtShiftB.SelectAll();
-                txtShiftB.Focus();
+            if (!int.TryParse(strShiftB, out shiftB) || shiftB <= 0 || shiftB >= 64) {
+                MessageBox.Show("El parámetro semilla de shift B debe ser un número entero positivo [1, 64).", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
-            if (!int.TryParse(strShiftC, out shiftC) || shiftC <= 0)
-            {
-                MessageBox.Show("El parámetro semilla de shift C debe ser un número entero positivo.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtShiftC.SelectAll();
-                txtShiftC.Focus();
+            if (!int.TryParse(strShiftC, out shiftC) || shiftC <= 0 || shiftC >= 64) {
+                MessageBox.Show("El parámetro semilla de shift C debe ser un número entero positivo [1, 64).", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
             return true;
         }
 
-        private void runFrequencyTests() {
-            for (int i = 0; i < valuesLCGLists.Count; i++)
+        private void loadRandomDataGrids()
+        {
+            for (int i = 0; i < dataGridsXOR.Count; i++)
             {
-                FrequencyTest(valuesLCGLists[i], labelsRepeatedLCG[i]);
+                dataGridsXOR[i].AutoGenerateColumns = false;
+                dataGridsXOR[i].DataSource = tablesXOR[i];
             }
-            for (int i = 0; i < valuesXORLists.Count; i++)
+            for (int i = 0; i < dataGridsLCG.Count; i++)
             {
-                FrequencyTest(valuesXORLists[i], labelsRepeatedXOR[i]);
+                dataGridsLCG[i].AutoGenerateColumns = false;
+                dataGridsLCG[i].DataSource = tablesLCG[i];
             }
         }
 
-        private void runDistributionTests() {
+        private void unBindDataGrids()
+        {
+            for (int i = 0; i < dataGridsXOR.Count; i++) dataGridsXOR[i].DataSource = null;
+            for (int i = 0; i < dataGridsLCG.Count; i++) dataGridsLCG[i].DataSource = null;
+        }
 
+        private void runFrequencyTests() {
+            for (int i = 0; i < valuesLCGLists.Count; i++) FrequencyTest(valuesLCGLists[i], labelsRepeatedLCG[i], lcgRepeated);
+            for (int i = 0; i < valuesXORLists.Count; i++) FrequencyTest(valuesXORLists[i], labelsRepeatedXOR[i], xorRepeated);
+        }
+
+        private void runDistributionTests() {
             for (int i = 0; i < rangedCharts.Count; i++)
             {
                 graphDistributedRanges(rangedCharts[i], valuesLCGLists[i], 0);
                 graphDistributedRanges(rangedCharts[i], valuesXORLists[i], 1);
             }
-
         }
 
         private void runTrendTests() {
@@ -387,6 +422,9 @@ namespace Taller1_Simulacion
             }
         }
 
+        /// <summary>
+        /// Ejecuta y grafica la prueba de correlación matemática comparando U(i) vs U(i+1)
+        /// </summary>
         private void runCorrelationTests()
         {
             for ( int i = 0; i < correlationLCGCharts.Count; i++)
@@ -394,46 +432,34 @@ namespace Taller1_Simulacion
                 graphCorrelation(correlationLCGCharts[i], valuesLCGLists[i]);
                 double corrLCG = calcCorrelation(valuesLCGLists[i]);
                 TextAnnotation noteLCG = (TextAnnotation)correlationLCGCharts[i].Annotations["txtAnnLCGCorrelation"];
-                if (double.IsNaN(corrLCG))
-                {
-                    noteLCG.Text = $"Correlación (r): No se pudo calcular (n <= 2)";
-                    
-                }else
-                {
-                    noteLCG.Text = $"Correlación (r): {corrLCG:F4}";
-                }
                 
+                if (double.IsNaN(corrLCG)) noteLCG.Text = $"Correlación (r): No se pudo calcular (n <= 2)";
+                else noteLCG.Text = $"Correlación (r): {corrLCG:F4}";
+                
+                lcgCorrelations.Add(corrLCG);
 
                 graphCorrelation(correlationXORCharts[i], valuesXORLists[i]);
                 double corrXOR = calcCorrelation(valuesXORLists[i]);
                 TextAnnotation noteXOR = (TextAnnotation)correlationXORCharts[i].Annotations["txtAnnXorCorrelation"];
-                if (double.IsNaN(corrXOR))
-                {
-                    noteXOR.Text = $"Correlación (r): No se pudo calcular (n <= 2)";
-                }
-                else
-                {
-                    noteXOR.Text = $"Correlación (r): {corrXOR:F4}";
-                }
-
+                
+                if (double.IsNaN(corrXOR)) noteXOR.Text = $"Correlación (r): No se pudo calcular (n <= 2)";
+                else noteXOR.Text = $"Correlación (r): {corrXOR:F4}";
+                
+                xorCorrelations.Add(corrXOR);
             }
         }
 
         private void runKSTests() {
-            for (int i = 0; i < KSLCGlabels.Count; i++)
-            {
-                KSTest(valuesLCGLists[i], KSLCGlabels[i]);
-            }
-            for (int i = 0; i < KSXORlabels.Count; i++)
-            {
-                KSTest(valuesXORLists[i], KSXORlabels[i]);
-            }
+            for (int i = 0; i < KSLCGlabels.Count; i++) KSTest(valuesLCGLists[i], KSLCGlabels[i], lcgKSD, lcgKSPercents);
+            for (int i = 0; i < KSXORlabels.Count; i++) KSTest(valuesXORLists[i], KSXORlabels[i], xorKSD, xorKSPercents);
         }
 
-
-        private void FrequencyTest(List<double> values, Label label)
+        /// <summary>
+        /// Prueba de Frecuencia: Detecta números repetidos en la secuencia generada 
+        /// usando un HashSet para comprobar la longitud del periodo y evitar solapamientos.
+        /// </summary>
+        private void FrequencyTest(List<double> values, Label label, List<double> doubleNums )
         {
-
             HashSet<double> uniqueNumbers = new HashSet<double>(values);
             int repeatedCount = values.Count - uniqueNumbers.Count;
 
@@ -442,8 +468,7 @@ namespace Taller1_Simulacion
 
             foreach (var num in values)
             {
-                if (!frequencyMap.ContainsKey(num))
-                    frequencyMap[num] = 0;
+                if (!frequencyMap.ContainsKey(num)) frequencyMap[num] = 0;
                 frequencyMap[num]++;
             }
 
@@ -467,13 +492,13 @@ namespace Taller1_Simulacion
                     repeatedList += $", ... (+{repeatedNumbers.Count - 10} más)";
                 label.Text = $"⚠️ REPETICIONES DETECTADAS: {repeatedCount} repeticiones. Números: {repeatedList}";
             }
+            doubleNums.Add(repeatedCount);
         }
 
         private void graphDistributedRanges(Chart ch, List<double> lst, int serie)
         {
             int ranges = 10;
             double rangeSize = 1.0 / ranges;
-
             int[] frequencies = new int[ranges];
 
             foreach (double Un in lst)
@@ -482,6 +507,7 @@ namespace Taller1_Simulacion
                 if (rangeIndex >= ranges) rangeIndex = ranges - 1;
                 frequencies[rangeIndex]++;
             }
+            
             ch.Series[serie].Points.Clear();
             string[] tags = new string[ranges];
             for (int i = 0; i < ranges; i++)
@@ -514,6 +540,10 @@ namespace Taller1_Simulacion
             ch.Series[0].Points.ResumeUpdates();
         }
 
+        /// <summary>
+        /// Calcula el Coeficiente de Correlación de Pearson (r) para verificar 
+        /// la independencia estadística entre valores consecutivos generados.
+        /// </summary>
         private double calcCorrelation(List<double> lst) {
             int n = lst.Count - 1;
             if (n <= 2) return double.NaN;
@@ -522,11 +552,9 @@ namespace Taller1_Simulacion
             {
                 double x = lst[i];
                 double y = lst[i + 1];
-                sumX += x;
-                sumY += y;
+                sumX += x; sumY += y;
                 sumXY += x * y;
-                sumX2 += x * x;
-                sumY2 += y * y;
+                sumX2 += x * x; sumY2 += y * y;
             }
             double num = (n * sumXY) - (sumX * sumY);   
             double den = Math.Sqrt(((n * sumX2) - (sumX * sumX)) * ((n * sumY2) - (sumY * sumY)));
@@ -535,7 +563,11 @@ namespace Taller1_Simulacion
             return num / den;
         }
 
-        private void KSTest(List<double> lst, Label kslabel)
+        /// <summary>
+        /// Prueba de Kolmogorov-Smirnov: Determina si los números generados siguen
+        /// una distribución uniforme continua comparando la Frecuencia Esperada vs Observada.
+        /// </summary>
+        private void KSTest(List<double> lst, Label kslabel, List<double> dValues, List<double> percentValues )
         {
             int n = lst.Count;
             if (n == 0) return;
@@ -556,7 +588,6 @@ namespace Taller1_Simulacion
 
                 dPlusMax = Math.Max(dPlusMax, dPlus);
                 dMinusMax = Math.Max(dMinusMax, dMinus);
-
             }
 
             double dCalculated = Math.Max(dPlusMax, dMinusMax);
@@ -569,14 +600,19 @@ namespace Taller1_Simulacion
             {
                 kslabel.ForeColor = Color.DarkGreen;
                 kslabel.BackColor = Color.LightGreen;
-            
             }
             else { 
                 kslabel.ForeColor = Color.DarkRed; 
                 kslabel.BackColor = Color.LightCoral;
             }
-            
+            dValues.Add(dCalculated);
+            percentValues.Add(percent);
         }
+
+        /// <summary>
+        /// Estima matemáticamente el P-Value (Porcentaje de confianza) basado 
+        /// en el valor crítico obtenido del Test de Kolmogorov-Smirnov.
+        /// </summary>
         private double calcRandomnessPercent ( double dCalculated , int n)
         {
             double x = dCalculated * Math.Sqrt(n);
@@ -598,52 +634,166 @@ namespace Taller1_Simulacion
             return p * 100.0;
         }
 
-        private void btnRunMontecarlo_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Evento disparado al solicitar la ejecución de la simulación de Montecarlo.
+        /// Recopila los resultados de todos los generadores y calcula los errores de estimación.
+        /// </summary>
+        private async void btnRunMontecarlo_Click(object sender, EventArgs e)
         {
             btnRunMontecarlo.Enabled = false;
+            loadingIcon.Visible = true;
+
+            List<double> lcgAbsErrors = new List<double>();
+            List<double> lcgRelErrors = new List<double>();
+            List<double> lcgEstimatedAreas = new List<double>();
+
+            List<double> xorAbsErrors = new List<double>();
+            List<double> xorRelErrors = new List<double>();
+            List<double> xorEstimatedAreas = new List<double>();
+
+            List<double> theoricalErrors = new List<double>();
 
             for (int i = 0; i < valuesLCGLists.Count; i++) { 
-                
-                runMontecarlo(valuesLCGLists[i], montecarloLCGCharts[0], montecarloLCGResultsLabels[0]);
-
+                await runMontecarlo(valuesLCGLists[i], montecarloLCGCharts[i], montecarloLCGResultsLabels[i]);
+                lcgAbsErrors.Add(absError);
+                lcgRelErrors.Add(relError);
+                lcgEstimatedAreas.Add(estimatedArea);
+                theoricalErrors.Add(theoricalError);
             }
 
             for (int i = 0; i < valuesXORLists.Count; i++) { 
-                
-                runMontecarlo(valuesXORLists[i], montecarloXORCharts[0], montecarloXORResultsLabels[0]);
-
+                await runMontecarlo(valuesXORLists[i], montecarloXORCharts[i], montecarloXORResultsLabels[i]);
+                xorAbsErrors.Add(absError);
+                xorRelErrors.Add(relError);
+                xorEstimatedAreas.Add(estimatedArea);
             }
 
+            gridMontecarloResults.Rows.Clear();
+            for ( int i = 0; i < pointsIterations.Count; i++)
+            {
+                gridMontecarloResults.Rows.Add(pointsIterations[i], lcgEstimatedAreas[i], xorEstimatedAreas[i], lcgAbsErrors[i], xorAbsErrors[i], lcgRelErrors[i], xorRelErrors[i], theoricalErrors[i] );
+            }
 
+            double lcgAvgArea = lcgEstimatedAreas.Average();
+            double xorAvgArea = xorEstimatedAreas.Average();
+
+            double lcgBestArea = calcMedian(lcgEstimatedAreas);
+            double xorBestArea = calcMedian(xorEstimatedAreas);
+
+            double lcgAvgAreaAbsError = calcRealErrror(lcgBestArea, REALAREA);
+            double xorAvgAreaAbsError = calcRealErrror(xorBestArea, REALAREA);
+
+            double lcgAvgAreaRelError = calcRelativeError(lcgBestArea, REALAREA);
+            double xorAvgAreaRelError = calcRelativeError(xorBestArea, REALAREA);
+
+            gridMontecarloAvg.Rows.Clear();
+            gridMontecarloAvg.Rows.Add("Congruencial",  lcgAvgArea,lcgBestArea, lcgAvgAreaRelError, lcgAvgAreaAbsError);
+            gridMontecarloAvg.Rows.Add("Xor shift", xorAvgArea, xorBestArea, xorAvgAreaRelError, xorAvgAreaAbsError);
+
+            chMontecarloAbsolute.Series[0].Points.Clear();
+            chMontecarloAbsolute.Series[1].Points.Clear();
+            chMontecarloAbsolute.Series[0].Points.DataBindXY(pointsIterations, lcgAbsErrors);
+            chMontecarloAbsolute.Series[1].Points.DataBindXY(pointsIterations, xorAbsErrors);
+
+            chMontecarloRelative.Series[0].Points.Clear();
+            chMontecarloRelative.Series[1].Points.Clear();
+            chMontecarloRelative.Series[0].Points.DataBindXY(pointsIterations, lcgRelErrors);
+            chMontecarloRelative.Series[1].Points.DataBindXY(pointsIterations, xorRelErrors);
+
+            chMontecarloTheory.Series[0].Points.Clear();
+            chMontecarloTheory.Series[0].Points.DataBindXY(pointsIterations, theoricalErrors);
 
             tbcMontecarloIterations.Visible = true;
+            loadingIcon.Visible = false;
             btnRunMontecarlo.Enabled = true;
         }
 
-        private void runMontecarlo(List<double> values, Chart ch, Label lbl )
+        /// <summary>
+        /// Método central de la Simulación de Montecarlo estructurado con hilos (Task.Run).
+        /// Recibe una lista de números pseudoaleatorios, los mezcla, calcula qué puntos 
+        /// caen dentro de la curva y devuelve los resultados a la UI sin congelarla.
+        /// </summary>
+        private async Task runMontecarlo(List<double> values, Chart ch, Label lbl)
         {
-            // Shuffle values to ensure randomness in point selection
-            var pointsList = montecarloSim.processPoints(values);
-            int totalPoints = pointsList.inside.Count + pointsList.outside.Count;
-            int inside = pointsList.inside.Count;
-            double estimatedArea = montecarloSim.EstimateArea(totalPoints, inside );
-            // Update label results
-            lbl.Text = $"Puntos dentro: {inside}\nPuntos totales: {totalPoints}\nÁrea estimada: {estimatedArea:F4}";
+            var resultados = await Task.Run(() =>
+            {
+                shuffler.Shuffle(values);
+
+                var localPointsList = montecarloSim.processPoints(values);
+
+                int localInside = localPointsList.inside.Count;
+                int localTotalPoints = localInside + localPointsList.outside.Count;
+
+                double localEstimatedArea = montecarloSim.EstimateArea(localTotalPoints, localInside);
+                double localAbsError = calcRealErrror(localEstimatedArea, REALAREA);
+                double localRelError = calcRelativeError(localEstimatedArea, REALAREA);
+                double localTheoricalError = calcTheoricalError(localTotalPoints);
+                
+                return new
+                {
+                    PointsList = localPointsList,
+                    Inside = localInside,
+                    TotalPoints = localTotalPoints,
+                    EstimatedArea = localEstimatedArea,
+                    AbsError = localAbsError,
+                    RelError = localRelError,
+                    TheoricalError = localTheoricalError
+                };
+            });
+            
+            estimatedArea = resultados.EstimatedArea;
+            absError = resultados.AbsError;
+            relError = resultados.RelError;
+            theoricalError = resultados.TheoricalError;
+          
+            lbl.Text = $"Puntos dentro = {resultados.Inside}\n" +
+                       $"Puntos totales = {resultados.TotalPoints}\n" +
+                       $"Área estimada = {resultados.EstimatedArea:F6}\n" +
+                       $"Área calculada analíticamente = {REALAREA:F6} \n" +
+                       $"Error absoluto = {resultados.AbsError:F6} \n" +
+                       $"Error relativo = {(resultados.RelError * 100.0):F4}%\n" +
+                       $"Error teórico ~ {resultados.TheoricalError:F6} \n" +
+                       $"ℹ️ El error teórico está acotado por O(1 / √N)";
+  
             ch.Series["SeriesInsidePoints"].Points.Clear();
             ch.Series["SeriesOutsidePoints"].Points.Clear();
-            ch.Series["SeriesInsidePoints"].Points.DataBind(pointsList.inside, "X", "Y", "");
-            ch.Series["SeriesOutsidePoints"].Points.DataBind(pointsList.outside, "X", "Y", "");
-
+            ch.Series["SeriesInsidePoints"].Points.DataBind(resultados.PointsList.inside, "X", "Y", "");
+            ch.Series["SeriesOutsidePoints"].Points.DataBind(resultados.PointsList.outside, "X", "Y", "");
         }
 
-        private double calcRealErrror( double result )
+        /// <summary>
+        /// Calcula el Error Absoluto: |Valor Real - Valor Estimado|
+        /// </summary>
+        private double calcRealErrror( double result, double realResult )
         {
-            return 0.0;
+            return Math.Abs( realResult - result );
         }
 
-        private double calcTheoricalError( int usedPoints )
+        /// <summary>
+        /// Calcula el Error Relativo Porcentual: |Valor Real - Valor Estimado| / Valor Real
+        /// </summary>
+        private double calcRelativeError(double result, double realResult )
         {
-            return 0.0;
+            return Math.Abs(result - realResult) / Math.Abs(realResult);
+        }
+
+        /// <summary>
+        /// Calcula la cota de error esperada matemáticamente por la ley de los grandes números: 1 / √N
+        /// </summary>
+        private double calcTheoricalError(  int totalPoints )
+        {
+            return (double) 1 / (Math.Sqrt(totalPoints));
+        }
+
+        /// <summary>
+        /// Obtiene la mediana estadística de una lista de datos (valor central ordenado).
+        /// </summary>
+        private double calcMedian( List<double> lst ) { 
+            if ( lst == null || lst.Count == 0) return 0.0;
+            var sorted = lst.OrderBy(x => x).ToList();
+            int medianIndex = sorted.Count / 2;
+            double median = (sorted.Count % 2 == 0) ? (sorted[medianIndex - 1] + sorted[medianIndex]) / 2.0 : sorted[medianIndex];
+            return median;
         }
     }
 }

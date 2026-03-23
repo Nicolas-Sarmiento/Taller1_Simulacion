@@ -69,13 +69,15 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="IRandomGenerator.cs" />
-    <Compile Include="LCG.cs" />
-    <Compile Include="Montecarlo.cs" />
-    <Compile Include="Point.cs" />
+    <Compile Include="Generators\IRandomGenerator.cs" />
+    <Compile Include="Generators\LCG.cs" />
+    <Compile Include="Logic\Montecarlo.cs" />
+    <Compile Include="Models\Point.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="xorShift.cs" />
+    <Compile Include="Logic\ShuffleFisherYates.cs" />
+    <Compile Include="Generators\xorShiftPlus.cs" />
+    <Compile Include="Generators\xorShift.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -87,6 +89,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -101,6 +104,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dice-roll-dice.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
