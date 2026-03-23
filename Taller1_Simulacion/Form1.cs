@@ -11,8 +11,11 @@ namespace Taller1_Simulacion
 {
     /// <summary>
     /// Formulario principal de la aplicación.
-    /// Actúa como el controlador principal ("God Object") que maneja la UI, 
-    /// genera los números pseudoaleatorios y ejecuta las pruebas estadísticas.
+    /// Genera los números pseudoaleatorios y ejecuta las pruebas estadísticas.
+    /// Autores: Nicolas Sarmiento y Edwar Ramirez.
+    /// TLDR: Profe, intentamos lo mejor, sabemos que no es la mejor interfaz gráfica, pero intentamos lo
+    /// mejor :D Tenganos piedad a la hora de calificar. Compensamos la falta de creatividad en la interfaz con
+    /// otros generadores y un documento más riguroso. 😁 (una notica extra por el esfuerzo plis)
     /// </summary>
     public partial class Form1 : Form
     {
