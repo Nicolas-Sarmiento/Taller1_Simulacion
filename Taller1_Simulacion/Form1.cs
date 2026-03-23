@@ -34,9 +34,6 @@ namespace Taller1_Simulacion
         List<List<double>> valuesLCGLists;
         List<List<double>> valuesXORLists;
 
-        List<List<double>> valuesLCGListsMontecarlo;
-        List<List<double>> valuesXORListsMontecarlo;
-
         List<DataGridView> dataGridsLCG;
         List<DataGridView> dataGridsXOR;
 
@@ -60,6 +57,11 @@ namespace Taller1_Simulacion
 
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private void InitializeObjects() {
 
             lgcs = new List<LCG> { lcg20, lcg200, lcg2000, lcg10000, lcg20000 };
@@ -70,22 +72,22 @@ namespace Taller1_Simulacion
             valuesXORLists = new List<List<double>> { xorvalues20, xorvalues200, xorvalues2000, xorvalues10000, xorvalues20000 };
             valuesLCGLists = new List<List<double>> { values20, values200, values2000, values10000, values20000 };
 
-            dataGridsLCG = new List<DataGridView> { gridMod20 };
-            dataGridsXOR = new List<DataGridView> { gridXor20 };
+            dataGridsLCG = new List<DataGridView> { gridMod20, gridMod200, gridMod2000, gridMod10000, gridMod20000 };
+            dataGridsXOR = new List<DataGridView> { gridXor20, gridXor200, gridXor2000, gridXor10000, gridXor20000 };
 
-            labelsRepeatedLCG = new List<Label> { lblLCGfreqTest20 };
-            labelsRepeatedXOR = new List<Label> { lblXORfreqTest20 };
+            labelsRepeatedLCG = new List<Label> { lblLCGfreqTest20, lblLCGfreqTest200, lblLCGfreqTest2000, lblLCGfreqTest10000, lblLCGfreqTest20000 };
+            labelsRepeatedXOR = new List<Label> { lblXORfreqTest20, lblXORfreqTest200, lblXORfreqTest2000, lblXORfreqTest10000, lblXORfreqTest20000 };
 
-            rangedCharts = new List<Chart> { chRanges20 };
+            rangedCharts = new List<Chart> { chRanges20, chRanges200, chRanges2000, chRanges10000, chRanges20000 };
 
-            trendLCGCharts = new List<Chart> { chLCGTrendTest20 };
-            trendXORCharts = new List<Chart> { chXORTrendTest20 };
+            trendLCGCharts = new List<Chart> { chLCGTrendTest20, chLCGTrendTest200, chLCGTrendTest2000, chLCGTrendTest10000, chLCGTrendTest20000 };
+            trendXORCharts = new List<Chart> { chXORTrendTest20, chXORTrendTest200, chXORTrendTest2000, chXORTrendTest10000, chXORTrendTest20000 };
 
-            correlationLCGCharts = new List<Chart> { chLCGCorrelation20 };
-            correlationXORCharts = new List<Chart> { chXorCorrelation20 };
+            correlationLCGCharts = new List<Chart> { chLCGCorrelation20, chLCGCorrelation200, chLCGCorrelation2000, chLCGCorrelation10000, chLCGCorrelation20000 };
+            correlationXORCharts = new List<Chart> { chXORCorrelation20, chXORCorrelation200, chXORCorrelation2000, chXORCorrelation10000, chXORCorrelation20000 };
 
-            KSLCGlabels = new List<Label> { lblLCGKSTest20 };
-            KSXORlabels = new List<Label> { lblXORKSTest20 };
+            KSLCGlabels = new List<Label> { lblLCGKSTest20, lblLCGKSTest200, lblLCGKSTest2000, lblLCGKSTest10000, lblLCGKSTest20000 };
+            KSXORlabels = new List<Label> { lblXORKSTest20, lblXORKSTest200, lblXORKSTest2000, lblXORKSTest10000, lblXORKSTest20000 };
 
             for (int i = 0; i < valuesLCGLists.Count; i++) valuesLCGLists[i] = new List<Double>();
             for (int i = 0; i < valuesXORLists.Count; i++) valuesXORLists[i] = new List<Double>();
@@ -160,8 +162,6 @@ namespace Taller1_Simulacion
             clearObjects();
             getRandomValues();
 
-            copyValues();
-
             runFrequencyTests();
             runDistributionTests();
             runTrendTests();
@@ -169,11 +169,7 @@ namespace Taller1_Simulacion
             runKSTests();
         }
 
-        private void copyValues()
-        {
-            valuesLCGListsMontecarlo = new List<List<double>>(valuesLCGLists);
-            valuesXORListsMontecarlo = new List<List<double>>(valuesXORLists);
-        }
+
 
         private void getRandomValues()
         {
@@ -193,7 +189,6 @@ namespace Taller1_Simulacion
                     double un = lcg.Next();
                     long xn = lcg.LastXn;
                     table.Rows.Add(j + 1, xn, un);
-                    // Console.WriteLine($"LCG {modulos[i]} - Iteración {j + 1}: Xn={xn}, Un={un}");
                     valuesList.Add(un);
                 }
             }
@@ -205,7 +200,6 @@ namespace Taller1_Simulacion
                 for (int j = 0; j < randomQuantity[i]; j++)
                 {
                     double un = xorGenerator.Next();
-                    //Console.WriteLine($"XOR Shift - Iteración {j + 1}: Un={un}");
                     valuesXORLists[i].Add(un);
                     tablesXOR[i].Rows.Add(j + 1, xorGenerator.x, un);
                 }
@@ -304,11 +298,11 @@ namespace Taller1_Simulacion
         }
 
         private void runFrequencyTests() {
-            for (int i = 0; i < 1; i++)
+            for (int i = 0; i < valuesLCGLists.Count; i++)
             {
                 FrequencyTest(valuesLCGLists[i], labelsRepeatedLCG[i]);
             }
-            for (int i = 0; i < 1; i++)
+            for (int i = 0; i < valuesXORLists.Count; i++)
             {
                 FrequencyTest(valuesXORLists[i], labelsRepeatedXOR[i]);
             }
@@ -316,7 +310,7 @@ namespace Taller1_Simulacion
 
         private void runDistributionTests() {
 
-            for (int i = 0; i < 1; i++)
+            for (int i = 0; i < rangedCharts.Count; i++)
             {
                 graphDistributedRanges(rangedCharts[i], valuesLCGLists[i], 0);
                 graphDistributedRanges(rangedCharts[i], valuesXORLists[i], 1);
@@ -325,7 +319,7 @@ namespace Taller1_Simulacion
         }
 
         private void runTrendTests() {
-            for (int i = 0; i < 1; i++)
+            for (int i = 0; i < trendLCGCharts.Count; i++)
             {
                 graphTrendChart(trendLCGCharts[i], valuesLCGLists[i]);
                 graphTrendChart(trendXORCharts[i], valuesXORLists[i]);
@@ -334,27 +328,42 @@ namespace Taller1_Simulacion
 
         private void runCorrelationTests()
         {
-            for ( int i = 0; i < 1; i++)
+            for ( int i = 0; i < correlationLCGCharts.Count; i++)
             {
                 graphCorrelation(correlationLCGCharts[i], valuesLCGLists[i]);
                 double corrLCG = calcCorrelation(valuesLCGLists[i]);
                 TextAnnotation noteLCG = (TextAnnotation)correlationLCGCharts[i].Annotations["txtAnnLCGCorrelation"];
-                noteLCG.Text = $"Correlación (r): {corrLCG:F4}";
+                if (double.IsNaN(corrLCG))
+                {
+                    noteLCG.Text = $"Correlación (r): No se pudo calcular (n <= 2)";
+                    
+                }else
+                {
+                    noteLCG.Text = $"Correlación (r): {corrLCG:F4}";
+                }
+                
 
                 graphCorrelation(correlationXORCharts[i], valuesXORLists[i]);
                 double corrXOR = calcCorrelation(valuesXORLists[i]);
                 TextAnnotation noteXOR = (TextAnnotation)correlationXORCharts[i].Annotations["txtAnnXorCorrelation"];
-                noteXOR.Text = $"Correlación (r): {corrXOR:F4}";
+                if (double.IsNaN(corrXOR))
+                {
+                    noteXOR.Text = $"Correlación (r): No se pudo calcular (n <= 2)";
+                }
+                else
+                {
+                    noteXOR.Text = $"Correlación (r): {corrXOR:F4}";
+                }
 
             }
         }
 
         private void runKSTests() {
-            for (int i = 0; i < 1; i++)
+            for (int i = 0; i < KSLCGlabels.Count; i++)
             {
                 KSTest(valuesLCGLists[i], KSLCGlabels[i]);
             }
-            for (int i = 0; i < 1; i++)
+            for (int i = 0; i < KSXORlabels.Count; i++)
             {
                 KSTest(valuesXORLists[i], KSXORlabels[i]);
             }
@@ -413,34 +422,40 @@ namespace Taller1_Simulacion
                 frequencies[rangeIndex]++;
             }
             ch.Series[serie].Points.Clear();
+            string[] tags = new string[ranges];
             for (int i = 0; i < ranges; i++)
             {
                 string tag = $"{(i * rangeSize):F2} - {((i + 1) * rangeSize):F2}";
-                ch.Series[serie].Points.AddXY(tag, frequencies[i]);
+                tags[i] = tag;
             }
+            ch.Series[serie].Points.DataBindXY(tags, frequencies);
+            ch.Series[serie].Points.ResumeUpdates();
         }
 
         private void graphTrendChart(Chart ch, List<double> lst)
         {
             ch.Series[0].Points.Clear();
-            for (int i = 0; i < lst.Count; i++)
-            {
-                ch.Series[0].Points.AddXY(i + 1, lst[i]);
-            }
+            ch.Series[0].Points.DataBindY(lst);
+            ch.Series[0].Points.ResumeUpdates();
         }
 
         private void graphCorrelation(Chart ch, List<double> lst)
         {
             ch.Series[0].Points.Clear();
-            for (int i = 0; i < lst.Count - 1; i++)
+            List<double> xValues = new List<double>();
+            List<double> yValues = new List<double>();
+            for (int i = 0; i < lst.Count - 1; i+=2)
             {
-                ch.Series[0].Points.AddXY(lst[i], lst[i + 1]);
+                xValues.Add(lst[i]);
+                yValues.Add(lst[i + 1]);
             }
+            ch.Series[0].Points.DataBindXY(xValues, yValues);
+            ch.Series[0].Points.ResumeUpdates();
         }
 
         private double calcCorrelation(List<double> lst) {
             int n = lst.Count - 1;
-            if (n <= 0) return 0.0;
+            if (n <= 2) return double.NaN;
             double sumX = 0, sumY = 0, sumXY = 0, sumX2 = 0, sumY2 = 0;
             for ( int i = 0; i < n; i++)
             {
@@ -455,7 +470,7 @@ namespace Taller1_Simulacion
             double num = (n * sumXY) - (sumX * sumY);   
             double den = Math.Sqrt(((n * sumX2) - (sumX * sumX)) * ((n * sumY2) - (sumY * sumY)));
 
-            if (den == 0) return 0.0;
+            if (den == 0 ) return 0.0;
             return num / den;
         }
 
@@ -488,19 +503,12 @@ namespace Taller1_Simulacion
 
             double percent = calcRandomnessPercent(dCalculated, n);
 
-            kslabel.Text = $"D calculado = {dCalculated:F4}\nD crítico = {dCritical:F4}\nPorcentaje de aleatoreidad de los números generados = {percent:F2}%";
-            if (dCalculated <= dCritical)
+            kslabel.Text = $"D calculado = {dCalculated:F4}\nD crítico = {dCritical:F4}\nPorcentaje de compatibilidad con la distribución uniforme de los números generados = {percent:F2}%";
+            if (percent >= 5.0)
             {
-                if (percent >= 90)
-                {
-                    kslabel.ForeColor = Color.DarkGreen;
-                    kslabel.BackColor = Color.LightGreen;
-                }
-                else
-                {
-                    kslabel.ForeColor = Color.Orange;
-                    kslabel.BackColor = Color.LightYellow;
-                }
+                kslabel.ForeColor = Color.DarkGreen;
+                kslabel.BackColor = Color.LightGreen;
+            
             }
             else { 
                 kslabel.ForeColor = Color.DarkRed; 
@@ -511,14 +519,15 @@ namespace Taller1_Simulacion
         private double calcRandomnessPercent ( double dCalculated , int n)
         {
             double x = dCalculated * Math.Sqrt(n);
-            if (x == 0) return 100.0;
+            if (x < 0.27) return 100.0;
 
             double sum = 0;
-            for ( int j = 1; j <= 10; j++)
+            for (int j = 1; j <= 100; j++)
             {
-                double sign = Math.Pow(-1, j - 1);
-                double exp = Math.Exp(-2 * j * j * x * x);
-                sum += sign * exp;
+                double term = Math.Pow(-1, j - 1) * Math.Exp(-2 * j * j * x * x);
+                sum += term;
+
+                if (Math.Abs(term) < 1e-10) break;
             }
 
             double p = 2 * sum;
