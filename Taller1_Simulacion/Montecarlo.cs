@@ -8,29 +8,45 @@ namespace Taller1_Simulacion
 {
     internal class Montecarlo
     {
-        private IRandomGenerator _rgn;
+        
         private List<Func<Point,bool>> _constraints;
         private Point _lowerPoint, _upperPoint;
 
-        public Montecarlo(IRandomGenerator rng, List<Func<Point, bool>> constraint_functions, Point lowerPoint, Point upperPoint) { 
-            _rgn = rng;
+        public Montecarlo( List<Func<Point, bool>> constraint_functions, Point lowerPoint, Point upperPoint) { 
+           
             _constraints = constraint_functions;
             _lowerPoint = lowerPoint;
             _upperPoint = upperPoint;
         }
-        public double EstimateArea( int iterations ) { 
-            int inside_count = 0;
-            for (int i = 0; i < iterations; i++)
-            {
-                var p = new Point(
-                    _lowerPoint.X + _rgn.Next() * (_upperPoint.X - _lowerPoint.X),
-                    _lowerPoint.Y + _rgn.Next() * (_upperPoint.Y - _lowerPoint.Y)
-                );
-                if (isInside(p)) inside_count++;
-            }
+        public double EstimateArea( int totalPoints, int insidePoints ) { 
             double total_area = (_upperPoint.X - _lowerPoint.X) * (_upperPoint.Y - _lowerPoint.Y);
-            return ((double)inside_count / iterations) * total_area;
+            return ((double)insidePoints / totalPoints) * total_area;
         }
+
+        public ( List<Point> inside, List<Point> outside) processPoints ( List<double> randValues)
+        {
+            List<Point> inside = new List<Point>();
+            List<Point> outside = new List<Point>();
+            for (int i = 0; i < randValues.Count; i += 2)
+            {
+                Point p = new Point
+                {
+                    X = _lowerPoint.X + randValues[i] * (_upperPoint.X - _lowerPoint.X),
+                    Y = _lowerPoint.Y + randValues[i + 1] * (_upperPoint.Y - _lowerPoint.Y)
+                };
+                if (isInside(p))
+                {
+                    inside.Add(p);
+                }
+                else
+                {
+                    outside.Add(p);
+                }
+            }
+            return (inside, outside);
+        }
+
+
         private bool isInside( Point p ) { 
             foreach ( var constraint in _constraints)
             {

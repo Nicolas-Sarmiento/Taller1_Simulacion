@@ -28,117 +28,153 @@ namespace Taller1_Simulacion
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea26 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series31 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series32 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title26 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea27 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series33 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title27 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea57 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend17 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series97 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series98 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title57 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea58 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series99 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title58 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea28 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series34 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title28 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.TextAnnotation textAnnotation11 = new System.Windows.Forms.DataVisualization.Charting.TextAnnotation();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea29 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series35 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title29 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.TextAnnotation textAnnotation12 = new System.Windows.Forms.DataVisualization.Charting.TextAnnotation();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea30 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series36 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title30 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea31 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series37 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series38 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title31 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea32 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series39 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title32 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea33 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series40 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title33 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.TextAnnotation textAnnotation13 = new System.Windows.Forms.DataVisualization.Charting.TextAnnotation();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea34 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series41 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title34 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.TextAnnotation textAnnotation14 = new System.Windows.Forms.DataVisualization.Charting.TextAnnotation();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea35 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series42 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title35 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea36 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series43 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series44 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title36 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea37 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series45 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title37 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea38 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series46 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title38 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.TextAnnotation textAnnotation15 = new System.Windows.Forms.DataVisualization.Charting.TextAnnotation();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea39 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series47 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title39 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.TextAnnotation textAnnotation16 = new System.Windows.Forms.DataVisualization.Charting.TextAnnotation();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea40 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series48 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title40 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea41 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series49 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series50 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title41 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea42 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series51 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title42 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea43 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series52 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title43 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.TextAnnotation textAnnotation17 = new System.Windows.Forms.DataVisualization.Charting.TextAnnotation();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea44 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series53 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title44 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.TextAnnotation textAnnotation18 = new System.Windows.Forms.DataVisualization.Charting.TextAnnotation();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea45 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series54 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title45 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea46 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series55 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series56 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title46 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea47 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series57 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title47 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea48 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series58 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title48 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.TextAnnotation textAnnotation19 = new System.Windows.Forms.DataVisualization.Charting.TextAnnotation();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea49 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series59 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title49 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.TextAnnotation textAnnotation20 = new System.Windows.Forms.DataVisualization.Charting.TextAnnotation();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea50 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series60 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title50 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea59 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series100 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title59 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.TextAnnotation textAnnotation21 = new System.Windows.Forms.DataVisualization.Charting.TextAnnotation();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea60 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series101 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title60 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.TextAnnotation textAnnotation22 = new System.Windows.Forms.DataVisualization.Charting.TextAnnotation();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea61 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series102 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title61 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea62 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend18 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series103 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series104 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title62 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea63 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series105 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title63 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea64 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series106 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title64 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.TextAnnotation textAnnotation23 = new System.Windows.Forms.DataVisualization.Charting.TextAnnotation();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea65 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series107 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title65 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.TextAnnotation textAnnotation24 = new System.Windows.Forms.DataVisualization.Charting.TextAnnotation();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea66 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series108 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title66 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea67 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend19 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series109 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series110 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title67 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea68 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series111 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title68 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea69 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series112 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title69 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.TextAnnotation textAnnotation25 = new System.Windows.Forms.DataVisualization.Charting.TextAnnotation();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea70 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series113 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title70 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.TextAnnotation textAnnotation26 = new System.Windows.Forms.DataVisualization.Charting.TextAnnotation();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea71 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series114 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title71 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea72 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend20 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series115 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series116 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title72 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea73 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series117 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title73 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea74 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series118 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title74 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.TextAnnotation textAnnotation27 = new System.Windows.Forms.DataVisualization.Charting.TextAnnotation();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea75 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series119 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title75 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.TextAnnotation textAnnotation28 = new System.Windows.Forms.DataVisualization.Charting.TextAnnotation();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea76 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series120 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title76 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea77 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend21 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series121 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series122 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title77 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea78 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series123 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title78 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea79 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series124 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title79 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.TextAnnotation textAnnotation29 = new System.Windows.Forms.DataVisualization.Charting.TextAnnotation();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea80 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series125 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title80 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.TextAnnotation textAnnotation30 = new System.Windows.Forms.DataVisualization.Charting.TextAnnotation();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea81 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series126 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title81 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea82 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend22 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series127 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series128 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series129 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series130 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series131 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series132 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title82 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea83 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend23 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series133 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series134 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series135 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series136 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series137 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series138 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title83 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea55 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend15 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series85 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series86 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series87 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series88 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series89 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series90 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title55 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea56 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend16 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series91 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series92 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series93 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series94 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series95 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series96 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title56 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.btnRun = new System.Windows.Forms.Button();
             this.txtParamA = new System.Windows.Forms.TextBox();
             this.txtParamC = new System.Windows.Forms.TextBox();
@@ -147,7 +183,7 @@ namespace Taller1_Simulacion
             this.lblParamC = new System.Windows.Forms.Label();
             this.lblLCGDef = new System.Windows.Forms.Label();
             this.lblSeed = new System.Windows.Forms.Label();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabControlMain = new System.Windows.Forms.TabControl();
             this.tbRandom = new System.Windows.Forms.TabPage();
             this.lblRandomInfo = new System.Windows.Forms.Label();
             this.tbIteration20 = new System.Windows.Forms.TabControl();
@@ -377,7 +413,24 @@ namespace Taller1_Simulacion
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnRunMontecarlo = new System.Windows.Forms.Button();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            this.tabControl1.SuspendLayout();
+            this.lblMontecarloInfo = new System.Windows.Forms.Label();
+            this.tbcMontecarloIterations = new System.Windows.Forms.TabControl();
+            this.i10 = new System.Windows.Forms.TabPage();
+            this.i100 = new System.Windows.Forms.TabPage();
+            this.i1000 = new System.Windows.Forms.TabPage();
+            this.i5000 = new System.Windows.Forms.TabPage();
+            this.i10000 = new System.Windows.Forms.TabPage();
+            this.chMontecarloLGCI10 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.layoutI10 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblLCGResultI10 = new System.Windows.Forms.Label();
+            this.lblXORResultI10 = new System.Windows.Forms.Label();
+            this.chMontecarloXORI10 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.label1 = new System.Windows.Forms.Label();
+            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tabControlMain.SuspendLayout();
             this.tbRandom.SuspendLayout();
             this.tbIteration20.SuspendLayout();
             this.tbRand20.SuspendLayout();
@@ -480,11 +533,21 @@ namespace Taller1_Simulacion
             this.tabPage33.SuspendLayout();
             this.tableLayoutPanel42.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridXor20000)).BeginInit();
+            this.tbMontecarlo.SuspendLayout();
             this.layaoutControls.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
+            this.tbcMontecarloIterations.SuspendLayout();
+            this.i10.SuspendLayout();
+            this.i100.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chMontecarloLGCI10)).BeginInit();
+            this.layoutI10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chMontecarloXORI10)).BeginInit();
+            this.tableLayoutPanel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             this.SuspendLayout();
             // 
             // btnRun
@@ -565,18 +628,18 @@ namespace Taller1_Simulacion
             this.lblSeed.TabIndex = 7;
             this.lblSeed.Text = "semilla";
             // 
-            // tabControl1
+            // tabControlMain
             // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.tabControlMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabControl1.Controls.Add(this.tbRandom);
-            this.tabControl1.Controls.Add(this.tbMontecarlo);
-            this.tabControl1.Location = new System.Drawing.Point(3, 153);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1298, 832);
-            this.tabControl1.TabIndex = 8;
+            this.tabControlMain.Controls.Add(this.tbRandom);
+            this.tabControlMain.Controls.Add(this.tbMontecarlo);
+            this.tabControlMain.Location = new System.Drawing.Point(3, 153);
+            this.tabControlMain.Name = "tabControlMain";
+            this.tabControlMain.SelectedIndex = 0;
+            this.tabControlMain.Size = new System.Drawing.Size(1298, 832);
+            this.tabControlMain.TabIndex = 8;
             // 
             // tbRandom
             // 
@@ -592,8 +655,9 @@ namespace Taller1_Simulacion
             // 
             // lblRandomInfo
             // 
+            this.lblRandomInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblRandomInfo.AutoSize = true;
-            this.lblRandomInfo.Location = new System.Drawing.Point(12, 9);
+            this.lblRandomInfo.Location = new System.Drawing.Point(573, 9);
             this.lblRandomInfo.Name = "lblRandomInfo";
             this.lblRandomInfo.Size = new System.Drawing.Size(271, 13);
             this.lblRandomInfo.TabIndex = 1;
@@ -682,9 +746,9 @@ namespace Taller1_Simulacion
             // un
             // 
             this.un.DataPropertyName = "Un";
-            dataGridViewCellStyle16.Format = "G8";
-            dataGridViewCellStyle16.NullValue = null;
-            this.un.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle31.Format = "G8";
+            dataGridViewCellStyle31.NullValue = null;
+            this.un.DefaultCellStyle = dataGridViewCellStyle31;
             this.un.HeaderText = "Un";
             this.un.Name = "un";
             this.un.ReadOnly = true;
@@ -821,32 +885,32 @@ namespace Taller1_Simulacion
             // 
             // chRanges20
             // 
-            chartArea26.AxisX.Interval = 1D;
-            chartArea26.AxisX.Title = "Intervalos";
-            chartArea26.AxisY.Title = "Frecuencia";
-            chartArea26.Name = "ChartArea1";
-            this.chRanges20.ChartAreas.Add(chartArea26);
+            chartArea57.AxisX.Interval = 1D;
+            chartArea57.AxisX.Title = "Intervalos";
+            chartArea57.AxisY.Title = "Frecuencia";
+            chartArea57.Name = "ChartArea1";
+            this.chRanges20.ChartAreas.Add(chartArea57);
             this.chRanges20.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend6.Name = "Legend1";
-            legend6.Title = "Generador";
-            this.chRanges20.Legends.Add(legend6);
+            legend17.Name = "Legend1";
+            legend17.Title = "Generador";
+            this.chRanges20.Legends.Add(legend17);
             this.chRanges20.Location = new System.Drawing.Point(3, 43);
             this.chRanges20.Name = "chRanges20";
-            series31.ChartArea = "ChartArea1";
-            series31.Color = System.Drawing.Color.Red;
-            series31.Legend = "Legend1";
-            series31.Name = "Congruencial";
-            series32.ChartArea = "ChartArea1";
-            series32.Legend = "Legend1";
-            series32.Name = "XOR shift";
-            this.chRanges20.Series.Add(series31);
-            this.chRanges20.Series.Add(series32);
+            series97.ChartArea = "ChartArea1";
+            series97.Color = System.Drawing.Color.Red;
+            series97.Legend = "Legend1";
+            series97.Name = "Congruencial";
+            series98.ChartArea = "ChartArea1";
+            series98.Legend = "Legend1";
+            series98.Name = "XOR shift";
+            this.chRanges20.Series.Add(series97);
+            this.chRanges20.Series.Add(series98);
             this.chRanges20.Size = new System.Drawing.Size(598, 517);
             this.chRanges20.TabIndex = 0;
             this.chRanges20.Text = "chart1";
-            title26.Name = "Title1";
-            title26.Text = "Distribución de los números pseudoaleatorios generados por rangos";
-            this.chRanges20.Titles.Add(title26);
+            title57.Name = "Title1";
+            title57.Text = "Distribución de los números pseudoaleatorios generados por rangos";
+            this.chRanges20.Titles.Add(title57);
             // 
             // lblRangesInfo20
             // 
@@ -891,24 +955,24 @@ namespace Taller1_Simulacion
             // 
             // chXORTrendTest20
             // 
-            chartArea27.AxisX.Title = "Iteración";
-            chartArea27.AxisY.Title = "Valor generado (Un)";
-            chartArea27.Name = "ChartArea1";
-            this.chXORTrendTest20.ChartAreas.Add(chartArea27);
+            chartArea58.AxisX.Title = "Iteración";
+            chartArea58.AxisY.Title = "Valor generado (Un)";
+            chartArea58.Name = "ChartArea1";
+            this.chXORTrendTest20.ChartAreas.Add(chartArea58);
             this.chXORTrendTest20.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chXORTrendTest20.Location = new System.Drawing.Point(3, 304);
             this.chXORTrendTest20.Name = "chXORTrendTest20";
-            series33.ChartArea = "ChartArea1";
-            series33.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series33.Color = System.Drawing.Color.Red;
-            series33.Name = "XOR shift";
-            this.chXORTrendTest20.Series.Add(series33);
+            series99.ChartArea = "ChartArea1";
+            series99.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series99.Color = System.Drawing.Color.Red;
+            series99.Name = "XOR shift";
+            this.chXORTrendTest20.Series.Add(series99);
             this.chXORTrendTest20.Size = new System.Drawing.Size(598, 256);
             this.chXORTrendTest20.TabIndex = 2;
             this.chXORTrendTest20.Text = "chart1";
-            title27.Name = "Title1";
-            title27.Text = "Prueba de Tendencia Generador XOR Shift";
-            this.chXORTrendTest20.Titles.Add(title27);
+            title58.Name = "Title1";
+            title58.Text = "Prueba de Tendencia Generador XOR Shift";
+            this.chXORTrendTest20.Titles.Add(title58);
             // 
             // lblTrendInfo20
             // 
@@ -922,23 +986,23 @@ namespace Taller1_Simulacion
             // 
             // chLCGTrendTest20
             // 
-            chartArea28.AxisX.Title = "Iteración";
-            chartArea28.AxisY.Title = "Valor generado (Un)";
-            chartArea28.Name = "ChartArea1";
-            this.chLCGTrendTest20.ChartAreas.Add(chartArea28);
+            chartArea59.AxisX.Title = "Iteración";
+            chartArea59.AxisY.Title = "Valor generado (Un)";
+            chartArea59.Name = "ChartArea1";
+            this.chLCGTrendTest20.ChartAreas.Add(chartArea59);
             this.chLCGTrendTest20.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chLCGTrendTest20.Location = new System.Drawing.Point(3, 43);
             this.chLCGTrendTest20.Name = "chLCGTrendTest20";
-            series34.ChartArea = "ChartArea1";
-            series34.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series34.Name = "Congruencial";
-            this.chLCGTrendTest20.Series.Add(series34);
+            series100.ChartArea = "ChartArea1";
+            series100.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series100.Name = "Congruencial";
+            this.chLCGTrendTest20.Series.Add(series100);
             this.chLCGTrendTest20.Size = new System.Drawing.Size(598, 255);
             this.chLCGTrendTest20.TabIndex = 1;
             this.chLCGTrendTest20.Text = "chart1";
-            title28.Name = "Title1";
-            title28.Text = "Prueba de Tendencia Generador Congruencial";
-            this.chLCGTrendTest20.Titles.Add(title28);
+            title59.Name = "Title1";
+            title59.Text = "Prueba de Tendencia Generador Congruencial";
+            this.chLCGTrendTest20.Titles.Add(title59);
             // 
             // tabPage11
             // 
@@ -971,28 +1035,28 @@ namespace Taller1_Simulacion
             // 
             // chLCGCorrelation20
             // 
-            textAnnotation11.Name = "txtAnnLCGCorrelation";
-            textAnnotation11.Text = "Correlación Congruencial: 0.0001";
-            textAnnotation11.X = 0D;
-            textAnnotation11.Y = 93D;
-            this.chLCGCorrelation20.Annotations.Add(textAnnotation11);
-            chartArea29.AxisX.Title = "Valor Actual (Un)";
-            chartArea29.AxisY.Title = "Valor Siguiente (Un+1)";
-            chartArea29.Name = "ChartArea1";
-            this.chLCGCorrelation20.ChartAreas.Add(chartArea29);
+            textAnnotation21.Name = "txtAnnLCGCorrelation";
+            textAnnotation21.Text = "Correlación Congruencial: 0.0001";
+            textAnnotation21.X = 0D;
+            textAnnotation21.Y = 93D;
+            this.chLCGCorrelation20.Annotations.Add(textAnnotation21);
+            chartArea60.AxisX.Title = "Valor Actual (Un)";
+            chartArea60.AxisY.Title = "Valor Siguiente (Un+1)";
+            chartArea60.Name = "ChartArea1";
+            this.chLCGCorrelation20.ChartAreas.Add(chartArea60);
             this.chLCGCorrelation20.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chLCGCorrelation20.Location = new System.Drawing.Point(3, 63);
             this.chLCGCorrelation20.Name = "chLCGCorrelation20";
-            series35.ChartArea = "ChartArea1";
-            series35.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastPoint;
-            series35.Name = "Series1";
-            this.chLCGCorrelation20.Series.Add(series35);
+            series101.ChartArea = "ChartArea1";
+            series101.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastPoint;
+            series101.Name = "Series1";
+            this.chLCGCorrelation20.Series.Add(series101);
             this.chLCGCorrelation20.Size = new System.Drawing.Size(598, 245);
             this.chLCGCorrelation20.TabIndex = 3;
             this.chLCGCorrelation20.Text = "chart1";
-            title29.Name = "Title1";
-            title29.Text = "Prueba Correlación Generador Congruencial ";
-            this.chLCGCorrelation20.Titles.Add(title29);
+            title60.Name = "Title1";
+            title60.Text = "Prueba Correlación Generador Congruencial ";
+            this.chLCGCorrelation20.Titles.Add(title60);
             // 
             // lblCorrelationInfo20
             // 
@@ -1006,29 +1070,29 @@ namespace Taller1_Simulacion
             // 
             // chXORCorrelation20
             // 
-            textAnnotation12.Name = "txtAnnXorCorrelation";
-            textAnnotation12.Text = "Correlación XOR shift: 0.0001";
-            textAnnotation12.X = 0D;
-            textAnnotation12.Y = 93D;
-            this.chXORCorrelation20.Annotations.Add(textAnnotation12);
-            chartArea30.AxisX.Title = "Valor Actual (Un)";
-            chartArea30.AxisY.Title = "Valor Siguiente (Un+1)";
-            chartArea30.Name = "ChartArea1";
-            this.chXORCorrelation20.ChartAreas.Add(chartArea30);
+            textAnnotation22.Name = "txtAnnXorCorrelation";
+            textAnnotation22.Text = "Correlación XOR shift: 0.0001";
+            textAnnotation22.X = 0D;
+            textAnnotation22.Y = 93D;
+            this.chXORCorrelation20.Annotations.Add(textAnnotation22);
+            chartArea61.AxisX.Title = "Valor Actual (Un)";
+            chartArea61.AxisY.Title = "Valor Siguiente (Un+1)";
+            chartArea61.Name = "ChartArea1";
+            this.chXORCorrelation20.ChartAreas.Add(chartArea61);
             this.chXORCorrelation20.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chXORCorrelation20.Location = new System.Drawing.Point(3, 314);
             this.chXORCorrelation20.Name = "chXORCorrelation20";
-            series36.ChartArea = "ChartArea1";
-            series36.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastPoint;
-            series36.Color = System.Drawing.Color.Red;
-            series36.Name = "Series1";
-            this.chXORCorrelation20.Series.Add(series36);
+            series102.ChartArea = "ChartArea1";
+            series102.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastPoint;
+            series102.Color = System.Drawing.Color.Red;
+            series102.Name = "Series1";
+            this.chXORCorrelation20.Series.Add(series102);
             this.chXORCorrelation20.Size = new System.Drawing.Size(598, 246);
             this.chXORCorrelation20.TabIndex = 2;
             this.chXORCorrelation20.Text = "chart1";
-            title30.Name = "Title1";
-            title30.Text = "Prueba Correlación Generador Xor shift ";
-            this.chXORCorrelation20.Titles.Add(title30);
+            title61.Name = "Title1";
+            title61.Text = "Prueba Correlación Generador Xor shift ";
+            this.chXORCorrelation20.Titles.Add(title61);
             // 
             // tbKolmo
             // 
@@ -1147,8 +1211,8 @@ namespace Taller1_Simulacion
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "I";
-            dataGridViewCellStyle17.NullValue = null;
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle32.NullValue = null;
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle32;
             this.dataGridViewTextBoxColumn1.HeaderText = "iteración";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
@@ -1163,9 +1227,9 @@ namespace Taller1_Simulacion
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "Un";
-            dataGridViewCellStyle18.Format = "G8";
-            dataGridViewCellStyle18.NullValue = null;
-            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle33.Format = "G8";
+            dataGridViewCellStyle33.NullValue = null;
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle33;
             this.dataGridViewTextBoxColumn3.HeaderText = "Un";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
@@ -1260,9 +1324,9 @@ namespace Taller1_Simulacion
             // dataGridViewTextBoxColumn18
             // 
             this.dataGridViewTextBoxColumn18.DataPropertyName = "Un";
-            dataGridViewCellStyle19.Format = "G8";
-            dataGridViewCellStyle19.NullValue = null;
-            this.dataGridViewTextBoxColumn18.DefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle34.Format = "G8";
+            dataGridViewCellStyle34.NullValue = null;
+            this.dataGridViewTextBoxColumn18.DefaultCellStyle = dataGridViewCellStyle34;
             this.dataGridViewTextBoxColumn18.HeaderText = "Un";
             this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
             this.dataGridViewTextBoxColumn18.ReadOnly = true;
@@ -1399,32 +1463,32 @@ namespace Taller1_Simulacion
             // 
             // chRanges200
             // 
-            chartArea31.AxisX.Interval = 1D;
-            chartArea31.AxisX.Title = "Intervalos";
-            chartArea31.AxisY.Title = "Frecuencia";
-            chartArea31.Name = "ChartArea1";
-            this.chRanges200.ChartAreas.Add(chartArea31);
+            chartArea62.AxisX.Interval = 1D;
+            chartArea62.AxisX.Title = "Intervalos";
+            chartArea62.AxisY.Title = "Frecuencia";
+            chartArea62.Name = "ChartArea1";
+            this.chRanges200.ChartAreas.Add(chartArea62);
             this.chRanges200.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend7.Name = "Legend1";
-            legend7.Title = "Generador";
-            this.chRanges200.Legends.Add(legend7);
+            legend18.Name = "Legend1";
+            legend18.Title = "Generador";
+            this.chRanges200.Legends.Add(legend18);
             this.chRanges200.Location = new System.Drawing.Point(3, 43);
             this.chRanges200.Name = "chRanges200";
-            series37.ChartArea = "ChartArea1";
-            series37.Color = System.Drawing.Color.Red;
-            series37.Legend = "Legend1";
-            series37.Name = "Congruencial";
-            series38.ChartArea = "ChartArea1";
-            series38.Legend = "Legend1";
-            series38.Name = "XOR shift";
-            this.chRanges200.Series.Add(series37);
-            this.chRanges200.Series.Add(series38);
+            series103.ChartArea = "ChartArea1";
+            series103.Color = System.Drawing.Color.Red;
+            series103.Legend = "Legend1";
+            series103.Name = "Congruencial";
+            series104.ChartArea = "ChartArea1";
+            series104.Legend = "Legend1";
+            series104.Name = "XOR shift";
+            this.chRanges200.Series.Add(series103);
+            this.chRanges200.Series.Add(series104);
             this.chRanges200.Size = new System.Drawing.Size(598, 517);
             this.chRanges200.TabIndex = 0;
             this.chRanges200.Text = "chart1";
-            title31.Name = "Title1";
-            title31.Text = "Distribución de los números pseudoaleatorios generados por rangos";
-            this.chRanges200.Titles.Add(title31);
+            title62.Name = "Title1";
+            title62.Text = "Distribución de los números pseudoaleatorios generados por rangos";
+            this.chRanges200.Titles.Add(title62);
             // 
             // lblRangesInfo200
             // 
@@ -1469,24 +1533,24 @@ namespace Taller1_Simulacion
             // 
             // chXORTrendTest200
             // 
-            chartArea32.AxisX.Title = "Iteración";
-            chartArea32.AxisY.Title = "Valor generado (Un)";
-            chartArea32.Name = "ChartArea1";
-            this.chXORTrendTest200.ChartAreas.Add(chartArea32);
+            chartArea63.AxisX.Title = "Iteración";
+            chartArea63.AxisY.Title = "Valor generado (Un)";
+            chartArea63.Name = "ChartArea1";
+            this.chXORTrendTest200.ChartAreas.Add(chartArea63);
             this.chXORTrendTest200.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chXORTrendTest200.Location = new System.Drawing.Point(3, 304);
             this.chXORTrendTest200.Name = "chXORTrendTest200";
-            series39.ChartArea = "ChartArea1";
-            series39.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series39.Color = System.Drawing.Color.Red;
-            series39.Name = "XOR shift";
-            this.chXORTrendTest200.Series.Add(series39);
+            series105.ChartArea = "ChartArea1";
+            series105.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series105.Color = System.Drawing.Color.Red;
+            series105.Name = "XOR shift";
+            this.chXORTrendTest200.Series.Add(series105);
             this.chXORTrendTest200.Size = new System.Drawing.Size(598, 256);
             this.chXORTrendTest200.TabIndex = 2;
             this.chXORTrendTest200.Text = "chart1";
-            title32.Name = "Title1";
-            title32.Text = "Prueba de Tendencia Generador XOR Shift";
-            this.chXORTrendTest200.Titles.Add(title32);
+            title63.Name = "Title1";
+            title63.Text = "Prueba de Tendencia Generador XOR Shift";
+            this.chXORTrendTest200.Titles.Add(title63);
             // 
             // lblTrendTest200
             // 
@@ -1500,23 +1564,23 @@ namespace Taller1_Simulacion
             // 
             // chLCGTrendTest200
             // 
-            chartArea33.AxisX.Title = "Iteración";
-            chartArea33.AxisY.Title = "Valor generado (Un)";
-            chartArea33.Name = "ChartArea1";
-            this.chLCGTrendTest200.ChartAreas.Add(chartArea33);
+            chartArea64.AxisX.Title = "Iteración";
+            chartArea64.AxisY.Title = "Valor generado (Un)";
+            chartArea64.Name = "ChartArea1";
+            this.chLCGTrendTest200.ChartAreas.Add(chartArea64);
             this.chLCGTrendTest200.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chLCGTrendTest200.Location = new System.Drawing.Point(3, 43);
             this.chLCGTrendTest200.Name = "chLCGTrendTest200";
-            series40.ChartArea = "ChartArea1";
-            series40.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series40.Name = "Congruencial";
-            this.chLCGTrendTest200.Series.Add(series40);
+            series106.ChartArea = "ChartArea1";
+            series106.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series106.Name = "Congruencial";
+            this.chLCGTrendTest200.Series.Add(series106);
             this.chLCGTrendTest200.Size = new System.Drawing.Size(598, 255);
             this.chLCGTrendTest200.TabIndex = 1;
             this.chLCGTrendTest200.Text = "chart1";
-            title33.Name = "Title1";
-            title33.Text = "Prueba de Tendencia Generador Congruencial";
-            this.chLCGTrendTest200.Titles.Add(title33);
+            title64.Name = "Title1";
+            title64.Text = "Prueba de Tendencia Generador Congruencial";
+            this.chLCGTrendTest200.Titles.Add(title64);
             // 
             // tabPage17
             // 
@@ -1549,28 +1613,28 @@ namespace Taller1_Simulacion
             // 
             // chLCGCorrelation200
             // 
-            textAnnotation13.Name = "txtAnnLCGCorrelation";
-            textAnnotation13.Text = "Correlación Congruencial: 0.0001";
-            textAnnotation13.X = 0D;
-            textAnnotation13.Y = 93D;
-            this.chLCGCorrelation200.Annotations.Add(textAnnotation13);
-            chartArea34.AxisX.Title = "Valor Actual (Un)";
-            chartArea34.AxisY.Title = "Valor Siguiente (Un+1)";
-            chartArea34.Name = "ChartArea1";
-            this.chLCGCorrelation200.ChartAreas.Add(chartArea34);
+            textAnnotation23.Name = "txtAnnLCGCorrelation";
+            textAnnotation23.Text = "Correlación Congruencial: 0.0001";
+            textAnnotation23.X = 0D;
+            textAnnotation23.Y = 93D;
+            this.chLCGCorrelation200.Annotations.Add(textAnnotation23);
+            chartArea65.AxisX.Title = "Valor Actual (Un)";
+            chartArea65.AxisY.Title = "Valor Siguiente (Un+1)";
+            chartArea65.Name = "ChartArea1";
+            this.chLCGCorrelation200.ChartAreas.Add(chartArea65);
             this.chLCGCorrelation200.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chLCGCorrelation200.Location = new System.Drawing.Point(3, 63);
             this.chLCGCorrelation200.Name = "chLCGCorrelation200";
-            series41.ChartArea = "ChartArea1";
-            series41.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastPoint;
-            series41.Name = "Series1";
-            this.chLCGCorrelation200.Series.Add(series41);
+            series107.ChartArea = "ChartArea1";
+            series107.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastPoint;
+            series107.Name = "Series1";
+            this.chLCGCorrelation200.Series.Add(series107);
             this.chLCGCorrelation200.Size = new System.Drawing.Size(598, 245);
             this.chLCGCorrelation200.TabIndex = 3;
             this.chLCGCorrelation200.Text = "chart1";
-            title34.Name = "Title1";
-            title34.Text = "Prueba Correlación Generador Congruencial ";
-            this.chLCGCorrelation200.Titles.Add(title34);
+            title65.Name = "Title1";
+            title65.Text = "Prueba Correlación Generador Congruencial ";
+            this.chLCGCorrelation200.Titles.Add(title65);
             // 
             // lblCorrelationInfo200
             // 
@@ -1584,29 +1648,29 @@ namespace Taller1_Simulacion
             // 
             // chXORCorrelation200
             // 
-            textAnnotation14.Name = "txtAnnXorCorrelation";
-            textAnnotation14.Text = "Correlación XOR shift: 0.0001";
-            textAnnotation14.X = 0D;
-            textAnnotation14.Y = 93D;
-            this.chXORCorrelation200.Annotations.Add(textAnnotation14);
-            chartArea35.AxisX.Title = "Valor Actual (Un)";
-            chartArea35.AxisY.Title = "Valor Siguiente (Un+1)";
-            chartArea35.Name = "ChartArea1";
-            this.chXORCorrelation200.ChartAreas.Add(chartArea35);
+            textAnnotation24.Name = "txtAnnXorCorrelation";
+            textAnnotation24.Text = "Correlación XOR shift: 0.0001";
+            textAnnotation24.X = 0D;
+            textAnnotation24.Y = 93D;
+            this.chXORCorrelation200.Annotations.Add(textAnnotation24);
+            chartArea66.AxisX.Title = "Valor Actual (Un)";
+            chartArea66.AxisY.Title = "Valor Siguiente (Un+1)";
+            chartArea66.Name = "ChartArea1";
+            this.chXORCorrelation200.ChartAreas.Add(chartArea66);
             this.chXORCorrelation200.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chXORCorrelation200.Location = new System.Drawing.Point(3, 314);
             this.chXORCorrelation200.Name = "chXORCorrelation200";
-            series42.ChartArea = "ChartArea1";
-            series42.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastPoint;
-            series42.Color = System.Drawing.Color.Red;
-            series42.Name = "Series1";
-            this.chXORCorrelation200.Series.Add(series42);
+            series108.ChartArea = "ChartArea1";
+            series108.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastPoint;
+            series108.Color = System.Drawing.Color.Red;
+            series108.Name = "Series1";
+            this.chXORCorrelation200.Series.Add(series108);
             this.chXORCorrelation200.Size = new System.Drawing.Size(598, 246);
             this.chXORCorrelation200.TabIndex = 2;
             this.chXORCorrelation200.Text = "chart1";
-            title35.Name = "Title1";
-            title35.Text = "Prueba Correlación Generador Xor shift ";
-            this.chXORCorrelation200.Titles.Add(title35);
+            title66.Name = "Title1";
+            title66.Text = "Prueba Correlación Generador Xor shift ";
+            this.chXORCorrelation200.Titles.Add(title66);
             // 
             // tabPage18
             // 
@@ -1725,8 +1789,8 @@ namespace Taller1_Simulacion
             // dataGridViewTextBoxColumn19
             // 
             this.dataGridViewTextBoxColumn19.DataPropertyName = "I";
-            dataGridViewCellStyle20.NullValue = null;
-            this.dataGridViewTextBoxColumn19.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle35.NullValue = null;
+            this.dataGridViewTextBoxColumn19.DefaultCellStyle = dataGridViewCellStyle35;
             this.dataGridViewTextBoxColumn19.HeaderText = "iteración";
             this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
             this.dataGridViewTextBoxColumn19.ReadOnly = true;
@@ -1741,9 +1805,9 @@ namespace Taller1_Simulacion
             // dataGridViewTextBoxColumn21
             // 
             this.dataGridViewTextBoxColumn21.DataPropertyName = "Un";
-            dataGridViewCellStyle21.Format = "G8";
-            dataGridViewCellStyle21.NullValue = null;
-            this.dataGridViewTextBoxColumn21.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle36.Format = "G8";
+            dataGridViewCellStyle36.NullValue = null;
+            this.dataGridViewTextBoxColumn21.DefaultCellStyle = dataGridViewCellStyle36;
             this.dataGridViewTextBoxColumn21.HeaderText = "Un";
             this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
             this.dataGridViewTextBoxColumn21.ReadOnly = true;
@@ -1838,9 +1902,9 @@ namespace Taller1_Simulacion
             // dataGridViewTextBoxColumn24
             // 
             this.dataGridViewTextBoxColumn24.DataPropertyName = "Un";
-            dataGridViewCellStyle22.Format = "G8";
-            dataGridViewCellStyle22.NullValue = null;
-            this.dataGridViewTextBoxColumn24.DefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle37.Format = "G8";
+            dataGridViewCellStyle37.NullValue = null;
+            this.dataGridViewTextBoxColumn24.DefaultCellStyle = dataGridViewCellStyle37;
             this.dataGridViewTextBoxColumn24.HeaderText = "Un";
             this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
             this.dataGridViewTextBoxColumn24.ReadOnly = true;
@@ -1979,32 +2043,32 @@ namespace Taller1_Simulacion
             // 
             // chRanges2000
             // 
-            chartArea36.AxisX.Interval = 1D;
-            chartArea36.AxisX.Title = "Intervalos";
-            chartArea36.AxisY.Title = "Frecuencia";
-            chartArea36.Name = "ChartArea1";
-            this.chRanges2000.ChartAreas.Add(chartArea36);
+            chartArea67.AxisX.Interval = 1D;
+            chartArea67.AxisX.Title = "Intervalos";
+            chartArea67.AxisY.Title = "Frecuencia";
+            chartArea67.Name = "ChartArea1";
+            this.chRanges2000.ChartAreas.Add(chartArea67);
             this.chRanges2000.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend8.Name = "Legend1";
-            legend8.Title = "Generador";
-            this.chRanges2000.Legends.Add(legend8);
+            legend19.Name = "Legend1";
+            legend19.Title = "Generador";
+            this.chRanges2000.Legends.Add(legend19);
             this.chRanges2000.Location = new System.Drawing.Point(3, 43);
             this.chRanges2000.Name = "chRanges2000";
-            series43.ChartArea = "ChartArea1";
-            series43.Color = System.Drawing.Color.Red;
-            series43.Legend = "Legend1";
-            series43.Name = "Congruencial";
-            series44.ChartArea = "ChartArea1";
-            series44.Legend = "Legend1";
-            series44.Name = "XOR shift";
-            this.chRanges2000.Series.Add(series43);
-            this.chRanges2000.Series.Add(series44);
+            series109.ChartArea = "ChartArea1";
+            series109.Color = System.Drawing.Color.Red;
+            series109.Legend = "Legend1";
+            series109.Name = "Congruencial";
+            series110.ChartArea = "ChartArea1";
+            series110.Legend = "Legend1";
+            series110.Name = "XOR shift";
+            this.chRanges2000.Series.Add(series109);
+            this.chRanges2000.Series.Add(series110);
             this.chRanges2000.Size = new System.Drawing.Size(598, 517);
             this.chRanges2000.TabIndex = 0;
             this.chRanges2000.Text = "chart1";
-            title36.Name = "Title1";
-            title36.Text = "Distribución de los números pseudoaleatorios generados por rangos";
-            this.chRanges2000.Titles.Add(title36);
+            title67.Name = "Title1";
+            title67.Text = "Distribución de los números pseudoaleatorios generados por rangos";
+            this.chRanges2000.Titles.Add(title67);
             // 
             // lblRangesInfo2000
             // 
@@ -2049,24 +2113,24 @@ namespace Taller1_Simulacion
             // 
             // chXORTrendTest2000
             // 
-            chartArea37.AxisX.Title = "Iteración";
-            chartArea37.AxisY.Title = "Valor generado (Un)";
-            chartArea37.Name = "ChartArea1";
-            this.chXORTrendTest2000.ChartAreas.Add(chartArea37);
+            chartArea68.AxisX.Title = "Iteración";
+            chartArea68.AxisY.Title = "Valor generado (Un)";
+            chartArea68.Name = "ChartArea1";
+            this.chXORTrendTest2000.ChartAreas.Add(chartArea68);
             this.chXORTrendTest2000.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chXORTrendTest2000.Location = new System.Drawing.Point(3, 304);
             this.chXORTrendTest2000.Name = "chXORTrendTest2000";
-            series45.ChartArea = "ChartArea1";
-            series45.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series45.Color = System.Drawing.Color.Red;
-            series45.Name = "XOR shift";
-            this.chXORTrendTest2000.Series.Add(series45);
+            series111.ChartArea = "ChartArea1";
+            series111.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series111.Color = System.Drawing.Color.Red;
+            series111.Name = "XOR shift";
+            this.chXORTrendTest2000.Series.Add(series111);
             this.chXORTrendTest2000.Size = new System.Drawing.Size(598, 256);
             this.chXORTrendTest2000.TabIndex = 2;
             this.chXORTrendTest2000.Text = "chart1";
-            title37.Name = "Title1";
-            title37.Text = "Prueba de Tendencia Generador XOR Shift";
-            this.chXORTrendTest2000.Titles.Add(title37);
+            title68.Name = "Title1";
+            title68.Text = "Prueba de Tendencia Generador XOR Shift";
+            this.chXORTrendTest2000.Titles.Add(title68);
             // 
             // lblTrendTest2000
             // 
@@ -2080,23 +2144,23 @@ namespace Taller1_Simulacion
             // 
             // chLCGTrendTest2000
             // 
-            chartArea38.AxisX.Title = "Iteración";
-            chartArea38.AxisY.Title = "Valor generado (Un)";
-            chartArea38.Name = "ChartArea1";
-            this.chLCGTrendTest2000.ChartAreas.Add(chartArea38);
+            chartArea69.AxisX.Title = "Iteración";
+            chartArea69.AxisY.Title = "Valor generado (Un)";
+            chartArea69.Name = "ChartArea1";
+            this.chLCGTrendTest2000.ChartAreas.Add(chartArea69);
             this.chLCGTrendTest2000.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chLCGTrendTest2000.Location = new System.Drawing.Point(3, 43);
             this.chLCGTrendTest2000.Name = "chLCGTrendTest2000";
-            series46.ChartArea = "ChartArea1";
-            series46.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series46.Name = "Congruencial";
-            this.chLCGTrendTest2000.Series.Add(series46);
+            series112.ChartArea = "ChartArea1";
+            series112.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series112.Name = "Congruencial";
+            this.chLCGTrendTest2000.Series.Add(series112);
             this.chLCGTrendTest2000.Size = new System.Drawing.Size(598, 255);
             this.chLCGTrendTest2000.TabIndex = 1;
             this.chLCGTrendTest2000.Text = "chart1";
-            title38.Name = "Title1";
-            title38.Text = "Prueba de Tendencia Generador Congruencial";
-            this.chLCGTrendTest2000.Titles.Add(title38);
+            title69.Name = "Title1";
+            title69.Text = "Prueba de Tendencia Generador Congruencial";
+            this.chLCGTrendTest2000.Titles.Add(title69);
             // 
             // tabPage22
             // 
@@ -2129,28 +2193,28 @@ namespace Taller1_Simulacion
             // 
             // chLCGCorrelation2000
             // 
-            textAnnotation15.Name = "txtAnnLCGCorrelation";
-            textAnnotation15.Text = "Correlación Congruencial: 0.0001";
-            textAnnotation15.X = 0D;
-            textAnnotation15.Y = 93D;
-            this.chLCGCorrelation2000.Annotations.Add(textAnnotation15);
-            chartArea39.AxisX.Title = "Valor Actual (Un)";
-            chartArea39.AxisY.Title = "Valor Siguiente (Un+1)";
-            chartArea39.Name = "ChartArea1";
-            this.chLCGCorrelation2000.ChartAreas.Add(chartArea39);
+            textAnnotation25.Name = "txtAnnLCGCorrelation";
+            textAnnotation25.Text = "Correlación Congruencial: 0.0001";
+            textAnnotation25.X = 0D;
+            textAnnotation25.Y = 93D;
+            this.chLCGCorrelation2000.Annotations.Add(textAnnotation25);
+            chartArea70.AxisX.Title = "Valor Actual (Un)";
+            chartArea70.AxisY.Title = "Valor Siguiente (Un+1)";
+            chartArea70.Name = "ChartArea1";
+            this.chLCGCorrelation2000.ChartAreas.Add(chartArea70);
             this.chLCGCorrelation2000.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chLCGCorrelation2000.Location = new System.Drawing.Point(3, 63);
             this.chLCGCorrelation2000.Name = "chLCGCorrelation2000";
-            series47.ChartArea = "ChartArea1";
-            series47.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastPoint;
-            series47.Name = "Series1";
-            this.chLCGCorrelation2000.Series.Add(series47);
+            series113.ChartArea = "ChartArea1";
+            series113.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastPoint;
+            series113.Name = "Series1";
+            this.chLCGCorrelation2000.Series.Add(series113);
             this.chLCGCorrelation2000.Size = new System.Drawing.Size(598, 245);
             this.chLCGCorrelation2000.TabIndex = 3;
             this.chLCGCorrelation2000.Text = "chart1";
-            title39.Name = "Title1";
-            title39.Text = "Prueba Correlación Generador Congruencial ";
-            this.chLCGCorrelation2000.Titles.Add(title39);
+            title70.Name = "Title1";
+            title70.Text = "Prueba Correlación Generador Congruencial ";
+            this.chLCGCorrelation2000.Titles.Add(title70);
             // 
             // lblCorrelationInfo2000
             // 
@@ -2164,29 +2228,29 @@ namespace Taller1_Simulacion
             // 
             // chXORCorrelation2000
             // 
-            textAnnotation16.Name = "txtAnnXorCorrelation";
-            textAnnotation16.Text = "Correlación XOR shift: 0.0001";
-            textAnnotation16.X = 0D;
-            textAnnotation16.Y = 93D;
-            this.chXORCorrelation2000.Annotations.Add(textAnnotation16);
-            chartArea40.AxisX.Title = "Valor Actual (Un)";
-            chartArea40.AxisY.Title = "Valor Siguiente (Un+1)";
-            chartArea40.Name = "ChartArea1";
-            this.chXORCorrelation2000.ChartAreas.Add(chartArea40);
+            textAnnotation26.Name = "txtAnnXorCorrelation";
+            textAnnotation26.Text = "Correlación XOR shift: 0.0001";
+            textAnnotation26.X = 0D;
+            textAnnotation26.Y = 93D;
+            this.chXORCorrelation2000.Annotations.Add(textAnnotation26);
+            chartArea71.AxisX.Title = "Valor Actual (Un)";
+            chartArea71.AxisY.Title = "Valor Siguiente (Un+1)";
+            chartArea71.Name = "ChartArea1";
+            this.chXORCorrelation2000.ChartAreas.Add(chartArea71);
             this.chXORCorrelation2000.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chXORCorrelation2000.Location = new System.Drawing.Point(3, 314);
             this.chXORCorrelation2000.Name = "chXORCorrelation2000";
-            series48.ChartArea = "ChartArea1";
-            series48.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
-            series48.Color = System.Drawing.Color.Red;
-            series48.Name = "Series1";
-            this.chXORCorrelation2000.Series.Add(series48);
+            series114.ChartArea = "ChartArea1";
+            series114.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
+            series114.Color = System.Drawing.Color.Red;
+            series114.Name = "Series1";
+            this.chXORCorrelation2000.Series.Add(series114);
             this.chXORCorrelation2000.Size = new System.Drawing.Size(598, 246);
             this.chXORCorrelation2000.TabIndex = 2;
             this.chXORCorrelation2000.Text = "chart1";
-            title40.Name = "Title1";
-            title40.Text = "Prueba Correlación Generador Xor shift ";
-            this.chXORCorrelation2000.Titles.Add(title40);
+            title71.Name = "Title1";
+            title71.Text = "Prueba Correlación Generador Xor shift ";
+            this.chXORCorrelation2000.Titles.Add(title71);
             // 
             // tabPage23
             // 
@@ -2305,8 +2369,8 @@ namespace Taller1_Simulacion
             // dataGridViewTextBoxColumn25
             // 
             this.dataGridViewTextBoxColumn25.DataPropertyName = "I";
-            dataGridViewCellStyle23.NullValue = null;
-            this.dataGridViewTextBoxColumn25.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle38.NullValue = null;
+            this.dataGridViewTextBoxColumn25.DefaultCellStyle = dataGridViewCellStyle38;
             this.dataGridViewTextBoxColumn25.HeaderText = "iteración";
             this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
             this.dataGridViewTextBoxColumn25.ReadOnly = true;
@@ -2321,9 +2385,9 @@ namespace Taller1_Simulacion
             // dataGridViewTextBoxColumn27
             // 
             this.dataGridViewTextBoxColumn27.DataPropertyName = "Un";
-            dataGridViewCellStyle24.Format = "G8";
-            dataGridViewCellStyle24.NullValue = null;
-            this.dataGridViewTextBoxColumn27.DefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle39.Format = "G8";
+            dataGridViewCellStyle39.NullValue = null;
+            this.dataGridViewTextBoxColumn27.DefaultCellStyle = dataGridViewCellStyle39;
             this.dataGridViewTextBoxColumn27.HeaderText = "Un";
             this.dataGridViewTextBoxColumn27.Name = "dataGridViewTextBoxColumn27";
             this.dataGridViewTextBoxColumn27.ReadOnly = true;
@@ -2418,9 +2482,9 @@ namespace Taller1_Simulacion
             // dataGridViewTextBoxColumn30
             // 
             this.dataGridViewTextBoxColumn30.DataPropertyName = "Un";
-            dataGridViewCellStyle25.Format = "G8";
-            dataGridViewCellStyle25.NullValue = null;
-            this.dataGridViewTextBoxColumn30.DefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle40.Format = "G8";
+            dataGridViewCellStyle40.NullValue = null;
+            this.dataGridViewTextBoxColumn30.DefaultCellStyle = dataGridViewCellStyle40;
             this.dataGridViewTextBoxColumn30.HeaderText = "Un";
             this.dataGridViewTextBoxColumn30.Name = "dataGridViewTextBoxColumn30";
             this.dataGridViewTextBoxColumn30.ReadOnly = true;
@@ -2559,32 +2623,32 @@ namespace Taller1_Simulacion
             // 
             // chRanges10000
             // 
-            chartArea41.AxisX.Interval = 1D;
-            chartArea41.AxisX.Title = "Intervalos";
-            chartArea41.AxisY.Title = "Frecuencia";
-            chartArea41.Name = "ChartArea1";
-            this.chRanges10000.ChartAreas.Add(chartArea41);
+            chartArea72.AxisX.Interval = 1D;
+            chartArea72.AxisX.Title = "Intervalos";
+            chartArea72.AxisY.Title = "Frecuencia";
+            chartArea72.Name = "ChartArea1";
+            this.chRanges10000.ChartAreas.Add(chartArea72);
             this.chRanges10000.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend9.Name = "Legend1";
-            legend9.Title = "Generador";
-            this.chRanges10000.Legends.Add(legend9);
+            legend20.Name = "Legend1";
+            legend20.Title = "Generador";
+            this.chRanges10000.Legends.Add(legend20);
             this.chRanges10000.Location = new System.Drawing.Point(3, 43);
             this.chRanges10000.Name = "chRanges10000";
-            series49.ChartArea = "ChartArea1";
-            series49.Color = System.Drawing.Color.Red;
-            series49.Legend = "Legend1";
-            series49.Name = "Congruencial";
-            series50.ChartArea = "ChartArea1";
-            series50.Legend = "Legend1";
-            series50.Name = "XOR shift";
-            this.chRanges10000.Series.Add(series49);
-            this.chRanges10000.Series.Add(series50);
+            series115.ChartArea = "ChartArea1";
+            series115.Color = System.Drawing.Color.Red;
+            series115.Legend = "Legend1";
+            series115.Name = "Congruencial";
+            series116.ChartArea = "ChartArea1";
+            series116.Legend = "Legend1";
+            series116.Name = "XOR shift";
+            this.chRanges10000.Series.Add(series115);
+            this.chRanges10000.Series.Add(series116);
             this.chRanges10000.Size = new System.Drawing.Size(598, 517);
             this.chRanges10000.TabIndex = 0;
             this.chRanges10000.Text = "chart1";
-            title41.Name = "Title1";
-            title41.Text = "Distribución de los números pseudoaleatorios generados por rangos";
-            this.chRanges10000.Titles.Add(title41);
+            title72.Name = "Title1";
+            title72.Text = "Distribución de los números pseudoaleatorios generados por rangos";
+            this.chRanges10000.Titles.Add(title72);
             // 
             // lblRangesInfo10000
             // 
@@ -2629,24 +2693,24 @@ namespace Taller1_Simulacion
             // 
             // chXORTrendTest10000
             // 
-            chartArea42.AxisX.Title = "Iteración";
-            chartArea42.AxisY.Title = "Valor generado (Un)";
-            chartArea42.Name = "ChartArea1";
-            this.chXORTrendTest10000.ChartAreas.Add(chartArea42);
+            chartArea73.AxisX.Title = "Iteración";
+            chartArea73.AxisY.Title = "Valor generado (Un)";
+            chartArea73.Name = "ChartArea1";
+            this.chXORTrendTest10000.ChartAreas.Add(chartArea73);
             this.chXORTrendTest10000.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chXORTrendTest10000.Location = new System.Drawing.Point(3, 304);
             this.chXORTrendTest10000.Name = "chXORTrendTest10000";
-            series51.ChartArea = "ChartArea1";
-            series51.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series51.Color = System.Drawing.Color.Red;
-            series51.Name = "XOR shift";
-            this.chXORTrendTest10000.Series.Add(series51);
+            series117.ChartArea = "ChartArea1";
+            series117.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series117.Color = System.Drawing.Color.Red;
+            series117.Name = "XOR shift";
+            this.chXORTrendTest10000.Series.Add(series117);
             this.chXORTrendTest10000.Size = new System.Drawing.Size(598, 256);
             this.chXORTrendTest10000.TabIndex = 2;
             this.chXORTrendTest10000.Text = "chart1";
-            title42.Name = "Title1";
-            title42.Text = "Prueba de Tendencia Generador XOR Shift";
-            this.chXORTrendTest10000.Titles.Add(title42);
+            title73.Name = "Title1";
+            title73.Text = "Prueba de Tendencia Generador XOR Shift";
+            this.chXORTrendTest10000.Titles.Add(title73);
             // 
             // lblTrendTest10000
             // 
@@ -2660,23 +2724,23 @@ namespace Taller1_Simulacion
             // 
             // chLCGTrendTest10000
             // 
-            chartArea43.AxisX.Title = "Iteración";
-            chartArea43.AxisY.Title = "Valor generado (Un)";
-            chartArea43.Name = "ChartArea1";
-            this.chLCGTrendTest10000.ChartAreas.Add(chartArea43);
+            chartArea74.AxisX.Title = "Iteración";
+            chartArea74.AxisY.Title = "Valor generado (Un)";
+            chartArea74.Name = "ChartArea1";
+            this.chLCGTrendTest10000.ChartAreas.Add(chartArea74);
             this.chLCGTrendTest10000.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chLCGTrendTest10000.Location = new System.Drawing.Point(3, 43);
             this.chLCGTrendTest10000.Name = "chLCGTrendTest10000";
-            series52.ChartArea = "ChartArea1";
-            series52.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series52.Name = "Congruencial";
-            this.chLCGTrendTest10000.Series.Add(series52);
+            series118.ChartArea = "ChartArea1";
+            series118.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series118.Name = "Congruencial";
+            this.chLCGTrendTest10000.Series.Add(series118);
             this.chLCGTrendTest10000.Size = new System.Drawing.Size(598, 255);
             this.chLCGTrendTest10000.TabIndex = 1;
             this.chLCGTrendTest10000.Text = "chart1";
-            title43.Name = "Title1";
-            title43.Text = "Prueba de Tendencia Generador Congruencial";
-            this.chLCGTrendTest10000.Titles.Add(title43);
+            title74.Name = "Title1";
+            title74.Text = "Prueba de Tendencia Generador Congruencial";
+            this.chLCGTrendTest10000.Titles.Add(title74);
             // 
             // tabPage27
             // 
@@ -2709,28 +2773,28 @@ namespace Taller1_Simulacion
             // 
             // chLCGCorrelation10000
             // 
-            textAnnotation17.Name = "txtAnnLCGCorrelation";
-            textAnnotation17.Text = "Correlación Congruencial: 0.0001";
-            textAnnotation17.X = 0D;
-            textAnnotation17.Y = 93D;
-            this.chLCGCorrelation10000.Annotations.Add(textAnnotation17);
-            chartArea44.AxisX.Title = "Valor Actual (Un)";
-            chartArea44.AxisY.Title = "Valor Siguiente (Un+1)";
-            chartArea44.Name = "ChartArea1";
-            this.chLCGCorrelation10000.ChartAreas.Add(chartArea44);
+            textAnnotation27.Name = "txtAnnLCGCorrelation";
+            textAnnotation27.Text = "Correlación Congruencial: 0.0001";
+            textAnnotation27.X = 0D;
+            textAnnotation27.Y = 93D;
+            this.chLCGCorrelation10000.Annotations.Add(textAnnotation27);
+            chartArea75.AxisX.Title = "Valor Actual (Un)";
+            chartArea75.AxisY.Title = "Valor Siguiente (Un+1)";
+            chartArea75.Name = "ChartArea1";
+            this.chLCGCorrelation10000.ChartAreas.Add(chartArea75);
             this.chLCGCorrelation10000.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chLCGCorrelation10000.Location = new System.Drawing.Point(3, 63);
             this.chLCGCorrelation10000.Name = "chLCGCorrelation10000";
-            series53.ChartArea = "ChartArea1";
-            series53.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastPoint;
-            series53.Name = "Series1";
-            this.chLCGCorrelation10000.Series.Add(series53);
+            series119.ChartArea = "ChartArea1";
+            series119.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastPoint;
+            series119.Name = "Series1";
+            this.chLCGCorrelation10000.Series.Add(series119);
             this.chLCGCorrelation10000.Size = new System.Drawing.Size(598, 245);
             this.chLCGCorrelation10000.TabIndex = 3;
             this.chLCGCorrelation10000.Text = "chart1";
-            title44.Name = "Title1";
-            title44.Text = "Prueba Correlación Generador Congruencial ";
-            this.chLCGCorrelation10000.Titles.Add(title44);
+            title75.Name = "Title1";
+            title75.Text = "Prueba Correlación Generador Congruencial ";
+            this.chLCGCorrelation10000.Titles.Add(title75);
             // 
             // lblCorrelationInfo10000
             // 
@@ -2744,29 +2808,29 @@ namespace Taller1_Simulacion
             // 
             // chXORCorrelation10000
             // 
-            textAnnotation18.Name = "txtAnnXorCorrelation";
-            textAnnotation18.Text = "Correlación XOR shift: 0.0001";
-            textAnnotation18.X = 0D;
-            textAnnotation18.Y = 93D;
-            this.chXORCorrelation10000.Annotations.Add(textAnnotation18);
-            chartArea45.AxisX.Title = "Valor Actual (Un)";
-            chartArea45.AxisY.Title = "Valor Siguiente (Un+1)";
-            chartArea45.Name = "ChartArea1";
-            this.chXORCorrelation10000.ChartAreas.Add(chartArea45);
+            textAnnotation28.Name = "txtAnnXorCorrelation";
+            textAnnotation28.Text = "Correlación XOR shift: 0.0001";
+            textAnnotation28.X = 0D;
+            textAnnotation28.Y = 93D;
+            this.chXORCorrelation10000.Annotations.Add(textAnnotation28);
+            chartArea76.AxisX.Title = "Valor Actual (Un)";
+            chartArea76.AxisY.Title = "Valor Siguiente (Un+1)";
+            chartArea76.Name = "ChartArea1";
+            this.chXORCorrelation10000.ChartAreas.Add(chartArea76);
             this.chXORCorrelation10000.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chXORCorrelation10000.Location = new System.Drawing.Point(3, 314);
             this.chXORCorrelation10000.Name = "chXORCorrelation10000";
-            series54.ChartArea = "ChartArea1";
-            series54.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastPoint;
-            series54.Color = System.Drawing.Color.Red;
-            series54.Name = "Series1";
-            this.chXORCorrelation10000.Series.Add(series54);
+            series120.ChartArea = "ChartArea1";
+            series120.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastPoint;
+            series120.Color = System.Drawing.Color.Red;
+            series120.Name = "Series1";
+            this.chXORCorrelation10000.Series.Add(series120);
             this.chXORCorrelation10000.Size = new System.Drawing.Size(598, 246);
             this.chXORCorrelation10000.TabIndex = 2;
             this.chXORCorrelation10000.Text = "chart1";
-            title45.Name = "Title1";
-            title45.Text = "Prueba Correlación Generador Xor shift ";
-            this.chXORCorrelation10000.Titles.Add(title45);
+            title76.Name = "Title1";
+            title76.Text = "Prueba Correlación Generador Xor shift ";
+            this.chXORCorrelation10000.Titles.Add(title76);
             // 
             // tabPage28
             // 
@@ -2885,8 +2949,8 @@ namespace Taller1_Simulacion
             // dataGridViewTextBoxColumn31
             // 
             this.dataGridViewTextBoxColumn31.DataPropertyName = "I";
-            dataGridViewCellStyle26.NullValue = null;
-            this.dataGridViewTextBoxColumn31.DefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle41.NullValue = null;
+            this.dataGridViewTextBoxColumn31.DefaultCellStyle = dataGridViewCellStyle41;
             this.dataGridViewTextBoxColumn31.HeaderText = "iteración";
             this.dataGridViewTextBoxColumn31.Name = "dataGridViewTextBoxColumn31";
             this.dataGridViewTextBoxColumn31.ReadOnly = true;
@@ -2901,9 +2965,9 @@ namespace Taller1_Simulacion
             // dataGridViewTextBoxColumn33
             // 
             this.dataGridViewTextBoxColumn33.DataPropertyName = "Un";
-            dataGridViewCellStyle27.Format = "G8";
-            dataGridViewCellStyle27.NullValue = null;
-            this.dataGridViewTextBoxColumn33.DefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle42.Format = "G8";
+            dataGridViewCellStyle42.NullValue = null;
+            this.dataGridViewTextBoxColumn33.DefaultCellStyle = dataGridViewCellStyle42;
             this.dataGridViewTextBoxColumn33.HeaderText = "Un";
             this.dataGridViewTextBoxColumn33.Name = "dataGridViewTextBoxColumn33";
             this.dataGridViewTextBoxColumn33.ReadOnly = true;
@@ -2998,9 +3062,9 @@ namespace Taller1_Simulacion
             // dataGridViewTextBoxColumn36
             // 
             this.dataGridViewTextBoxColumn36.DataPropertyName = "Un";
-            dataGridViewCellStyle28.Format = "G8";
-            dataGridViewCellStyle28.NullValue = null;
-            this.dataGridViewTextBoxColumn36.DefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle43.Format = "G8";
+            dataGridViewCellStyle43.NullValue = null;
+            this.dataGridViewTextBoxColumn36.DefaultCellStyle = dataGridViewCellStyle43;
             this.dataGridViewTextBoxColumn36.HeaderText = "Un";
             this.dataGridViewTextBoxColumn36.Name = "dataGridViewTextBoxColumn36";
             this.dataGridViewTextBoxColumn36.ReadOnly = true;
@@ -3139,32 +3203,32 @@ namespace Taller1_Simulacion
             // 
             // chRanges20000
             // 
-            chartArea46.AxisX.Interval = 1D;
-            chartArea46.AxisX.Title = "Intervalos";
-            chartArea46.AxisY.Title = "Frecuencia";
-            chartArea46.Name = "ChartArea1";
-            this.chRanges20000.ChartAreas.Add(chartArea46);
+            chartArea77.AxisX.Interval = 1D;
+            chartArea77.AxisX.Title = "Intervalos";
+            chartArea77.AxisY.Title = "Frecuencia";
+            chartArea77.Name = "ChartArea1";
+            this.chRanges20000.ChartAreas.Add(chartArea77);
             this.chRanges20000.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend10.Name = "Legend1";
-            legend10.Title = "Generador";
-            this.chRanges20000.Legends.Add(legend10);
+            legend21.Name = "Legend1";
+            legend21.Title = "Generador";
+            this.chRanges20000.Legends.Add(legend21);
             this.chRanges20000.Location = new System.Drawing.Point(3, 43);
             this.chRanges20000.Name = "chRanges20000";
-            series55.ChartArea = "ChartArea1";
-            series55.Color = System.Drawing.Color.Red;
-            series55.Legend = "Legend1";
-            series55.Name = "Congruencial";
-            series56.ChartArea = "ChartArea1";
-            series56.Legend = "Legend1";
-            series56.Name = "XOR shift";
-            this.chRanges20000.Series.Add(series55);
-            this.chRanges20000.Series.Add(series56);
+            series121.ChartArea = "ChartArea1";
+            series121.Color = System.Drawing.Color.Red;
+            series121.Legend = "Legend1";
+            series121.Name = "Congruencial";
+            series122.ChartArea = "ChartArea1";
+            series122.Legend = "Legend1";
+            series122.Name = "XOR shift";
+            this.chRanges20000.Series.Add(series121);
+            this.chRanges20000.Series.Add(series122);
             this.chRanges20000.Size = new System.Drawing.Size(598, 517);
             this.chRanges20000.TabIndex = 0;
             this.chRanges20000.Text = "chart1";
-            title46.Name = "Title1";
-            title46.Text = "Distribución de los números pseudoaleatorios generados por rangos";
-            this.chRanges20000.Titles.Add(title46);
+            title77.Name = "Title1";
+            title77.Text = "Distribución de los números pseudoaleatorios generados por rangos";
+            this.chRanges20000.Titles.Add(title77);
             // 
             // lblRangesInfo20000
             // 
@@ -3209,24 +3273,24 @@ namespace Taller1_Simulacion
             // 
             // chXORTrendTest20000
             // 
-            chartArea47.AxisX.Title = "Iteración";
-            chartArea47.AxisY.Title = "Valor generado (Un)";
-            chartArea47.Name = "ChartArea1";
-            this.chXORTrendTest20000.ChartAreas.Add(chartArea47);
+            chartArea78.AxisX.Title = "Iteración";
+            chartArea78.AxisY.Title = "Valor generado (Un)";
+            chartArea78.Name = "ChartArea1";
+            this.chXORTrendTest20000.ChartAreas.Add(chartArea78);
             this.chXORTrendTest20000.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chXORTrendTest20000.Location = new System.Drawing.Point(3, 304);
             this.chXORTrendTest20000.Name = "chXORTrendTest20000";
-            series57.ChartArea = "ChartArea1";
-            series57.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series57.Color = System.Drawing.Color.Red;
-            series57.Name = "XOR shift";
-            this.chXORTrendTest20000.Series.Add(series57);
+            series123.ChartArea = "ChartArea1";
+            series123.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series123.Color = System.Drawing.Color.Red;
+            series123.Name = "XOR shift";
+            this.chXORTrendTest20000.Series.Add(series123);
             this.chXORTrendTest20000.Size = new System.Drawing.Size(598, 256);
             this.chXORTrendTest20000.TabIndex = 2;
             this.chXORTrendTest20000.Text = "chart1";
-            title47.Name = "Title1";
-            title47.Text = "Prueba de Tendencia Generador XOR Shift";
-            this.chXORTrendTest20000.Titles.Add(title47);
+            title78.Name = "Title1";
+            title78.Text = "Prueba de Tendencia Generador XOR Shift";
+            this.chXORTrendTest20000.Titles.Add(title78);
             // 
             // lblTrendTest20000
             // 
@@ -3240,23 +3304,23 @@ namespace Taller1_Simulacion
             // 
             // chLCGTrendTest20000
             // 
-            chartArea48.AxisX.Title = "Iteración";
-            chartArea48.AxisY.Title = "Valor generado (Un)";
-            chartArea48.Name = "ChartArea1";
-            this.chLCGTrendTest20000.ChartAreas.Add(chartArea48);
+            chartArea79.AxisX.Title = "Iteración";
+            chartArea79.AxisY.Title = "Valor generado (Un)";
+            chartArea79.Name = "ChartArea1";
+            this.chLCGTrendTest20000.ChartAreas.Add(chartArea79);
             this.chLCGTrendTest20000.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chLCGTrendTest20000.Location = new System.Drawing.Point(3, 43);
             this.chLCGTrendTest20000.Name = "chLCGTrendTest20000";
-            series58.ChartArea = "ChartArea1";
-            series58.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series58.Name = "Congruencial";
-            this.chLCGTrendTest20000.Series.Add(series58);
+            series124.ChartArea = "ChartArea1";
+            series124.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series124.Name = "Congruencial";
+            this.chLCGTrendTest20000.Series.Add(series124);
             this.chLCGTrendTest20000.Size = new System.Drawing.Size(598, 255);
             this.chLCGTrendTest20000.TabIndex = 1;
             this.chLCGTrendTest20000.Text = "chart1";
-            title48.Name = "Title1";
-            title48.Text = "Prueba de Tendencia Generador Congruencial";
-            this.chLCGTrendTest20000.Titles.Add(title48);
+            title79.Name = "Title1";
+            title79.Text = "Prueba de Tendencia Generador Congruencial";
+            this.chLCGTrendTest20000.Titles.Add(title79);
             // 
             // tabPage32
             // 
@@ -3289,28 +3353,28 @@ namespace Taller1_Simulacion
             // 
             // chLCGCorrelation20000
             // 
-            textAnnotation19.Name = "txtAnnLCGCorrelation";
-            textAnnotation19.Text = "Correlación Congruencial: 0.0001";
-            textAnnotation19.X = 0D;
-            textAnnotation19.Y = 93D;
-            this.chLCGCorrelation20000.Annotations.Add(textAnnotation19);
-            chartArea49.AxisX.Title = "Valor Actual (Un)";
-            chartArea49.AxisY.Title = "Valor Siguiente (Un+1)";
-            chartArea49.Name = "ChartArea1";
-            this.chLCGCorrelation20000.ChartAreas.Add(chartArea49);
+            textAnnotation29.Name = "txtAnnLCGCorrelation";
+            textAnnotation29.Text = "Correlación Congruencial: 0.0001";
+            textAnnotation29.X = 0D;
+            textAnnotation29.Y = 93D;
+            this.chLCGCorrelation20000.Annotations.Add(textAnnotation29);
+            chartArea80.AxisX.Title = "Valor Actual (Un)";
+            chartArea80.AxisY.Title = "Valor Siguiente (Un+1)";
+            chartArea80.Name = "ChartArea1";
+            this.chLCGCorrelation20000.ChartAreas.Add(chartArea80);
             this.chLCGCorrelation20000.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chLCGCorrelation20000.Location = new System.Drawing.Point(3, 63);
             this.chLCGCorrelation20000.Name = "chLCGCorrelation20000";
-            series59.ChartArea = "ChartArea1";
-            series59.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastPoint;
-            series59.Name = "Series1";
-            this.chLCGCorrelation20000.Series.Add(series59);
+            series125.ChartArea = "ChartArea1";
+            series125.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastPoint;
+            series125.Name = "Series1";
+            this.chLCGCorrelation20000.Series.Add(series125);
             this.chLCGCorrelation20000.Size = new System.Drawing.Size(598, 245);
             this.chLCGCorrelation20000.TabIndex = 3;
             this.chLCGCorrelation20000.Text = "chart1";
-            title49.Name = "Title1";
-            title49.Text = "Prueba Correlación Generador Congruencial ";
-            this.chLCGCorrelation20000.Titles.Add(title49);
+            title80.Name = "Title1";
+            title80.Text = "Prueba Correlación Generador Congruencial ";
+            this.chLCGCorrelation20000.Titles.Add(title80);
             // 
             // lblCorrelationInfo20000
             // 
@@ -3324,29 +3388,29 @@ namespace Taller1_Simulacion
             // 
             // chXORCorrelation20000
             // 
-            textAnnotation20.Name = "txtAnnXorCorrelation";
-            textAnnotation20.Text = "Correlación XOR shift: 0.0001";
-            textAnnotation20.X = 0D;
-            textAnnotation20.Y = 93D;
-            this.chXORCorrelation20000.Annotations.Add(textAnnotation20);
-            chartArea50.AxisX.Title = "Valor Actual (Un)";
-            chartArea50.AxisY.Title = "Valor Siguiente (Un+1)";
-            chartArea50.Name = "ChartArea1";
-            this.chXORCorrelation20000.ChartAreas.Add(chartArea50);
+            textAnnotation30.Name = "txtAnnXorCorrelation";
+            textAnnotation30.Text = "Correlación XOR shift: 0.0001";
+            textAnnotation30.X = 0D;
+            textAnnotation30.Y = 93D;
+            this.chXORCorrelation20000.Annotations.Add(textAnnotation30);
+            chartArea81.AxisX.Title = "Valor Actual (Un)";
+            chartArea81.AxisY.Title = "Valor Siguiente (Un+1)";
+            chartArea81.Name = "ChartArea1";
+            this.chXORCorrelation20000.ChartAreas.Add(chartArea81);
             this.chXORCorrelation20000.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chXORCorrelation20000.Location = new System.Drawing.Point(3, 314);
             this.chXORCorrelation20000.Name = "chXORCorrelation20000";
-            series60.ChartArea = "ChartArea1";
-            series60.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastPoint;
-            series60.Color = System.Drawing.Color.Red;
-            series60.Name = "Series1";
-            this.chXORCorrelation20000.Series.Add(series60);
+            series126.ChartArea = "ChartArea1";
+            series126.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastPoint;
+            series126.Color = System.Drawing.Color.Red;
+            series126.Name = "Series1";
+            this.chXORCorrelation20000.Series.Add(series126);
             this.chXORCorrelation20000.Size = new System.Drawing.Size(598, 246);
             this.chXORCorrelation20000.TabIndex = 2;
             this.chXORCorrelation20000.Text = "chart1";
-            title50.Name = "Title1";
-            title50.Text = "Prueba Correlación Generador Xor shift ";
-            this.chXORCorrelation20000.Titles.Add(title50);
+            title81.Name = "Title1";
+            title81.Text = "Prueba Correlación Generador Xor shift ";
+            this.chXORCorrelation20000.Titles.Add(title81);
             // 
             // tabPage33
             // 
@@ -3465,8 +3529,8 @@ namespace Taller1_Simulacion
             // dataGridViewTextBoxColumn37
             // 
             this.dataGridViewTextBoxColumn37.DataPropertyName = "I";
-            dataGridViewCellStyle29.NullValue = null;
-            this.dataGridViewTextBoxColumn37.DefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle44.NullValue = null;
+            this.dataGridViewTextBoxColumn37.DefaultCellStyle = dataGridViewCellStyle44;
             this.dataGridViewTextBoxColumn37.HeaderText = "iteración";
             this.dataGridViewTextBoxColumn37.Name = "dataGridViewTextBoxColumn37";
             this.dataGridViewTextBoxColumn37.ReadOnly = true;
@@ -3481,9 +3545,9 @@ namespace Taller1_Simulacion
             // dataGridViewTextBoxColumn39
             // 
             this.dataGridViewTextBoxColumn39.DataPropertyName = "Un";
-            dataGridViewCellStyle30.Format = "G8";
-            dataGridViewCellStyle30.NullValue = null;
-            this.dataGridViewTextBoxColumn39.DefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle45.Format = "G8";
+            dataGridViewCellStyle45.NullValue = null;
+            this.dataGridViewTextBoxColumn39.DefaultCellStyle = dataGridViewCellStyle45;
             this.dataGridViewTextBoxColumn39.HeaderText = "Un";
             this.dataGridViewTextBoxColumn39.Name = "dataGridViewTextBoxColumn39";
             this.dataGridViewTextBoxColumn39.ReadOnly = true;
@@ -3513,10 +3577,12 @@ namespace Taller1_Simulacion
             // 
             // tbMontecarlo
             // 
+            this.tbMontecarlo.Controls.Add(this.tbcMontecarloIterations);
+            this.tbMontecarlo.Controls.Add(this.lblMontecarloInfo);
             this.tbMontecarlo.Location = new System.Drawing.Point(4, 22);
             this.tbMontecarlo.Name = "tbMontecarlo";
             this.tbMontecarlo.Padding = new System.Windows.Forms.Padding(3);
-            this.tbMontecarlo.Size = new System.Drawing.Size(1272, 684);
+            this.tbMontecarlo.Size = new System.Drawing.Size(1290, 806);
             this.tbMontecarlo.TabIndex = 1;
             this.tbMontecarlo.Text = "método montecarlo";
             this.tbMontecarlo.UseVisualStyleBackColor = true;
@@ -3674,19 +3740,21 @@ namespace Taller1_Simulacion
             // btnRunMontecarlo
             // 
             this.btnRunMontecarlo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRunMontecarlo.Enabled = false;
             this.btnRunMontecarlo.Location = new System.Drawing.Point(64, 74);
             this.btnRunMontecarlo.Name = "btnRunMontecarlo";
             this.btnRunMontecarlo.Size = new System.Drawing.Size(171, 41);
             this.btnRunMontecarlo.TabIndex = 1;
             this.btnRunMontecarlo.Text = "Ejecutar Montecarlo";
             this.btnRunMontecarlo.UseVisualStyleBackColor = true;
+            this.btnRunMontecarlo.Click += new System.EventHandler(this.btnRunMontecarlo_Click);
             // 
             // tableLayoutPanel7
             // 
             this.tableLayoutPanel7.ColumnCount = 1;
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel7.Controls.Add(this.layaoutControls, 0, 0);
-            this.tableLayoutPanel7.Controls.Add(this.tabControl1, 0, 1);
+            this.tableLayoutPanel7.Controls.Add(this.tabControlMain, 0, 1);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel7.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
@@ -3695,6 +3763,424 @@ namespace Taller1_Simulacion
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel7.Size = new System.Drawing.Size(1304, 988);
             this.tableLayoutPanel7.TabIndex = 19;
+            // 
+            // lblMontecarloInfo
+            // 
+            this.lblMontecarloInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblMontecarloInfo.AutoSize = true;
+            this.lblMontecarloInfo.Location = new System.Drawing.Point(549, 12);
+            this.lblMontecarloInfo.Name = "lblMontecarloInfo";
+            this.lblMontecarloInfo.Size = new System.Drawing.Size(237, 13);
+            this.lblMontecarloInfo.TabIndex = 0;
+            this.lblMontecarloInfo.Text = "Iteraciones con diferentes cantidades de puntos.";
+            // 
+            // tbcMontecarloIterations
+            // 
+            this.tbcMontecarloIterations.Controls.Add(this.i10);
+            this.tbcMontecarloIterations.Controls.Add(this.i100);
+            this.tbcMontecarloIterations.Controls.Add(this.i1000);
+            this.tbcMontecarloIterations.Controls.Add(this.i5000);
+            this.tbcMontecarloIterations.Controls.Add(this.i10000);
+            this.tbcMontecarloIterations.Location = new System.Drawing.Point(6, 28);
+            this.tbcMontecarloIterations.Name = "tbcMontecarloIterations";
+            this.tbcMontecarloIterations.SelectedIndex = 0;
+            this.tbcMontecarloIterations.Size = new System.Drawing.Size(1281, 778);
+            this.tbcMontecarloIterations.TabIndex = 1;
+            this.tbcMontecarloIterations.Visible = false;
+            // 
+            // i10
+            // 
+            this.i10.Controls.Add(this.layoutI10);
+            this.i10.Location = new System.Drawing.Point(4, 22);
+            this.i10.Name = "i10";
+            this.i10.Padding = new System.Windows.Forms.Padding(3);
+            this.i10.Size = new System.Drawing.Size(1273, 752);
+            this.i10.TabIndex = 0;
+            this.i10.Text = "10 puntos";
+            this.i10.UseVisualStyleBackColor = true;
+            // 
+            // i100
+            // 
+            this.i100.Controls.Add(this.tableLayoutPanel8);
+            this.i100.Location = new System.Drawing.Point(4, 22);
+            this.i100.Name = "i100";
+            this.i100.Padding = new System.Windows.Forms.Padding(3);
+            this.i100.Size = new System.Drawing.Size(1273, 752);
+            this.i100.TabIndex = 1;
+            this.i100.Text = "100 puntos";
+            this.i100.UseVisualStyleBackColor = true;
+            // 
+            // i1000
+            // 
+            this.i1000.Location = new System.Drawing.Point(4, 22);
+            this.i1000.Name = "i1000";
+            this.i1000.Padding = new System.Windows.Forms.Padding(3);
+            this.i1000.Size = new System.Drawing.Size(1273, 752);
+            this.i1000.TabIndex = 2;
+            this.i1000.Text = "1000 puntos";
+            this.i1000.UseVisualStyleBackColor = true;
+            // 
+            // i5000
+            // 
+            this.i5000.Location = new System.Drawing.Point(4, 22);
+            this.i5000.Name = "i5000";
+            this.i5000.Padding = new System.Windows.Forms.Padding(3);
+            this.i5000.Size = new System.Drawing.Size(1273, 752);
+            this.i5000.TabIndex = 3;
+            this.i5000.Text = "5000 puntos";
+            this.i5000.UseVisualStyleBackColor = true;
+            // 
+            // i10000
+            // 
+            this.i10000.Location = new System.Drawing.Point(4, 22);
+            this.i10000.Name = "i10000";
+            this.i10000.Padding = new System.Windows.Forms.Padding(3);
+            this.i10000.Size = new System.Drawing.Size(1273, 752);
+            this.i10000.TabIndex = 4;
+            this.i10000.Text = "10000 puntos";
+            this.i10000.UseVisualStyleBackColor = true;
+            // 
+            // chMontecarloLGCI10
+            // 
+            chartArea82.AxisX.Maximum = 0.9D;
+            chartArea82.AxisX.Minimum = 0D;
+            chartArea82.AxisX.Title = "x";
+            chartArea82.AxisY.Maximum = 0.9D;
+            chartArea82.AxisY.Minimum = 0D;
+            chartArea82.AxisY.Title = "y";
+            chartArea82.Name = "ChartArea1";
+            this.chMontecarloLGCI10.ChartAreas.Add(chartArea82);
+            this.chMontecarloLGCI10.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend22.Name = "Legend1";
+            this.chMontecarloLGCI10.Legends.Add(legend22);
+            this.chMontecarloLGCI10.Location = new System.Drawing.Point(3, 3);
+            this.chMontecarloLGCI10.Name = "chMontecarloLGCI10";
+            series127.BorderWidth = 2;
+            series127.ChartArea = "ChartArea1";
+            series127.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series127.Legend = "Legend1";
+            series127.LegendText = "x^2";
+            series127.Name = "SeriesFun1";
+            series128.BorderWidth = 2;
+            series128.ChartArea = "ChartArea1";
+            series128.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series128.Color = System.Drawing.Color.Red;
+            series128.Legend = "Legend1";
+            series128.LegendText = "x^3";
+            series128.Name = "SeriesFun2";
+            series129.BorderWidth = 2;
+            series129.ChartArea = "ChartArea1";
+            series129.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series129.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            series129.Legend = "Legend1";
+            series129.LegendText = "cos(x)";
+            series129.Name = "SeriesFun3";
+            series130.ChartArea = "ChartArea1";
+            series130.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastPoint;
+            series130.Color = System.Drawing.Color.DeepSkyBlue;
+            series130.Legend = "Legend1";
+            series130.LegendText = "Puntos dentro del área";
+            series130.Name = "SeriesInsidePoints";
+            series131.ChartArea = "ChartArea1";
+            series131.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastPoint;
+            series131.Color = System.Drawing.Color.Crimson;
+            series131.Legend = "Legend1";
+            series131.LegendText = "Puntos fuera del área";
+            series131.Name = "SeriesOutsidePoints";
+            series132.BorderWidth = 3;
+            series132.ChartArea = "ChartArea1";
+            series132.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastLine;
+            series132.Color = System.Drawing.Color.Purple;
+            series132.Legend = "Legend1";
+            series132.LegendText = "Cuadrado delimitador";
+            series132.Name = "SeriesSquare";
+            this.chMontecarloLGCI10.Series.Add(series127);
+            this.chMontecarloLGCI10.Series.Add(series128);
+            this.chMontecarloLGCI10.Series.Add(series129);
+            this.chMontecarloLGCI10.Series.Add(series130);
+            this.chMontecarloLGCI10.Series.Add(series131);
+            this.chMontecarloLGCI10.Series.Add(series132);
+            this.chMontecarloLGCI10.Size = new System.Drawing.Size(1061, 367);
+            this.chMontecarloLGCI10.TabIndex = 0;
+            this.chMontecarloLGCI10.Text = "chart1";
+            title82.Name = "Title1";
+            title82.Text = "Simulación Montecarlo utilizando 10 puntos del generador Congruencial mezclados";
+            this.chMontecarloLGCI10.Titles.Add(title82);
+            // 
+            // layoutI10
+            // 
+            this.layoutI10.ColumnCount = 2;
+            this.layoutI10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.layoutI10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            this.layoutI10.Controls.Add(this.chMontecarloXORI10, 0, 1);
+            this.layoutI10.Controls.Add(this.lblXORResultI10, 1, 1);
+            this.layoutI10.Controls.Add(this.chMontecarloLGCI10, 0, 0);
+            this.layoutI10.Controls.Add(this.lblLCGResultI10, 1, 0);
+            this.layoutI10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.layoutI10.Location = new System.Drawing.Point(3, 3);
+            this.layoutI10.Name = "layoutI10";
+            this.layoutI10.RowCount = 2;
+            this.layoutI10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.layoutI10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.layoutI10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.layoutI10.Size = new System.Drawing.Size(1267, 746);
+            this.layoutI10.TabIndex = 1;
+            // 
+            // lblLCGResultI10
+            // 
+            this.lblLCGResultI10.AutoSize = true;
+            this.lblLCGResultI10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblLCGResultI10.Location = new System.Drawing.Point(1070, 0);
+            this.lblLCGResultI10.Name = "lblLCGResultI10";
+            this.lblLCGResultI10.Size = new System.Drawing.Size(194, 373);
+            this.lblLCGResultI10.TabIndex = 1;
+            // 
+            // lblXORResultI10
+            // 
+            this.lblXORResultI10.AutoSize = true;
+            this.lblXORResultI10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblXORResultI10.Location = new System.Drawing.Point(1070, 373);
+            this.lblXORResultI10.Name = "lblXORResultI10";
+            this.lblXORResultI10.Size = new System.Drawing.Size(194, 373);
+            this.lblXORResultI10.TabIndex = 3;
+            // 
+            // chMontecarloXORI10
+            // 
+            chartArea83.AxisX.Maximum = 0.9D;
+            chartArea83.AxisX.Minimum = 0D;
+            chartArea83.AxisX.Title = "x";
+            chartArea83.AxisY.Maximum = 0.9D;
+            chartArea83.AxisY.Minimum = 0D;
+            chartArea83.AxisY.Title = "y";
+            chartArea83.Name = "ChartArea1";
+            this.chMontecarloXORI10.ChartAreas.Add(chartArea83);
+            this.chMontecarloXORI10.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend23.Name = "Legend1";
+            this.chMontecarloXORI10.Legends.Add(legend23);
+            this.chMontecarloXORI10.Location = new System.Drawing.Point(3, 376);
+            this.chMontecarloXORI10.Name = "chMontecarloXORI10";
+            series133.BorderWidth = 2;
+            series133.ChartArea = "ChartArea1";
+            series133.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series133.Legend = "Legend1";
+            series133.LegendText = "x^2";
+            series133.Name = "SeriesFun1";
+            series134.BorderWidth = 2;
+            series134.ChartArea = "ChartArea1";
+            series134.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series134.Color = System.Drawing.Color.Red;
+            series134.Legend = "Legend1";
+            series134.LegendText = "x^3";
+            series134.Name = "SeriesFun2";
+            series135.BorderWidth = 2;
+            series135.ChartArea = "ChartArea1";
+            series135.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series135.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            series135.Legend = "Legend1";
+            series135.LegendText = "cos(x)";
+            series135.Name = "SeriesFun3";
+            series136.ChartArea = "ChartArea1";
+            series136.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastPoint;
+            series136.Color = System.Drawing.Color.DeepSkyBlue;
+            series136.Legend = "Legend1";
+            series136.LegendText = "Puntos dentro del área";
+            series136.Name = "SeriesInsidePoints";
+            series137.ChartArea = "ChartArea1";
+            series137.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastPoint;
+            series137.Color = System.Drawing.Color.Crimson;
+            series137.Legend = "Legend1";
+            series137.LegendText = "Puntos fuera del área";
+            series137.Name = "SeriesOutsidePoints";
+            series138.BorderWidth = 3;
+            series138.ChartArea = "ChartArea1";
+            series138.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastLine;
+            series138.Color = System.Drawing.Color.Purple;
+            series138.Legend = "Legend1";
+            series138.LegendText = "Cuadrado delimitador";
+            series138.Name = "SeriesSquare";
+            this.chMontecarloXORI10.Series.Add(series133);
+            this.chMontecarloXORI10.Series.Add(series134);
+            this.chMontecarloXORI10.Series.Add(series135);
+            this.chMontecarloXORI10.Series.Add(series136);
+            this.chMontecarloXORI10.Series.Add(series137);
+            this.chMontecarloXORI10.Series.Add(series138);
+            this.chMontecarloXORI10.Size = new System.Drawing.Size(1061, 367);
+            this.chMontecarloXORI10.TabIndex = 5;
+            this.chMontecarloXORI10.Text = "chart1";
+            title83.Name = "Title1";
+            title83.Text = "Simulación Montecarlo utilizando 10 puntos del generador Xor Shift mezclados";
+            this.chMontecarloXORI10.Titles.Add(title83);
+            // 
+            // tableLayoutPanel8
+            // 
+            this.tableLayoutPanel8.ColumnCount = 2;
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            this.tableLayoutPanel8.Controls.Add(this.chart1, 0, 1);
+            this.tableLayoutPanel8.Controls.Add(this.label1, 1, 1);
+            this.tableLayoutPanel8.Controls.Add(this.chart2, 0, 0);
+            this.tableLayoutPanel8.Controls.Add(this.label2, 1, 0);
+            this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
+            this.tableLayoutPanel8.RowCount = 2;
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(1267, 746);
+            this.tableLayoutPanel8.TabIndex = 2;
+            // 
+            // chart1
+            // 
+            chartArea55.AxisX.Maximum = 0.9D;
+            chartArea55.AxisX.Minimum = 0D;
+            chartArea55.AxisX.Title = "x";
+            chartArea55.AxisY.Maximum = 0.9D;
+            chartArea55.AxisY.Minimum = 0D;
+            chartArea55.AxisY.Title = "y";
+            chartArea55.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea55);
+            this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend15.Name = "Legend1";
+            this.chart1.Legends.Add(legend15);
+            this.chart1.Location = new System.Drawing.Point(3, 376);
+            this.chart1.Name = "chart1";
+            series85.BorderWidth = 2;
+            series85.ChartArea = "ChartArea1";
+            series85.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series85.Legend = "Legend1";
+            series85.LegendText = "x^2";
+            series85.Name = "SeriesFun1";
+            series86.BorderWidth = 2;
+            series86.ChartArea = "ChartArea1";
+            series86.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series86.Color = System.Drawing.Color.Red;
+            series86.Legend = "Legend1";
+            series86.LegendText = "x^3";
+            series86.Name = "SeriesFun2";
+            series87.BorderWidth = 2;
+            series87.ChartArea = "ChartArea1";
+            series87.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series87.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            series87.Legend = "Legend1";
+            series87.LegendText = "cos(x)";
+            series87.Name = "SeriesFun3";
+            series88.ChartArea = "ChartArea1";
+            series88.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastPoint;
+            series88.Color = System.Drawing.Color.DeepSkyBlue;
+            series88.Legend = "Legend1";
+            series88.LegendText = "Puntos dentro del área";
+            series88.Name = "SeriesInsidePoints";
+            series89.ChartArea = "ChartArea1";
+            series89.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastPoint;
+            series89.Color = System.Drawing.Color.Crimson;
+            series89.Legend = "Legend1";
+            series89.LegendText = "Puntos fuera del área";
+            series89.Name = "SeriesOutsidePoints";
+            series90.BorderWidth = 3;
+            series90.ChartArea = "ChartArea1";
+            series90.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastLine;
+            series90.Color = System.Drawing.Color.Purple;
+            series90.Legend = "Legend1";
+            series90.LegendText = "Cuadrado delimitador";
+            series90.Name = "SeriesSquare";
+            this.chart1.Series.Add(series85);
+            this.chart1.Series.Add(series86);
+            this.chart1.Series.Add(series87);
+            this.chart1.Series.Add(series88);
+            this.chart1.Series.Add(series89);
+            this.chart1.Series.Add(series90);
+            this.chart1.Size = new System.Drawing.Size(1061, 367);
+            this.chart1.TabIndex = 5;
+            this.chart1.Text = "chart1";
+            title55.Name = "Title1";
+            title55.Text = "Simulación Montecarlo utilizando 10 puntos del generador Xor Shift mezclados";
+            this.chart1.Titles.Add(title55);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Location = new System.Drawing.Point(1070, 373);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(194, 373);
+            this.label1.TabIndex = 3;
+            // 
+            // chart2
+            // 
+            chartArea56.AxisX.Maximum = 0.9D;
+            chartArea56.AxisX.Minimum = 0D;
+            chartArea56.AxisX.Title = "x";
+            chartArea56.AxisY.Maximum = 0.9D;
+            chartArea56.AxisY.Minimum = 0D;
+            chartArea56.AxisY.Title = "y";
+            chartArea56.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea56);
+            this.chart2.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend16.Name = "Legend1";
+            this.chart2.Legends.Add(legend16);
+            this.chart2.Location = new System.Drawing.Point(3, 3);
+            this.chart2.Name = "chart2";
+            series91.BorderWidth = 2;
+            series91.ChartArea = "ChartArea1";
+            series91.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series91.Legend = "Legend1";
+            series91.LegendText = "x^2";
+            series91.Name = "SeriesFun1";
+            series92.BorderWidth = 2;
+            series92.ChartArea = "ChartArea1";
+            series92.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series92.Color = System.Drawing.Color.Red;
+            series92.Legend = "Legend1";
+            series92.LegendText = "x^3";
+            series92.Name = "SeriesFun2";
+            series93.BorderWidth = 2;
+            series93.ChartArea = "ChartArea1";
+            series93.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series93.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            series93.Legend = "Legend1";
+            series93.LegendText = "cos(x)";
+            series93.Name = "SeriesFun3";
+            series94.ChartArea = "ChartArea1";
+            series94.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastPoint;
+            series94.Color = System.Drawing.Color.DeepSkyBlue;
+            series94.Legend = "Legend1";
+            series94.LegendText = "Puntos dentro del área";
+            series94.Name = "SeriesInsidePoints";
+            series95.ChartArea = "ChartArea1";
+            series95.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastPoint;
+            series95.Color = System.Drawing.Color.Crimson;
+            series95.Legend = "Legend1";
+            series95.LegendText = "Puntos fuera del área";
+            series95.Name = "SeriesOutsidePoints";
+            series96.BorderWidth = 3;
+            series96.ChartArea = "ChartArea1";
+            series96.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastLine;
+            series96.Color = System.Drawing.Color.Purple;
+            series96.Legend = "Legend1";
+            series96.LegendText = "Cuadrado delimitador";
+            series96.Name = "SeriesSquare";
+            this.chart2.Series.Add(series91);
+            this.chart2.Series.Add(series92);
+            this.chart2.Series.Add(series93);
+            this.chart2.Series.Add(series94);
+            this.chart2.Series.Add(series95);
+            this.chart2.Series.Add(series96);
+            this.chart2.Size = new System.Drawing.Size(1061, 367);
+            this.chart2.TabIndex = 0;
+            this.chart2.Text = "chart1";
+            title56.Name = "Title1";
+            title56.Text = "Simulación Montecarlo utilizando 10 puntos del generador Congruencial mezclados";
+            this.chart2.Titles.Add(title56);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Location = new System.Drawing.Point(1070, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(194, 373);
+            this.label2.TabIndex = 1;
             // 
             // Form1
             // 
@@ -3705,7 +4191,7 @@ namespace Taller1_Simulacion
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            this.tabControl1.ResumeLayout(false);
+            this.tabControlMain.ResumeLayout(false);
             this.tbRandom.ResumeLayout(false);
             this.tbRandom.PerformLayout();
             this.tbIteration20.ResumeLayout(false);
@@ -3839,6 +4325,8 @@ namespace Taller1_Simulacion
             this.tableLayoutPanel42.ResumeLayout(false);
             this.tableLayoutPanel42.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridXor20000)).EndInit();
+            this.tbMontecarlo.ResumeLayout(false);
+            this.tbMontecarlo.PerformLayout();
             this.layaoutControls.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -3846,6 +4334,17 @@ namespace Taller1_Simulacion
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.tableLayoutPanel7.ResumeLayout(false);
+            this.tbcMontecarloIterations.ResumeLayout(false);
+            this.i10.ResumeLayout(false);
+            this.i100.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chMontecarloLGCI10)).EndInit();
+            this.layoutI10.ResumeLayout(false);
+            this.layoutI10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chMontecarloXORI10)).EndInit();
+            this.tableLayoutPanel8.ResumeLayout(false);
+            this.tableLayoutPanel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3860,7 +4359,7 @@ namespace Taller1_Simulacion
         private System.Windows.Forms.Label lblParamC;
         private System.Windows.Forms.Label lblLCGDef;
         private System.Windows.Forms.Label lblSeed;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl tabControlMain;
         private System.Windows.Forms.TabPage tbRandom;
         private System.Windows.Forms.TabControl tbIteration20;
         private System.Windows.Forms.TabPage tbRand20;
@@ -4090,5 +4589,22 @@ namespace Taller1_Simulacion
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnRunMontecarlo;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
+        private System.Windows.Forms.TabControl tbcMontecarloIterations;
+        private System.Windows.Forms.TabPage i10;
+        private System.Windows.Forms.TabPage i100;
+        private System.Windows.Forms.Label lblMontecarloInfo;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chMontecarloLGCI10;
+        private System.Windows.Forms.TabPage i1000;
+        private System.Windows.Forms.TabPage i5000;
+        private System.Windows.Forms.TabPage i10000;
+        private System.Windows.Forms.TableLayoutPanel layoutI10;
+        private System.Windows.Forms.Label lblLCGResultI10;
+        private System.Windows.Forms.Label lblXORResultI10;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chMontecarloXORI10;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -14,7 +14,7 @@ namespace Taller1_Simulacion
         ulong xorseed;
         int shiftA, shiftB, shiftC;
         LCG lcg20, lcg200, lcg2000, lcg10000, lcg20000;
-        // xor ones
+        
         List<Double> xorvalues20, xorvalues200, xorvalues2000, xorvalues10000, xorvalues20000;
         List<Double> values20, values200, values2000, values10000, values20000;
 
@@ -50,6 +50,20 @@ namespace Taller1_Simulacion
         List<Label> KSLCGlabels;
         List<Label> KSXORlabels;
 
+        List<Chart> montecarloLCGCharts;
+        List<Chart> montecarloXORCharts;
+
+        List<Label> montecarloLCGResultsLabels;
+        List<Label> montecarloXORResultsLabels;
+
+        List<double> xValues, fun1, fun2, fun3, squareX, squareY;
+        Montecarlo montecarloSim;
+
+        Point maxPoint = new Point { X = 0.865474033101613, Y = 0.679194068181104 };
+        Point minPoint = new Point { X = 0.0, Y = 0.0 };
+
+        const double realArea = 0.0737586345871;
+
         public Form1()
         {
             InitializeComponent();
@@ -57,10 +71,7 @@ namespace Taller1_Simulacion
 
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void InitializeObjects() {
 
@@ -89,6 +100,15 @@ namespace Taller1_Simulacion
             KSLCGlabels = new List<Label> { lblLCGKSTest20, lblLCGKSTest200, lblLCGKSTest2000, lblLCGKSTest10000, lblLCGKSTest20000 };
             KSXORlabels = new List<Label> { lblXORKSTest20, lblXORKSTest200, lblXORKSTest2000, lblXORKSTest10000, lblXORKSTest20000 };
 
+            montecarloLCGCharts = new List<Chart> { chMontecarloLGCI10 };
+            montecarloXORCharts = new List<Chart> { chMontecarloXORI10 };
+
+            montecarloLCGResultsLabels = new List<Label> { lblLCGResultI10 };
+            montecarloXORResultsLabels = new List<Label> { lblXORResultI10 };
+
+
+
+
             for (int i = 0; i < valuesLCGLists.Count; i++) valuesLCGLists[i] = new List<Double>();
             for (int i = 0; i < valuesXORLists.Count; i++) valuesXORLists[i] = new List<Double>();
 
@@ -102,8 +122,54 @@ namespace Taller1_Simulacion
 
         private void loadMontecarloVisualizationObjects()
         {
+            montecarloSim = new Montecarlo(
+                new List<Func<Point, bool>> {
+                    p => p.Y <= Math.Cos(p.X),
+                    p => p.Y <= Math.Pow(p.X, 2),
+                    p => p.Y >= Math.Pow(p.X, 3)
+                },
+                minPoint,
+                maxPoint
+            );
+
+            loadFunctions();
+            for (int i = 0; i < montecarloLCGCharts.Count; i++) {
+                montecarloLCGCharts[i].Series["SeriesFun1"].Points.DataBindXY(xValues, fun1);
+                montecarloLCGCharts[i].Series["SeriesFun2"].Points.DataBindXY(xValues, fun2);
+                montecarloLCGCharts[i].Series["SeriesFun3"].Points.DataBindXY(xValues, fun3);
+                montecarloLCGCharts[i].Series["SeriesSquare"].Points.DataBindXY(squareX, squareY);
+            }
+            for ( int i = 0; i < montecarloXORCharts.Count; i++)
+            {
+                montecarloXORCharts[i].Series["SeriesFun1"].Points.DataBindXY(xValues, fun1);
+                montecarloXORCharts[i].Series["SeriesFun2"].Points.DataBindXY(xValues, fun2);
+                montecarloXORCharts[i].Series["SeriesFun3"].Points.DataBindXY(xValues, fun3);
+                montecarloXORCharts[i].Series["SeriesSquare"].Points.DataBindXY(squareX, squareY);
+            }
+        }
+
+        private void loadFunctions()
+        {
+                xValues = new List<double>();
+                fun1 = new List<double>();
+                fun2 = new List<double>();
+                fun3 = new List<double>();
+                squareX = new List<double> { 0, 0.865474033101613, 0.865474033101613, 0, 0 };
+                squareY = new List<double> { 0, 0, 0.679194068181104, 0.679194068181104, 0 };
+    
+                for (double x = 0; x <= 1; x += 0.01)
+                {
+                    xValues.Add(x);
+                    fun1.Add(Math.Pow(x, 2));
+                    fun2.Add(Math.Pow(x, 3));
+                    fun3.Add(Math.Cos(x));
+                    
+                }
+
 
         }
+
+
         private void loadRandomVisualizationObjects() {
 
 
@@ -140,6 +206,8 @@ namespace Taller1_Simulacion
         private void btnRun_Click(object sender, EventArgs e)
         {
             btnRun.Enabled = false;
+            btnRunMontecarlo.Enabled = false;
+            tbcMontecarloIterations.Visible = false;
             if (!validateParams())
             {
                 btnRun.Enabled = true;
@@ -148,13 +216,8 @@ namespace Taller1_Simulacion
 
             randomSimulation();
 
-            // pruebas
-
-
-
-
-
             btnRun.Enabled = true;
+            btnRunMontecarlo.Enabled = true;
         }
 
         private void randomSimulation() {
@@ -168,8 +231,6 @@ namespace Taller1_Simulacion
             runCorrelationTests();
             runKSTests();
         }
-
-
 
         private void getRandomValues()
         {
@@ -537,6 +598,52 @@ namespace Taller1_Simulacion
             return p * 100.0;
         }
 
+        private void btnRunMontecarlo_Click(object sender, EventArgs e)
+        {
+            btnRunMontecarlo.Enabled = false;
 
+            for (int i = 0; i < valuesLCGLists.Count; i++) { 
+                
+                runMontecarlo(valuesLCGLists[i], montecarloLCGCharts[0], montecarloLCGResultsLabels[0]);
+
+            }
+
+            for (int i = 0; i < valuesXORLists.Count; i++) { 
+                
+                runMontecarlo(valuesXORLists[i], montecarloXORCharts[0], montecarloXORResultsLabels[0]);
+
+            }
+
+
+
+            tbcMontecarloIterations.Visible = true;
+            btnRunMontecarlo.Enabled = true;
+        }
+
+        private void runMontecarlo(List<double> values, Chart ch, Label lbl )
+        {
+            // Shuffle values to ensure randomness in point selection
+            var pointsList = montecarloSim.processPoints(values);
+            int totalPoints = pointsList.inside.Count + pointsList.outside.Count;
+            int inside = pointsList.inside.Count;
+            double estimatedArea = montecarloSim.EstimateArea(totalPoints, inside );
+            // Update label results
+            lbl.Text = $"Puntos dentro: {inside}\nPuntos totales: {totalPoints}\nÁrea estimada: {estimatedArea:F4}";
+            ch.Series["SeriesInsidePoints"].Points.Clear();
+            ch.Series["SeriesOutsidePoints"].Points.Clear();
+            ch.Series["SeriesInsidePoints"].Points.DataBind(pointsList.inside, "X", "Y", "");
+            ch.Series["SeriesOutsidePoints"].Points.DataBind(pointsList.outside, "X", "Y", "");
+
+        }
+
+        private double calcRealErrror( double result )
+        {
+            return 0.0;
+        }
+
+        private double calcTheoricalError( int usedPoints )
+        {
+            return 0.0;
+        }
     }
 }
